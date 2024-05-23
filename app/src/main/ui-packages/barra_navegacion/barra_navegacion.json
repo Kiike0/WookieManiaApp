@@ -1,0 +1,270 @@
+{
+  "name": "barra_navegacion",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "115:214",
+    "version": "5835279667",
+    "component-id": "e013512cdd48382c167bbca961d4151489d43d4c"
+  },
+  "default": "BarraNavegacion",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "Nav"
+      },
+      {
+        "type": "group",
+        "id": "HomeButton"
+      },
+      {
+        "type": "image",
+        "id": "ProfileButton"
+      },
+      {
+        "type": "group",
+        "id": "AddButton"
+      },
+      {
+        "type": "vector",
+        "id": "VectorHome2"
+      },
+      {
+        "type": "vector",
+        "id": "VectorHome1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      }
+    ],
+    "modes": {
+      "BarraNavegacion": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "Nav",
+              "HomeButton",
+              "ProfileButton",
+              "AddButton"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Nav",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 400.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 132.0
+              }
+            },
+            "vector-content": "nav.svg"
+          },
+          {
+            "id": "HomeButton",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -126.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -12.5
+              }
+            },
+            "tap-handler": "$HomeButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 55.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 55.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "VectorHome2",
+              "VectorHome1"
+            ]
+          },
+          {
+            "id": "ProfileButton",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 122.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -11.0
+              }
+            },
+            "tap-handler": "$ProfileButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 50.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 50.0
+              }
+            },
+            "stroke-width": 4.0,
+            "stroke-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "image-content": "profile_button.jpeg",
+            "scale": "cover"
+          },
+          {
+            "id": "AddButton",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -11.0
+              }
+            },
+            "tap-handler": "$AddButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 60.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 60.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector"
+            ]
+          },
+          {
+            "id": "VectorHome2",
+            "margin": {
+              "left": 11.078338623046875,
+              "top": 30.301513671875,
+              "right": 39.026246547698975,
+              "bottom": 21.59614109992981
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_home2.svg"
+          },
+          {
+            "id": "VectorHome1",
+            "margin": {
+              "left": 5.1539306640625,
+              "top": 3.4375,
+              "right": 5.149120330810547,
+              "bottom": 1.7264480590820312
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_home1.svg"
+          },
+          {
+            "id": "Vector",
+            "margin": {
+              "left": 5.0,
+              "top": 5.0,
+              "right": 4.999996185302734,
+              "bottom": 4.999996185302734
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "HomeButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "ProfileButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "AddButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "BarraNavegacion",
+      "size": {
+        "width": 400.0,
+        "height": 132.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
