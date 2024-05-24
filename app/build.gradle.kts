@@ -83,10 +83,13 @@ dependencies {
      */
 
     //Navigation
-    implementation(libs.androidx.navigation.compose)
+    //noinspection UseTomlInstead
+    implementation("androidx.navigation:navigation-compose:2.7.7")
     //LiveData
-    implementation(libs.androidx.runtime.livedata)
-    implementation(libs.androidx.compose.material)
+    //noinspection UseTomlInstead
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.7")
+    //noinspection UseTomlInstead
+    implementation("androidx.wear.compose:compose-material:1.3.1")
 
 
     testImplementation(libs.junit)

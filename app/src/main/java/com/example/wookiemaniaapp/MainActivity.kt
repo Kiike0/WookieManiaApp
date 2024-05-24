@@ -41,11 +41,13 @@ class MainActivity : ComponentActivity() {
                         navController = navController,
                         startDestination = Routes.FirstScreen.route
                     ) {
+                        // Ruta desde la primera Screen
                         composable(Routes.FirstScreen.route) {
                             FirstScreenView(
                                 navController = navController
                             )
                         }
+                        // Composable con la ruta a la pantalla Home
                         composable(Routes.Home.route) {
                             HomeScreen(
                                 navController = navController
