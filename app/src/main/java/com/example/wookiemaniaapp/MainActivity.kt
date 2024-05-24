@@ -14,8 +14,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.WookieManiaAppTheme
+import com.example.wookiemaniaapp.ui.views.Category
 import com.example.wookiemaniaapp.ui.views.FirstScreenView
 import com.example.wookiemaniaapp.ui.views.HomeScreen
+import com.example.wookiemaniaapp.ui.views.NormalMode
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +52,20 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla Home
                         composable(Routes.Home.route) {
                             HomeScreen(
+                                navController = navController
+                            )
+                        }
+
+                        // Composable con la ruta a la pantalla del modo Normal
+                        composable(Routes.Category.route) {
+                            Category(
+                                navController = navController
+                            )
+                        }
+
+                        // Composable con la ruta a la pantalla del modo Normal
+                        composable(Routes.NormalMode.route) {
+                            NormalMode(
                                 navController = navController
                             )
                         }

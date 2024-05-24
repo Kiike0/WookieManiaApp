@@ -1,0 +1,263 @@
+{
+  "name": "categoria_elegida",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "197:41",
+    "version": "5843543453",
+    "component-id": "5d216918c8b760b5dc54d0d3c80f7b365b86fc02"
+  },
+  "default": "CategoriaElegida",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "CategoryComp"
+      },
+      {
+        "type": "group",
+        "id": "StartButton"
+      },
+      {
+        "type": "group",
+        "id": "Close"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 51"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 50"
+      },
+      {
+        "type": "text",
+        "id": "Aventura"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 2"
+      },
+      {
+        "type": "text",
+        "id": "Start"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      }
+    ],
+    "modes": {
+      "CategoriaElegida": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "CategoryComp",
+              "StartButton",
+              "Close"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "CategoryComp",
+            "margin": {
+              "bottom": 362.0
+            },
+            "is-structured": false,
+            "children": [
+              "Rectangle 51",
+              "Rectangle 50",
+              "Aventura"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "StartButton",
+            "margin": {
+              "left": 96.0,
+              "top": 213.0,
+              "right": 84.0,
+              "bottom": 135.0
+            },
+            "tap-handler": "$StartButton",
+            "is-structured": false,
+            "children": [
+              "Ellipse 2",
+              "Start"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Close",
+            "margin": {
+              "left": 155.0,
+              "top": 430.0,
+              "right": 143.0
+            },
+            "tap-handler": "$CloseButton",
+            "is-structured": false,
+            "children": [
+              "Vector"
+            ]
+          },
+          {
+            "id": "Rectangle 51",
+            "margin": {
+              "top": 48.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "rectangle_51.svg"
+          },
+          {
+            "id": "Rectangle 50",
+            "margin": {
+              "bottom": 50.0
+            },
+            "border-radius": 20.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "rectangle_50.svg"
+          },
+          {
+            "id": "Aventura",
+            "margin": {
+              "left": 12.0,
+              "top": 19.0,
+              "right": 14.0,
+              "bottom": 73.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Aventura",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 30.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "Ellipse 2",
+            "margin": {
+              "left": 18.0,
+              "right": 18.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "ellipse_2.svg"
+          },
+          {
+            "id": "Start",
+            "margin": {
+              "top": 46.0,
+              "bottom": 38.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "font-weight": 700.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Start",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 36.0,
+            "line-height": 1.2000000211927626,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "Vector",
+            "margin": 3.75,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "StartButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "CloseButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "CategoriaElegida",
+      "size": {
+        "width": 358.0,
+        "height": 490.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

@@ -1,0 +1,406 @@
+{
+  "name": "cabecera_tipo2",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "161:107",
+    "version": "5843520904",
+    "component-id": "498753c6188148c1452b6574d2224a792d767995"
+  },
+  "default": "CabeceraTipo2",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "CajaInterrogantes"
+      },
+      {
+        "type": "group",
+        "id": "Interrogantes"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante10"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante9"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante8"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante7"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante6"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante5"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante4"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante3"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante2"
+      },
+      {
+        "type": "image",
+        "id": "Interrogante1"
+      }
+    ],
+    "modes": {
+      "CabeceraTipo2": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "CajaInterrogantes",
+              "Interrogantes"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "CajaInterrogantes",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 400.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 184.0
+              }
+            },
+            "vector-content": "caja_interrogantes.svg"
+          },
+          {
+            "id": "Interrogantes",
+            "margin": {
+              "left": 1.0,
+              "top": 34.0,
+              "right": 6.0,
+              "bottom": 22.0
+            },
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.24705882352941178,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 4.0,
+              "offset-x": 13.0,
+              "offset-y": 4.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "is-structured": false,
+            "children": [
+              "Interrogante10",
+              "Interrogante9",
+              "Interrogante8",
+              "Interrogante7",
+              "Interrogante6",
+              "Interrogante5",
+              "Interrogante4",
+              "Interrogante3",
+              "Interrogante2",
+              "Interrogante1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Interrogante10",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -4.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -2.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 107.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 112.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Interrogante9",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 56.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 28.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 64.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 67.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Interrogante8",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 97.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -28.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 53.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 72.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Interrogante7",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 118.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 35.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 42.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 54.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Interrogante6",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -123.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 13.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 82.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Interrogante5",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 165.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 8.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 82.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Interrogante4",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -76.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -35.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 37.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 45.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Interrogante3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -171.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -31.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 26.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 37.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Interrogante2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -178.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 31.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 37.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 45.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Interrogante1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -66.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 27.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 47.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 73.0
+              }
+            },
+            "image-content": "interrogante10.png",
+            "scale": "cover"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "CabeceraTipo2",
+      "size": {
+        "width": 400.0,
+        "height": 184.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

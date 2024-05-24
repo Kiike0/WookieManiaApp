@@ -21,6 +21,19 @@ sealed class Routes(val route: String) {
 
     object Home : Routes("homeView")
 
+    /**
+     * Pantalla de la Categoría elegida o modo normal de juego.
+     */
+
+    object Category : Routes("categoryView")
+
+
+    /**
+     * Pantalla de la Categoría elegida o modo normal de juego.
+     */
+
+    object NormalMode : Routes("normalModeView")
+
     /*
 
         /**

@@ -1,0 +1,443 @@
+{
+  "name": "question",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "197:68",
+    "version": "5843586549",
+    "component-id": "a39572e7a9397dfbaa7e22110d6df16a2066934a"
+  },
+  "default": "Question",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "BoxQuestion"
+      },
+      {
+        "type": "vector",
+        "id": "AnswerA"
+      },
+      {
+        "type": "vector",
+        "id": "AnswerB"
+      },
+      {
+        "type": "vector",
+        "id": "AnswerC"
+      },
+      {
+        "type": "vector",
+        "id": "AnswerD"
+      },
+      {
+        "type": "image",
+        "id": "QuestionRandom"
+      },
+      {
+        "type": "text",
+        "id": "¿Te ha gustado?"
+      },
+      {
+        "type": "group",
+        "id": "DislikeIcon"
+      },
+      {
+        "type": "group",
+        "id": "LikeIcon"
+      },
+      {
+        "type": "text",
+        "id": "TextCategory"
+      },
+      {
+        "type": "group",
+        "id": "CloseIcon"
+      },
+      {
+        "type": "group",
+        "id": "Save"
+      },
+      {
+        "type": "vector",
+        "id": "VectorDislike"
+      },
+      {
+        "type": "vector",
+        "id": "VectorLike"
+      },
+      {
+        "type": "vector",
+        "id": "VectorBoxClose"
+      },
+      {
+        "type": "vector",
+        "id": "VectorClose"
+      },
+      {
+        "type": "vector",
+        "id": "VectorSave"
+      }
+    ],
+    "modes": {
+      "Question": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "BoxQuestion",
+              "AnswerA",
+              "AnswerB",
+              "AnswerC",
+              "AnswerD",
+              "QuestionRandom",
+              "¿Te ha gustado?",
+              "DislikeIcon",
+              "LikeIcon",
+              "TextCategory",
+              "CloseIcon",
+              "Save"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "BoxQuestion",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "box_question.svg"
+          },
+          {
+            "id": "AnswerA",
+            "margin": {
+              "left": 24.0,
+              "top": 315.0,
+              "right": 25.0,
+              "bottom": 353.0
+            },
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "answer_a.svg"
+          },
+          {
+            "id": "AnswerB",
+            "margin": {
+              "left": 24.0,
+              "top": 403.0,
+              "right": 25.0,
+              "bottom": 265.0
+            },
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "answer_b.svg"
+          },
+          {
+            "id": "AnswerC",
+            "margin": {
+              "left": 24.0,
+              "top": 491.0,
+              "right": 25.0,
+              "bottom": 177.0
+            },
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "answer_c.svg"
+          },
+          {
+            "id": "AnswerD",
+            "margin": {
+              "left": 24.0,
+              "top": 579.0,
+              "right": 25.0,
+              "bottom": 89.0
+            },
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "answer_d.svg"
+          },
+          {
+            "id": "QuestionRandom",
+            "margin": {
+              "left": 48.0,
+              "top": 81.0,
+              "right": 49.0,
+              "bottom": 435.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "image-content": "question_random.png",
+            "scale": "cover"
+          },
+          {
+            "id": "¿Te ha gustado?",
+            "margin": {
+              "left": 20.0,
+              "top": 667.0,
+              "right": 209.0,
+              "bottom": 40.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "¿Te ha gustado?",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "DislikeIcon",
+            "margin": {
+              "left": 331.0,
+              "top": 666.0,
+              "right": 27.0,
+              "bottom": 30.0
+            },
+            "is-structured": false,
+            "children": [
+              "VectorDislike"
+            ]
+          },
+          {
+            "id": "LikeIcon",
+            "margin": {
+              "left": 272.0,
+              "top": 662.0,
+              "right": 86.0,
+              "bottom": 34.0
+            },
+            "is-structured": false,
+            "children": [
+              "VectorLike"
+            ]
+          },
+          {
+            "id": "TextCategory",
+            "margin": {
+              "left": 287.0,
+              "top": 34.0,
+              "right": 24.0,
+              "bottom": 673.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Aventura",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "CloseIcon",
+            "margin": {
+              "left": 24.0,
+              "top": 30.0,
+              "right": 336.0,
+              "bottom": 668.0
+            },
+            "is-structured": false,
+            "children": [
+              "VectorBoxClose",
+              "VectorClose"
+            ]
+          },
+          {
+            "id": "Save",
+            "margin": {
+              "left": 206.0,
+              "top": 664.0,
+              "right": 152.0,
+              "bottom": 32.0
+            },
+            "is-structured": false,
+            "children": [
+              "VectorSave"
+            ]
+          },
+          {
+            "id": "VectorDislike",
+            "margin": {
+              "left": 4.375,
+              "top": 4.375,
+              "right": 3.558053970336914,
+              "bottom": 4.375
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_dislike.svg"
+          },
+          {
+            "id": "VectorLike",
+            "margin": {
+              "left": 4.375,
+              "top": 4.375,
+              "right": 3.5580520629882812,
+              "bottom": 4.375
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_like.svg"
+          },
+          {
+            "id": "VectorBoxClose",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "id": "VectorClose",
+            "margin": {
+              "left": 5.66168212890625,
+              "top": 5.66162109375,
+              "right": 5.686336517333984,
+              "bottom": 5.66168212890625
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_close.svg"
+          },
+          {
+            "id": "VectorSave",
+            "margin": {
+              "left": 4.375,
+              "top": 3.28125,
+              "right": 4.375,
+              "bottom": 3.279895782470703
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_save.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "Question",
+      "size": {
+        "width": 393.0,
+        "height": 731.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

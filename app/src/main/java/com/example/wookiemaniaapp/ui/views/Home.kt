@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -28,6 +29,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.barranavegacion.BarraNavegacion
 import com.example.wookiemaniaapp.cabecera.Cabecera
+import com.example.wookiemaniaapp.navigation.Routes
+import com.example.wookiemaniaapp.ui.components.HeadBoard
+import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 
 /**
@@ -44,25 +48,44 @@ fun HomeScreen(
         contentAlignment = Alignment.Center
     ) {
 
-        Cabecera(
-            modifier= Modifier,
-        rankingButton = {},
-        playButton = {},
-        survivalButton = {},
-        categoryButton = {},
-        starButton = {},
-        notifButton = {}
-        )
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(150.dp)
+                .background(color = Color.Transparent)
+                .align(Alignment.TopStart)
+                .padding(top = 30.dp)
+        ) {
+            HeadBoard(
+                modifier= Modifier,
+                rankingButton = {},
+                playButton = { navController.navigate(Routes.Category.route) },
+                survivalButton = {},
+                categoryButton = {},
+                starButton = {},
+                notifButton = {}
+            )
+        }
 
-        BarraNavegacion(
-            modifier = Modifier,
-        homeButton = {},
-        profileButton= {},
-        addButton = {}
-        )
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(150.dp)
+                .background(color = Color.Transparent)
+                .align(Alignment.BottomEnd)
+                .padding(bottom = 10.dp)
+        ) {
+            NavigationBar(
+                modifier = Modifier,
+                homeButton = {},
+                profileButton= {},
+                addButton = {}
+            )
 
-
-
+        }
 
     }
+
+
+
 }
