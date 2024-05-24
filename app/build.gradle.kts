@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 
+    /*
+    //Google dependencies
+    id("com.google.gms.google-services")
+    */
+
     //Relay dependencies
     id("com.google.relay") version "0.3.11"
 }
@@ -12,7 +17,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.wookiemaniaapp"
-        minSdk = 24
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -62,6 +67,28 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    /*
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+    // DCS - Servicio de Autenticación
+    implementation(libs.firebase.auth.ktx)
+    // DCS - Base de datos Firestore
+    implementation(libs.firebase.firestore.ktx)
+
+     */
+
+    //Navigation
+    implementation(libs.androidx.navigation.compose)
+    //LiveData
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.compose.material)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
