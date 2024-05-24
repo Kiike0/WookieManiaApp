@@ -4,7 +4,7 @@
             "outputFile": "com.example.wookiemaniaapp.test.app-mergeDebugAndroidTestResources-32:/values-ta/values-ta.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\enrique.villegas\\.gradle\\caches\\transforms-3\\30ff78bacc73cd4335d8f6fbe0239771\\transformed\\core-1.13.1\\res\\values-ta\\values-ta.xml",
+                    "source": "C:\\Users\\enrique.villegas\\.gradle\\caches\\transforms-3\\29bf2fdad1cd350346da65763c4131d7\\transformed\\core-1.13.1\\res\\values-ta\\values-ta.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\enrique.villegas\\.gradle\\caches\\transforms-3\\fb11422f76687ee6c36c744177df1670\\transformed\\ui-release\\res\\values-ta\\values-ta.xml",
+                    "source": "C:\\Users\\enrique.villegas\\.gradle\\caches\\transforms-3\\3b6159d732305352ef45a5d004b1cf73\\transformed\\ui-release\\res\\values-ta\\values-ta.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

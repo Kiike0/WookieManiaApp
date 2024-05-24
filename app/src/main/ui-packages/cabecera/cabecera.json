@@ -1,0 +1,700 @@
+{
+  "name": "cabecera",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "161:57",
+    "version": "5840136519",
+    "component-id": "b772f49ae74b7c963d452497c1832ddbdabb2ab9"
+  },
+  "default": "Cabecera",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "BoxBarGame"
+      },
+      {
+        "type": "group",
+        "id": "RankingButton"
+      },
+      {
+        "type": "group",
+        "id": "PlayButton"
+      },
+      {
+        "type": "group",
+        "id": "SurvivalButton"
+      },
+      {
+        "type": "group",
+        "id": "CategoryButton"
+      },
+      {
+        "type": "text",
+        "id": "Wookiemania"
+      },
+      {
+        "type": "group",
+        "id": "StarButton"
+      },
+      {
+        "type": "group",
+        "id": "NotifButton"
+      },
+      {
+        "type": "vector",
+        "id": "BoxRanking"
+      },
+      {
+        "type": "group",
+        "id": "RankingIcon"
+      },
+      {
+        "type": "vector",
+        "id": "VectorRanking"
+      },
+      {
+        "type": "vector",
+        "id": "BoxPlay"
+      },
+      {
+        "type": "group",
+        "id": "PlayIcon"
+      },
+      {
+        "type": "vector",
+        "id": "VectorPlay"
+      },
+      {
+        "type": "vector",
+        "id": "BoxSurvival"
+      },
+      {
+        "type": "group",
+        "id": "VectorSurvival"
+      },
+      {
+        "type": "vector",
+        "id": "VectorSurv"
+      },
+      {
+        "type": "vector",
+        "id": "CajaCategory"
+      },
+      {
+        "type": "group",
+        "id": "VectorCategory"
+      },
+      {
+        "type": "vector",
+        "id": "VectorCateg"
+      },
+      {
+        "type": "vector",
+        "id": "BoxStarVect"
+      },
+      {
+        "type": "vector",
+        "id": "StarVector"
+      },
+      {
+        "type": "vector",
+        "id": "VectorNotif"
+      }
+    ],
+    "modes": {
+      "Cabecera": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "BoxBarGame",
+              "RankingButton",
+              "PlayButton",
+              "SurvivalButton",
+              "CategoryButton",
+              "Wookiemania",
+              "StarButton",
+              "NotifButton"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "BoxBarGame",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 400.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 184.0
+              }
+            },
+            "vector-content": "box_bar_game.svg"
+          },
+          {
+            "id": "RankingButton",
+            "margin": {
+              "left": 304.0,
+              "top": 92.0,
+              "right": 21.0,
+              "bottom": 17.0
+            },
+            "tap-handler": "$RankingButton",
+            "is-structured": false,
+            "children": [
+              "BoxRanking",
+              "RankingIcon"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "PlayButton",
+            "margin": {
+              "left": 20.0,
+              "top": 92.0,
+              "right": 305.0,
+              "bottom": 17.0
+            },
+            "tap-handler": "$PlayButton",
+            "is-structured": false,
+            "children": [
+              "BoxPlay",
+              "PlayIcon"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "SurvivalButton",
+            "margin": {
+              "left": 115.0,
+              "top": 92.0,
+              "right": 210.0,
+              "bottom": 17.0
+            },
+            "tap-handler": "$SurvivalButton",
+            "is-structured": false,
+            "children": [
+              "BoxSurvival",
+              "VectorSurvival"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "CategoryButton",
+            "margin": {
+              "left": 209.0,
+              "top": 92.0,
+              "right": 116.0,
+              "bottom": 17.0
+            },
+            "tap-handler": "$CategoryButton",
+            "is-structured": false,
+            "children": [
+              "CajaCategory",
+              "VectorCategory"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Wookiemania",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -78.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -31.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 182.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 38.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 50.35294117647059,
+              "saturation": 1.0,
+              "value": 1.0
+            },
+            "text-content": "Wookiemania",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 22.0,
+            "line-height": 1.2000000762939453,
+            "typeface": "Rubik Wet Paint"
+          },
+          {
+            "id": "StarButton",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 108.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -35.0
+              }
+            },
+            "tap-handler": "$StarButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 30.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 30.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "BoxStarVect",
+              "StarVector"
+            ]
+          },
+          {
+            "id": "NotifButton",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 157.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -35.0
+              }
+            },
+            "tap-handler": "$NotifButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 30.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 30.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "VectorNotif"
+            ]
+          },
+          {
+            "id": "BoxRanking",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 75.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 75.0
+              }
+            },
+            "vector-content": "box_ranking.svg"
+          },
+          {
+            "id": "RankingIcon",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -0.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 42.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 42.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "VectorRanking"
+            ]
+          },
+          {
+            "id": "VectorRanking",
+            "margin": {
+              "left": 1.3125,
+              "top": 6.5625,
+              "right": 1.3125,
+              "bottom": 6.5625
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_ranking.svg"
+          },
+          {
+            "id": "BoxPlay",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 75.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 75.0
+              }
+            },
+            "vector-content": "box_play.svg"
+          },
+          {
+            "id": "PlayIcon",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 1.679107666015625
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -0.5596694946289062
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 49.25372314453125
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 49.25372314453125
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "VectorPlay"
+            ]
+          },
+          {
+            "id": "VectorPlay",
+            "margin": {
+              "left": 9.238922119140625,
+              "top": 6.9261322021484375,
+              "right": 9.235488891601562,
+              "bottom": 6.926326751708984
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_play.svg"
+          },
+          {
+            "id": "BoxSurvival",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 75.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 75.0
+              }
+            },
+            "vector-content": "box_survival.svg"
+          },
+          {
+            "id": "VectorSurvival",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0001678466796875
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -1.1194305419921875
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 39.179107666015625
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 39.179107666015625
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "VectorSurv"
+            ]
+          },
+          {
+            "id": "VectorSurv",
+            "margin": {
+              "left": 3.264923095703125,
+              "top": 3.264923095703125,
+              "right": 3.2649154663085938,
+              "bottom": 3.2649192810058594
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_surv.svg"
+          },
+          {
+            "id": "CajaCategory",
+            "border-radius": 100.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 75.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 75.0
+              }
+            },
+            "vector-content": "caja_category.svg"
+          },
+          {
+            "id": "VectorCategory",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 2.2462615966796875
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -0.7537384033203125
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 51.492523193359375
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 51.492523193359375
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "VectorCateg"
+            ]
+          },
+          {
+            "id": "VectorCateg",
+            "margin": {
+              "left": 6.4365692138671875,
+              "top": 12.873130798339844,
+              "right": 7.311870574951172,
+              "bottom": 12.873130798339844
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_categ.svg"
+          },
+          {
+            "id": "BoxStarVect",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "id": "StarVector",
+            "margin": {
+              "left": 2.139606475830078,
+              "top": 2.809206008911133,
+              "right": 2.1405410766601562,
+              "bottom": 2.577146530151367
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "star_vector.svg"
+          },
+          {
+            "id": "VectorNotif",
+            "margin": {
+              "left": 2.8125,
+              "top": 0.9375,
+              "right": 2.8125,
+              "bottom": 1.875
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_notif.svg"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "RankingButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "PlayButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "SurvivalButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "CategoryButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "StarButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "NotifButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Cabecera",
+      "size": {
+        "width": 400.0,
+        "height": 184.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

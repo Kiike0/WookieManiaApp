@@ -1,0 +1,296 @@
+{
+  "name": "start_game",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "161:136",
+    "version": "5839990766",
+    "component-id": "d3d9392fc742067cf5cd158eabd728e4e0fe84ed"
+  },
+  "default": "StartGame",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "Play Now!"
+      },
+      {
+        "type": "text",
+        "id": "Wookiemania"
+      },
+      {
+        "type": "vector",
+        "id": "CajaLog"
+      },
+      {
+        "type": "vector",
+        "id": "CajaReg"
+      },
+      {
+        "type": "text",
+        "id": "Iniciar Sesión"
+      },
+      {
+        "type": "text",
+        "id": "Registrarse"
+      },
+      {
+        "type": "text",
+        "id": "Invitado"
+      }
+    ],
+    "modes": {
+      "StartGame": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "Play Now!",
+              "Wookiemania",
+              "CajaLog",
+              "CajaReg",
+              "Iniciar Sesión",
+              "Registrarse",
+              "Invitado"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Play Now!",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -87.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 393.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "text-content": "Play Now!",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 32.0,
+            "line-height": 1.2380000352859497,
+            "typeface": "Rubik Mono One"
+          },
+          {
+            "id": "Wookiemania",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -144.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 279.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 53.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 50.35294117647059,
+              "saturation": 1.0,
+              "value": 1.0
+            },
+            "text-content": "Wookiemania",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 36.0,
+            "line-height": 1.2000000762939453,
+            "typeface": "Rubik Wet Paint"
+          },
+          {
+            "id": "CajaLog",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 1.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -28.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 299.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 41.0
+              }
+            },
+            "vector-content": "caja_log.svg"
+          },
+          {
+            "id": "CajaReg",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 1.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 26.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 299.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 41.0
+              }
+            },
+            "vector-content": "caja_reg.svg"
+          },
+          {
+            "id": "Iniciar Sesión",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -5.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -29.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 279.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 600.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Iniciar Sesión",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "Registrarse",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -5.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 26.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 279.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Registrarse",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "Invitado",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 282.5
+              }
+            },
+            "tap-handler": "$InvitadoButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 393.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 700.0,
+            "text-content": "Continúa como Invitado",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 16.0,
+            "line-height": 1.2000000762939453,
+            "typeface": "Fira Sans",
+            "underline": true
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "InvitadoButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "StartGame",
+      "size": {
+        "width": 393.0,
+        "height": 584.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

@@ -26,6 +26,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.wookiemaniaapp.barranavegacion.BarraNavegacion
+import com.example.wookiemaniaapp.cabecera.Cabecera
+import com.example.wookiemaniaapp.ui.theme.ColorApp
 
 /**
  * Función composable que representa la pantalla Home del juego.
@@ -37,47 +40,26 @@ fun HomeScreen(
     navController: NavHostController
 ) {
     Box(
-        modifier = Modifier.fillMaxSize().background(Color.Yellow),
+        modifier = Modifier.fillMaxSize().background(ColorApp),
         contentAlignment = Alignment.Center
     ) {
 
-        Column (
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 150.dp)
-                .align(Alignment.TopCenter)
-        ){
-            Text(
-                text = "WookieMania",
-                style = TextStyle(
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black
-                )
+        Cabecera(
+            modifier= Modifier,
+        rankingButton = {},
+        playButton = {},
+        survivalButton = {},
+        categoryButton = {},
+        starButton = {},
+        notifButton = {}
+        )
 
-            )
-            Spacer(modifier = Modifier.height(300.dp))
-            Button(
-                onClick = { },
-                modifier = Modifier
-                    .size(120.dp)
-                    .border(width = 4.dp, color = Color.White, shape = CircleShape),
-                shape = CircleShape,
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Black, contentColor = Color.White)
-            )
-            {
-                Text(
-                    "Play Now!",
-                    style = TextStyle(
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold
-                    ),
-                    textAlign = TextAlign.Center
-                )
-
-            }
-        }
+        BarraNavegacion(
+            modifier = Modifier,
+        homeButton = {},
+        profileButton= {},
+        addButton = {}
+        )
 
 
 
