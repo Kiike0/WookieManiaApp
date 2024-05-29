@@ -1,0 +1,226 @@
+{
+  "name": "ranking_position",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "208:55",
+    "version": "5872004675",
+    "component-id": "35e3dcb1b0cf29180e7b8e70c78f3b8a70db0e89"
+  },
+  "default": "RankingPosition",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "BoxButton"
+      },
+      {
+        "type": "text",
+        "id": "Username"
+      },
+      {
+        "type": "image",
+        "id": "Avatar"
+      },
+      {
+        "type": "text",
+        "id": "Points"
+      },
+      {
+        "type": "text",
+        "id": "Position"
+      }
+    ],
+    "modes": {
+      "RankingPosition": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "BoxButton",
+              "Username",
+              "Avatar",
+              "Points",
+              "Position"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "BoxButton",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "tap-handler": "$BoxToProfileButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 348.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 57.0
+              }
+            },
+            "vector-content": "box_button.svg"
+          },
+          {
+            "id": "Username",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 42.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 263.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 700.0,
+            "text-content": "$Username",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.2000000476837158,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "Avatar",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -119.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "image-content": "$Avatar",
+            "scale": "cover"
+          },
+          {
+            "id": "Points",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 134.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 700.0,
+            "text-content": "$Points",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.2000000476837158,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "Position",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -154.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 700.0,
+            "text-content": "$Position",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.2000000476837158,
+            "typeface": "Fira Sans"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "BoxToProfileButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "Username": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "Avatar": {
+      "data-type": "image",
+      "required": false,
+      "description": ""
+    },
+    "Points": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "Position": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "RankingPosition",
+      "size": {
+        "width": 348.0,
+        "height": 57.0
+      },
+      "parameters": {
+        "Username": "@animatrix",
+        "Avatar": "avatar.jpeg",
+        "Points": "112",
+        "Position": "1"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

@@ -19,8 +19,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.cabeceratipo2.CabeceraTipo2
+import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.components.CategoryTypeComposable
-import com.example.wookiemaniaapp.ui.components.CustomizedCateogiesText
+import com.example.wookiemaniaapp.ui.components.CustomizedCategoryText
 import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 
@@ -65,7 +66,7 @@ fun Categories(
                 horizontalArrangement = Arrangement.spacedBy((-50).dp)
             ) {
                 item {
-                    CustomizedCateogiesText(contenido = "Categorías")
+                    CustomizedCategoryText(contenido = "Categorías")
                 }
                 item {
 
@@ -177,7 +178,7 @@ fun Categories(
             ) {
                 NavigationBar(
                     modifier = Modifier,
-                    homeButton = {},
+                    homeButton = {navController.navigate(Routes.Home.route)},
                     profileButton= {},
                     addButton = {}
                 )

@@ -15,13 +15,13 @@ import com.google.relay.compose.BoxScopeInstance.boxAlign
 import com.google.relay.compose.RelayText
 
 @Composable
-fun CustomizedCateogiesText(
+fun CustomizedCategoryText(
     modifier: Modifier = Modifier,
     contenido: String
 ) {
     RelayText(
         content = contenido,
-        fontSize = 20.0.sp,
+        fontSize = 18.0.sp,
         fontFamily = firaSans,
         color = Color(red = 0, green = 0, blue = 0, alpha = 255),
         fontWeight = FontWeight.Bold,
@@ -29,6 +29,27 @@ fun CustomizedCateogiesText(
             alignment = Alignment.Center,
             offset = DpOffset(
                 x = -20.dp,
+                y = 0.dp
+            )
+        )
+    )
+}
+
+@Composable
+fun CustomizedTypeText(
+    modifier: Modifier = Modifier,
+    contenido: String
+) {
+    RelayText(
+        content = contenido,
+        fontSize = 18.0.sp,
+        fontFamily = firaSans,
+        color = Color(red = 0, green = 0, blue = 0, alpha = 255),
+        fontWeight = FontWeight.Bold,
+        modifier = modifier.padding(top=20.dp).boxAlign(
+            alignment = Alignment.Center,
+            offset = DpOffset(
+                x = 20.dp,
                 y = 0.dp
             )
         )

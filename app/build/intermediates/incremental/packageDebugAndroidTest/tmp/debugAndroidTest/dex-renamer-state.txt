@@ -1,4 +1,4 @@
-#Wed May 29 08:03:59 CEST 2024
+#Wed May 29 10:44:52 CEST 2024
 base.0=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
 base.1=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
 base.2=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\7\\classes.dex

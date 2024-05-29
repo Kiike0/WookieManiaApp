@@ -41,7 +41,7 @@ fun HomeScreen(
         ) {
             HeadBoard(
                 modifier= Modifier,
-                rankingButton = {},
+                rankingButton = {navController.navigate(Routes.Ranking.route)},
                 playButton = { navController.navigate(Routes.Category.route) },
                 survivalButton = {},
                 categoriesButton = { navController.navigate(Routes.Categories.route) },
@@ -60,7 +60,7 @@ fun HomeScreen(
         ) {
             NavigationBar(
                 modifier = Modifier,
-                homeButton = {},
+                homeButton = {navController.navigate(Routes.Home.route)},
                 profileButton= {},
                 addButton = {}
             )

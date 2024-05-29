@@ -19,6 +19,7 @@ import com.example.wookiemaniaapp.ui.views.Category
 import com.example.wookiemaniaapp.ui.views.FirstScreenView
 import com.example.wookiemaniaapp.ui.views.HomeScreen
 import com.example.wookiemaniaapp.ui.views.NormalMode
+import com.example.wookiemaniaapp.ui.views.RankingScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,6 +61,13 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla de las categorias a elegir
                         composable(Routes.Categories.route) {
                             Categories(
+                                navController = navController
+                            )
+                        }
+
+                        // Composable con la ruta a la pantalla del Ranking global
+                        composable(Routes.Ranking.route) {
+                            RankingScreen(
                                 navController = navController
                             )
                         }

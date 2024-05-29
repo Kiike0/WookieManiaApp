@@ -80,6 +80,10 @@
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_extrabold.ttf"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_ranking_position_avatar.jpeg.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/ranking_position_avatar.jpeg"
+    },
+    {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_barra_navegacion_vector_home1.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/barra_navegacion_vector_home1.xml"
     },
@@ -274,6 +278,10 @@
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_start_game_caja_reg.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/start_game_caja_reg.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_ranking_position_box_button.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/ranking_position_box_button.xml"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_extralight.ttf.flat",

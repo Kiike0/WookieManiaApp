@@ -44,6 +44,8 @@ drawable question_vector_close
 drawable question_vector_dislike
 drawable question_vector_like
 drawable question_vector_save
+drawable ranking_position_avatar
+drawable ranking_position_box_button
 drawable start_game_caja_log
 drawable start_game_caja_reg
 font relay_fira_sans_black

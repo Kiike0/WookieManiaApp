@@ -133,6 +133,8 @@ drawable question_vector_close
 drawable question_vector_dislike
 drawable question_vector_like
 drawable question_vector_save
+drawable ranking_position_avatar
+drawable ranking_position_box_button
 drawable rectangular_vignette_bottom
 drawable rectangular_vignette_top
 drawable start_game_caja_log

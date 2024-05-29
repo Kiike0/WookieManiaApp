@@ -28,6 +28,12 @@ sealed class Routes(val route: String) {
     object Categories : Routes("categoriesView")
 
     /**
+     * Pantalla del Ranking.
+     */
+
+    object Ranking : Routes("rankingView")
+
+    /**
      * Pantalla de la Categoría elegida o modo normal de juego.
      */
 
