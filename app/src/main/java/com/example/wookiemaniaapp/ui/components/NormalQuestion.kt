@@ -6,8 +6,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.requiredWidth
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -15,7 +13,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
@@ -53,7 +50,7 @@ fun NormalQuestion(
                 alignment = Alignment.Center,
                 offset = DpOffset(
                     x = 0.0.dp,
-                    y = -72.5.dp
+                    y = (-72.5).dp
                 )
             )
         )
@@ -61,8 +58,8 @@ fun NormalQuestion(
             modifier = Modifier.boxAlign(
                 alignment = Alignment.Center,
                 offset = DpOffset(
-                    x = -94.5.dp,
-                    y = 243.5.dp
+                    x = (-94.5).dp,
+                    y = 233.5.dp
                 )
             )
         )
@@ -72,7 +69,7 @@ fun NormalQuestion(
                 alignment = Alignment.Center,
                 offset = DpOffset(
                     x = 152.0.dp,
-                    y = 248.0.dp
+                    y = 238.0.dp
                 )
             )
         ) {
@@ -84,7 +81,7 @@ fun NormalQuestion(
                 alignment = Alignment.Center,
                 offset = DpOffset(
                     x = 93.0.dp,
-                    y = 244.0.dp
+                    y = 234.0.dp
                 )
             )
         ) {
@@ -96,7 +93,7 @@ fun NormalQuestion(
                 alignment = Alignment.Center,
                 offset = DpOffset(
                     x = 72.0.dp,
-                    y = -379.5.dp
+                    y = (-362.5).dp
                 )
             )
         )
@@ -105,8 +102,8 @@ fun NormalQuestion(
             modifier = Modifier.boxAlign(
                 alignment = Alignment.Center,
                 offset = DpOffset(
-                    x = -156.0.dp,
-                    y = -379.0.dp
+                    x = (-156.0).dp,
+                    y = (-362.0).dp
                 )
             )
         ) {
@@ -119,7 +116,7 @@ fun NormalQuestion(
                 alignment = Alignment.Center,
                 offset = DpOffset(
                     x = 27.0.dp,
-                    y = 246.0.dp
+                    y = 236.0.dp
                 )
             )
         ) {
@@ -130,7 +127,7 @@ fun NormalQuestion(
                 alignment = Alignment.TopStart,
                 offset = DpOffset(
                     x = 48.0.dp,
-                    y = 81.0.dp
+                    y = 71.0.dp
                 )
             )
         ) {
@@ -139,7 +136,7 @@ fun NormalQuestion(
                     alignment = Alignment.Center,
                     offset = DpOffset(
                         x = 0.0.dp,
-                        y = 0.0.dp
+                        y = (-6.5).dp
                     )
                 )
             )
@@ -148,8 +145,8 @@ fun NormalQuestion(
                 modifier = Modifier.boxAlign(
                     alignment = Alignment.Center,
                     offset = DpOffset(
-                        x = -3.5.dp,
-                        y = -14.5.dp
+                        x = (-3.5).dp,
+                        y = (-21.0).dp
                     )
                 )
             )
@@ -160,7 +157,7 @@ fun NormalQuestion(
                 alignment = Alignment.TopStart,
                 offset = DpOffset(
                     x = 24.0.dp,
-                    y = 315.0.dp
+                    y = 298.5.dp
                 )
             )
         ) {
@@ -189,7 +186,7 @@ fun NormalQuestion(
                 alignment = Alignment.TopStart,
                 offset = DpOffset(
                     x = 24.0.dp,
-                    y = 403.0.dp
+                    y = 383.0.dp
                 )
             )
         ) {
@@ -218,7 +215,7 @@ fun NormalQuestion(
                 alignment = Alignment.TopStart,
                 offset = DpOffset(
                     x = 24.0.dp,
-                    y = 491.0.dp
+                    y = 465.0.dp
                 )
             )
         ) {
@@ -236,7 +233,7 @@ fun NormalQuestion(
                     alignment = Alignment.Center,
                     offset = DpOffset(
                         x = 4.0.dp,
-                        y = -0.5.dp
+                        y = 0.5.dp
                     )
                 )
             )
@@ -247,7 +244,7 @@ fun NormalQuestion(
                 alignment = Alignment.TopStart,
                 offset = DpOffset(
                     x = 24.0.dp,
-                    y = 579.0.dp
+                    y = 543.0.dp
                 )
             )
         ) {

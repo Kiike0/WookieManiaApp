@@ -67,7 +67,7 @@ fun HeadBoard(
                     alignment = Alignment.Center,
                     offset = DpOffset(
                         x = 0.5.dp,
-                        y = -0.5.dp
+                        y = (-0.5).dp
                     )
                 )
             ) {
@@ -92,7 +92,7 @@ fun HeadBoard(
                     alignment = Alignment.Center,
                     offset = DpOffset(
                         x = 1.679107666015625.dp,
-                        y = -0.5596694946289062.dp
+                        y = (-0.5596694946289062).dp
                     )
                 )
             ) {
@@ -117,7 +117,7 @@ fun HeadBoard(
                     alignment = Alignment.Center,
                     offset = DpOffset(
                         x = 0.0001678466796875.dp,
-                        y = -1.1194305419921875.dp
+                        y = (-1.1194305419921875).dp
                     )
                 )
             ) {
@@ -142,7 +142,7 @@ fun HeadBoard(
                     alignment = Alignment.Center,
                     offset = DpOffset(
                         x = 2.2462615966796875.dp,
-                        y = -0.7537384033203125.dp
+                        y = (-0.7537384033203125).dp
                     )
                 )
             ) {
@@ -153,8 +153,8 @@ fun HeadBoard(
             modifier = Modifier.boxAlign(
                 alignment = Alignment.Center,
                 offset = DpOffset(
-                    x = -78.0.dp,
-                    y = -31.0.dp
+                    x = (-78.0).dp,
+                    y = (-31.0).dp
                 )
             )
         )
@@ -164,7 +164,7 @@ fun HeadBoard(
                 alignment = Alignment.Center,
                 offset = DpOffset(
                     x = 108.0.dp,
-                    y = -35.0.dp
+                    y = (-35.0).dp
                 )
             )
         ) {
@@ -177,7 +177,7 @@ fun HeadBoard(
                 alignment = Alignment.Center,
                 offset = DpOffset(
                     x = 157.0.dp,
-                    y = -35.0.dp
+                    y = (-35.0).dp
                 )
             )
         ) {

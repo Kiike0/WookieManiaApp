@@ -44,7 +44,7 @@ fun ToAddComposable(
             modifier = Modifier.boxAlign(
                 alignment = Alignment.Center,
                 offset = DpOffset(
-                    x = -1.0.dp,
+                    x = (-1.0).dp,
                     y = 45.0.dp
                 )
             )

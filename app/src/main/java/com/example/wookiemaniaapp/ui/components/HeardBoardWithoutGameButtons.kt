@@ -49,8 +49,8 @@ fun HeadBoard2(
             modifier = Modifier.boxAlign(
                 alignment = Alignment.Center,
                 offset = DpOffset(
-                    x = -78.0.dp,
-                    y = -31.0.dp
+                    x = (-78.0).dp,
+                    y = (-31.0).dp
                 )
             )
         )
@@ -60,7 +60,7 @@ fun HeadBoard2(
                 alignment = Alignment.Center,
                 offset = DpOffset(
                     x = 108.0.dp,
-                    y = -35.0.dp
+                    y = (-35.0).dp
                 )
             )
         ) {
@@ -73,7 +73,7 @@ fun HeadBoard2(
                 alignment = Alignment.Center,
                 offset = DpOffset(
                     x = 157.0.dp,
-                    y = -35.0.dp
+                    y = (-35.0).dp
                 )
             )
         ) {

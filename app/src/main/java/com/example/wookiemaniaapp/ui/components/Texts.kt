@@ -28,7 +28,7 @@ fun CustomizedCategoryText(
         modifier = modifier.padding(top=20.dp).boxAlign(
             alignment = Alignment.Center,
             offset = DpOffset(
-                x = -20.dp,
+                x = (-20).dp,
                 y = 0.dp
             )
         )
