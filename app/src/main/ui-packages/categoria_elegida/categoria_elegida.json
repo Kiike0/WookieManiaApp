@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "bfhXjivzgOL5z45xSZTSnR",
     "node": "197:41",
-    "version": "5843543453",
+    "version": "5874031220",
     "component-id": "5d216918c8b760b5dc54d0d3c80f7b365b86fc02"
   },
   "default": "CategoriaElegida",
@@ -68,8 +68,25 @@
           },
           {
             "id": "CategoryComp",
-            "margin": {
-              "bottom": 362.0
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -181.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 358.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 128.0
+              }
             },
             "is-structured": false,
             "children": [
@@ -81,13 +98,27 @@
           },
           {
             "id": "StartButton",
-            "margin": {
-              "left": 96.0,
-              "top": 213.0,
-              "right": 84.0,
-              "bottom": 135.0
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 6.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 39.0
+              }
             },
             "tap-handler": "$StartButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 178.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 142.0
+              }
+            },
             "is-structured": false,
             "children": [
               "Ellipse 2",
@@ -97,12 +128,27 @@
           },
           {
             "id": "Close",
-            "margin": {
-              "left": 155.0,
-              "top": 430.0,
-              "right": 143.0
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 6.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 215.0
+              }
             },
             "tap-handler": "$CloseButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 60.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 60.0
+              }
+            },
             "is-structured": false,
             "children": [
               "Vector"

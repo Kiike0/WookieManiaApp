@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "bfhXjivzgOL5z45xSZTSnR",
     "node": "197:68",
-    "version": "5843586549",
+    "version": "5874088658",
     "component-id": "a39572e7a9397dfbaa7e22110d6df16a2066934a"
   },
   "default": "Question",
@@ -19,26 +19,6 @@
       {
         "type": "vector",
         "id": "BoxQuestion"
-      },
-      {
-        "type": "vector",
-        "id": "AnswerA"
-      },
-      {
-        "type": "vector",
-        "id": "AnswerB"
-      },
-      {
-        "type": "vector",
-        "id": "AnswerC"
-      },
-      {
-        "type": "vector",
-        "id": "AnswerD"
-      },
-      {
-        "type": "image",
-        "id": "QuestionRandom"
       },
       {
         "type": "text",
@@ -65,6 +45,26 @@
         "id": "Save"
       },
       {
+        "type": "group",
+        "id": "TitleDesign"
+      },
+      {
+        "type": "group",
+        "id": "ButtonTextAnswerA"
+      },
+      {
+        "type": "group",
+        "id": "ButtonTextAnswerB"
+      },
+      {
+        "type": "group",
+        "id": "ButtonTextAnswerC"
+      },
+      {
+        "type": "group",
+        "id": "ButtonTextAnswerD"
+      },
+      {
         "type": "vector",
         "id": "VectorDislike"
       },
@@ -83,6 +83,46 @@
       {
         "type": "vector",
         "id": "VectorSave"
+      },
+      {
+        "type": "image",
+        "id": "QuestionRandom"
+      },
+      {
+        "type": "text",
+        "id": "TituloPregunta"
+      },
+      {
+        "type": "vector",
+        "id": "AnswerA"
+      },
+      {
+        "type": "text",
+        "id": "RespuestaA"
+      },
+      {
+        "type": "vector",
+        "id": "AnswerB"
+      },
+      {
+        "type": "text",
+        "id": "RespuestaB"
+      },
+      {
+        "type": "vector",
+        "id": "AnswerC"
+      },
+      {
+        "type": "text",
+        "id": "RespuestaC"
+      },
+      {
+        "type": "vector",
+        "id": "AnswerD"
+      },
+      {
+        "type": "text",
+        "id": "RespuestaD"
       }
     ],
     "modes": {
@@ -93,155 +133,63 @@
             "is-structured": false,
             "children": [
               "BoxQuestion",
-              "AnswerA",
-              "AnswerB",
-              "AnswerC",
-              "AnswerD",
-              "QuestionRandom",
               "¿Te ha gustado?",
               "DislikeIcon",
               "LikeIcon",
               "TextCategory",
               "CloseIcon",
-              "Save"
+              "Save",
+              "TitleDesign",
+              "ButtonTextAnswerA",
+              "ButtonTextAnswerB",
+              "ButtonTextAnswerC",
+              "ButtonTextAnswerD"
             ],
             "clip-content": false
           },
           {
             "id": "BoxQuestion",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
             "size-constraints": {
               "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
+                "sizing-mode": "fixed",
+                "value": 393.0
               },
               "height-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
+                "sizing-mode": "fixed",
+                "value": 731.0
               }
             },
             "vector-content": "box_question.svg"
           },
           {
-            "id": "AnswerA",
-            "margin": {
-              "left": 24.0,
-              "top": 315.0,
-              "right": 25.0,
-              "bottom": 353.0
-            },
-            "border-radius": 5.0,
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              },
-              "height-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              }
-            },
-            "vector-content": "answer_a.svg"
-          },
-          {
-            "id": "AnswerB",
-            "margin": {
-              "left": 24.0,
-              "top": 403.0,
-              "right": 25.0,
-              "bottom": 265.0
-            },
-            "border-radius": 5.0,
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              },
-              "height-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              }
-            },
-            "vector-content": "answer_b.svg"
-          },
-          {
-            "id": "AnswerC",
-            "margin": {
-              "left": 24.0,
-              "top": 491.0,
-              "right": 25.0,
-              "bottom": 177.0
-            },
-            "border-radius": 5.0,
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              },
-              "height-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              }
-            },
-            "vector-content": "answer_c.svg"
-          },
-          {
-            "id": "AnswerD",
-            "margin": {
-              "left": 24.0,
-              "top": 579.0,
-              "right": 25.0,
-              "bottom": 89.0
-            },
-            "border-radius": 5.0,
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              },
-              "height-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              }
-            },
-            "vector-content": "answer_d.svg"
-          },
-          {
-            "id": "QuestionRandom",
-            "margin": {
-              "left": 48.0,
-              "top": 81.0,
-              "right": 49.0,
-              "bottom": 435.0
-            },
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              },
-              "height-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
-              }
-            },
-            "image-content": "question_random.png",
-            "scale": "cover"
-          },
-          {
             "id": "¿Te ha gustado?",
-            "margin": {
-              "left": 20.0,
-              "top": 667.0,
-              "right": 209.0,
-              "bottom": 40.0
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -94.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 313.5
+              }
             },
             "size-constraints": {
               "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
+                "sizing-mode": "fixed",
+                "value": 164.0
               },
               "height-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
+                "sizing-mode": "shrink"
               }
             },
             "font-weight": 600.0,
@@ -254,11 +202,26 @@
           },
           {
             "id": "DislikeIcon",
-            "margin": {
-              "left": 331.0,
-              "top": 666.0,
-              "right": 27.0,
-              "bottom": 30.0
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 152.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 318.0
+              }
+            },
+            "tap-handler": "$DislikeIcon",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 35.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 35.0
+              }
             },
             "is-structured": false,
             "children": [
@@ -267,11 +230,26 @@
           },
           {
             "id": "LikeIcon",
-            "margin": {
-              "left": 272.0,
-              "top": 662.0,
-              "right": 86.0,
-              "bottom": 34.0
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 93.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 314.0
+              }
+            },
+            "tap-handler": "$LikeIcon",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 35.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 35.0
+              }
             },
             "is-structured": false,
             "children": [
@@ -280,37 +258,56 @@
           },
           {
             "id": "TextCategory",
-            "margin": {
-              "left": 287.0,
-              "top": 34.0,
-              "right": 24.0,
-              "bottom": 673.0
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 72.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -319.5
+              }
             },
             "size-constraints": {
               "width-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
+                "sizing-mode": "fixed",
+                "value": 189.0
               },
               "height-constraints": {
-                "sizing-mode": "proportional",
-                "value": 1.0
+                "sizing-mode": "shrink"
               }
             },
             "font-weight": 500.0,
-            "text-content": "Aventura",
+            "text-content": "$TextCategory",
             "overflow": "visible",
-            "text-align": "left",
+            "max-lines": -1,
+            "text-align": "right",
             "text-size": 20.0,
             "line-height": 1.2,
             "typeface": "Fira Sans"
           },
           {
             "id": "CloseIcon",
-            "margin": {
-              "left": 24.0,
-              "top": 30.0,
-              "right": 336.0,
-              "bottom": 668.0
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -156.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -319.0
+              }
+            },
+            "tap-handler": "$CloseIcon",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 33.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 33.0
+              }
             },
             "is-structured": false,
             "children": [
@@ -320,16 +317,184 @@
           },
           {
             "id": "Save",
-            "margin": {
-              "left": 206.0,
-              "top": 664.0,
-              "right": 152.0,
-              "bottom": 32.0
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 27.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 316.0
+              }
+            },
+            "tap-handler": "$SaveIcon",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 35.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 35.0
+              }
             },
             "is-structured": false,
             "children": [
               "VectorSave"
             ]
+          },
+          {
+            "id": "TitleDesign",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 48.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 81.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 296.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 215.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "QuestionRandom",
+              "TituloPregunta"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "ButtonTextAnswerA",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 24.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 315.0
+              }
+            },
+            "tap-handler": "$ButtonTextAnswerA",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 344.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "AnswerA",
+              "RespuestaA"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "ButtonTextAnswerB",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 24.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 403.0
+              }
+            },
+            "tap-handler": "$ButtonTextAnswerB",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 344.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "AnswerB",
+              "RespuestaB"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "ButtonTextAnswerC",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 24.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 491.0
+              }
+            },
+            "tap-handler": "$ButtonTextAnswerC",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 344.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "AnswerC",
+              "RespuestaC"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "ButtonTextAnswerD",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 24.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 579.0
+              }
+            },
+            "tap-handler": "$ButtonTextAnswerD",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 344.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "AnswerD",
+              "RespuestaD"
+            ],
+            "clip-content": false
           },
           {
             "id": "VectorDislike",
@@ -423,9 +588,337 @@
               }
             },
             "vector-content": "vector_save.svg"
+          },
+          {
+            "id": "QuestionRandom",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 296.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 215.0
+              }
+            },
+            "image-content": "question_random.png",
+            "scale": "cover"
+          },
+          {
+            "id": "TituloPregunta",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -3.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -14.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 229.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 122.0
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "$QuestionTitle",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "AnswerA",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 344.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              }
+            },
+            "vector-content": "answer_a.svg"
+          },
+          {
+            "id": "RespuestaA",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 4.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 288.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "A. Hedwig",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "AnswerB",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 344.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              }
+            },
+            "vector-content": "answer_b.svg"
+          },
+          {
+            "id": "RespuestaB",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 4.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 288.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "B. Bethoven",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "AnswerC",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 344.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              }
+            },
+            "vector-content": "answer_c.svg"
+          },
+          {
+            "id": "RespuestaC",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 4.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -0.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 288.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "C. Scabbers",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "AnswerD",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 344.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 63.0
+              }
+            },
+            "vector-content": "answer_d.svg"
+          },
+          {
+            "id": "RespuestaD",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 4.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 288.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "D. Pluto",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
           }
         ]
       }
+    }
+  },
+  "parameters": {
+    "DislikeIcon": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "LikeIcon": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "TextCategory": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "CloseIcon": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "SaveIcon": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "ButtonTextAnswerA": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "ButtonTextAnswerB": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "ButtonTextAnswerC": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "ButtonTextAnswerD": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "QuestionTitle": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
     }
   },
   "previews": [
@@ -434,6 +927,10 @@
       "size": {
         "width": 393.0,
         "height": 731.0
+      },
+      "parameters": {
+        "TextCategory": "Fantasía",
+        "QuestionTitle": "¿Cómo se llama la lechuza de Harry\nPotter?"
       }
     }
   ],

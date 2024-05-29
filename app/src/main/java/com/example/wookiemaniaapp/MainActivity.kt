@@ -15,7 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.WookieManiaAppTheme
 import com.example.wookiemaniaapp.ui.views.Categories
-import com.example.wookiemaniaapp.ui.views.Category
+import com.example.wookiemaniaapp.ui.views.CategoryQuestion
 import com.example.wookiemaniaapp.ui.views.FirstScreenView
 import com.example.wookiemaniaapp.ui.views.HomeScreen
 import com.example.wookiemaniaapp.ui.views.NormalMode
@@ -115,7 +115,7 @@ class MainActivity : ComponentActivity() {
 
                         // Composable con la ruta a la pantalla del modo Normal
                         composable(Routes.Category.route) {
-                            Category(
+                            CategoryQuestion(
                                 navController = navController
                             )
                         }
@@ -123,7 +123,7 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla del modo Normal
                         composable(Routes.NormalMode.route) {
                             NormalMode(
-                                //navController = navController
+                                navController = navController
                             )
                         }
                     }

@@ -42,6 +42,13 @@ drawable login_prototipo_boton_box_acc
 drawable login_prototipo_box_atras
 drawable login_prototipo_text_field1
 drawable login_prototipo_text_field2
+drawable next_nav_nav_next_box
+drawable next_nav_next_vector1
+drawable next_nav_vector_next1
+drawable next_nav_vector_next2
+drawable next_nav_vector_next3
+drawable next_nav_vector_next4
+drawable next_nav_vector_next5
 drawable pregunta_titulo_box_categoria
 drawable pregunta_titulo_box_pregunta
 drawable pregunta_titulo_flecha

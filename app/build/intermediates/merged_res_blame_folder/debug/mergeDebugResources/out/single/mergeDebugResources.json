@@ -8,10 +8,6 @@
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/login_prototipo_text_field2.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_rectangle_name.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_rectangle_name.xml"
-    },
-    {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_vector_surv.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_vector_surv.xml"
     },
@@ -20,44 +16,12 @@
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_box_play.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.wookiemaniaapp-main-59:/mipmap-xxhdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_rubik_wet_paint_regular.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_rubik_wet_paint_regular.ttf"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable_bocadillopregunta.png.flat",
-        "source": "com.example.wookiemaniaapp-main-59:/drawable/bocadillopregunta.png"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.wookiemaniaapp-main-59:/mipmap-anydpi-v26/ic_launcher.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.wookiemaniaapp-main-59:/mipmap-xhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.wookiemaniaapp-main-59:/mipmap-mdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_question_box_question.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/question_box_question.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_caja_category.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_caja_category.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_black_italic.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_black_italic.ttf"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_category_type_comp_rectangulo1fondo.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/category_type_comp_rectangulo1fondo.xml"
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_next_nav_vector_next4.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/next_nav_vector_next4.xml"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/xml_backup_rules.xml.flat",
@@ -66,10 +30,6 @@
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-mdpi_ic_launcher.webp.flat",
         "source": "com.example.wookiemaniaapp-main-59:/mipmap-mdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_light_italic.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_light_italic.ttf"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_regular.ttf.flat",
@@ -84,10 +44,6 @@
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/question_answer_b.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_box_bar_game.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_box_bar_game.xml"
-    },
-    {
         "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_extrabold.ttf.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_extrabold.ttf"
     },
@@ -100,24 +56,12 @@
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/barra_navegacion_vector_home1.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.wookiemaniaapp-main-59:/mipmap-xhdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_login_prototipo_text_field1.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/login_prototipo_text_field1.xml"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_vector_play.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_vector_play.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_thin.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_thin.ttf"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_categoria_elegida_rectangle_51.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/categoria_elegida_rectangle_51.xml"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable_ic_launcher_background.xml.flat",
@@ -130,18 +74,6 @@
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_rubik_mono_one_regular.ttf.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_rubik_mono_one_regular.ttf"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_pregunta_titulo_box_pregunta.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/pregunta_titulo_box_pregunta.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_rectangle_cont.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_rectangle_cont.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_vector_categ.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_vector_categ.xml"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_light.ttf.flat",
@@ -160,36 +92,16 @@
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_italic.ttf"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_tipo3_box_screen_type.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_tipo3_box_screen_type.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.wookiemaniaapp-main-59:/mipmap-anydpi-v26/ic_launcher_round.xml"
-    },
-    {
         "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_medium_italic.ttf.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_medium_italic.ttf"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_login_prototipo_boton_box_acc.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/login_prototipo_boton_box_acc.xml"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_categoria_elegida_rectangle_50.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/categoria_elegida_rectangle_50.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_rect_username.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_rect_username.xml"
-    },
-    {
         "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "com.example.wookiemaniaapp-main-59:/mipmap-hdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_barra_navegacion_profile_button.jpeg.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/barra_navegacion_profile_button.jpeg"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -220,6 +132,178 @@
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_bold.ttf"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_next_nav_vector_next3.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/next_nav_vector_next3.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_extralight_italic.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_extralight_italic.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_next_nav_next_vector1.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/next_nav_next_vector1.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_tipo2_interrogante10.png.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_tipo2_interrogante10.png"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_vector_ranking.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_vector_ranking.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_categoria_elegida_vector.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/categoria_elegida_vector.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_extrabold_italic.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_extrabold_italic.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_pregunta_titulo_flecha.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/pregunta_titulo_flecha.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_semibold_italic.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_semibold_italic.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_vector_notif.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_vector_notif.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_semibold.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_semibold.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_start_game_caja_reg.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/start_game_caja_reg.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_ranking_position_box_button.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/ranking_position_box_button.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_extralight.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_extralight.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_barra_navegacion_vector.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/barra_navegacion_vector.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_rect_apellidos.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_rect_apellidos.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_login_prototipo_box_atras.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/login_prototipo_box_atras.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_medium.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_medium.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_rectangle_name.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_rectangle_name.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_rubik_wet_paint_regular.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_rubik_wet_paint_regular.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable_bocadillopregunta.png.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/drawable/bocadillopregunta.png"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_caja_category.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_caja_category.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_black_italic.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_black_italic.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_category_type_comp_rectangulo1fondo.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/category_type_comp_rectangulo1fondo.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_light_italic.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_light_italic.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_next_nav_vector_next1.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/next_nav_vector_next1.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_box_bar_game.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_box_bar_game.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_thin.ttf.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_thin.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_categoria_elegida_rectangle_51.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/categoria_elegida_rectangle_51.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_pregunta_titulo_box_pregunta.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/pregunta_titulo_box_pregunta.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_rectangle_cont.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_rectangle_cont.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_vector_categ.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_vector_categ.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_next_nav_nav_next_box.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/next_nav_nav_next_box.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_tipo3_box_screen_type.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_tipo3_box_screen_type.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_login_prototipo_boton_box_acc.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/login_prototipo_boton_box_acc.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_rect_username.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_rect_username.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_barra_navegacion_profile_button.jpeg.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/barra_navegacion_profile_button.jpeg"
+    },
+    {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_star_vector.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_star_vector.xml"
     },
@@ -248,16 +332,8 @@
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/category_type_comp_rectangulo2fondo_negro.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_extralight_italic.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_extralight_italic.ttf"
-    },
-    {
         "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "com.example.wookiemaniaapp-main-59:/mipmap-xxhdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_tipo2_interrogante10.png.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_tipo2_interrogante10.png"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_question_vector_save.xml.flat",
@@ -280,32 +356,12 @@
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_black.ttf"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_vector_ranking.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_vector_ranking.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_categoria_elegida_vector.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/categoria_elegida_vector.xml"
-    },
-    {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_tipo3_vector_back2.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_tipo3_vector_back2.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_extrabold_italic.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_extrabold_italic.ttf"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_pregunta_titulo_flecha.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/pregunta_titulo_flecha.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_semibold_italic.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_semibold_italic.ttf"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_cabecera_vector_notif.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/cabecera_vector_notif.xml"
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_next_nav_vector_next5.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/next_nav_vector_next5.xml"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable_ic_launcher_foreground.xml.flat",
@@ -316,20 +372,12 @@
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_bold_italic.ttf"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_semibold.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_semibold.ttf"
-    },
-    {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_question_answer_c.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/question_answer_c.xml"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_start_game_caja_log.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/start_game_caja_log.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_start_game_caja_reg.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/start_game_caja_reg.xml"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_box_volver_ainicio.xml.flat",
@@ -340,35 +388,15 @@
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_box_registrarse.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_ranking_position_box_button.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/ranking_position_box_button.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_extralight.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_extralight.ttf"
+        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/mipmap-hdpi/ic_launcher.webp"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_rect_email.xml.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_rect_email.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-57:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.wookiemaniaapp-main-59:/mipmap-hdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_barra_navegacion_vector.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/barra_navegacion_vector.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_registro_prototipo_rect_apellidos.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/registro_prototipo_rect_apellidos.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_login_prototipo_box_atras.xml.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/login_prototipo_box_atras.xml"
-    },
-    {
-        "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_medium.ttf.flat",
-        "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_medium.ttf"
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_next_nav_vector_next2.xml.flat",
+        "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/next_nav_vector_next2.xml"
     }
 ]

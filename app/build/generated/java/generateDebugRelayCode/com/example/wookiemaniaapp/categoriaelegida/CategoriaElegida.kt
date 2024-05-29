@@ -4,13 +4,17 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredHeight
+import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
@@ -32,21 +36,41 @@ fun CategoriaElegida(
     closeButton: () -> Unit = {}
 ) {
     TopLevel(modifier = modifier) {
-        CategoryComp(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)) {
+        CategoryComp(
+            modifier = Modifier.boxAlign(
+                alignment = Alignment.Center,
+                offset = DpOffset(
+                    x = 0.0.dp,
+                    y = -181.0.dp
+                )
+            )
+        ) {
             Rectangle51(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f))
             Rectangle50(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f))
             Aventura(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f))
         }
         StartButton(
             startButton = startButton,
-            modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
+            modifier = Modifier.boxAlign(
+                alignment = Alignment.Center,
+                offset = DpOffset(
+                    x = 6.0.dp,
+                    y = 39.0.dp
+                )
+            )
         ) {
             Ellipse2(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f))
             Start(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f))
         }
         Close(
             closeButton = closeButton,
-            modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
+            modifier = Modifier.boxAlign(
+                alignment = Alignment.Center,
+                offset = DpOffset(
+                    x = 6.0.dp,
+                    y = 215.0.dp
+                )
+            )
         ) {
             Vector(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f))
         }
@@ -126,14 +150,7 @@ fun CategoryComp(
         isStructured = false,
         clipToParent = false,
         content = content,
-        modifier = modifier.padding(
-            paddingValues = PaddingValues(
-                start = 0.0.dp,
-                top = 0.0.dp,
-                end = 0.0.dp,
-                bottom = 362.0.dp
-            )
-        ).fillMaxWidth(1.0f).fillMaxHeight(1.0f)
+        modifier = modifier.requiredWidth(358.0.dp).requiredHeight(128.0.dp)
     )
 }
 
@@ -188,14 +205,7 @@ fun StartButton(
         isStructured = false,
         clipToParent = false,
         content = content,
-        modifier = modifier.padding(
-            paddingValues = PaddingValues(
-                start = 96.0.dp,
-                top = 213.0.dp,
-                end = 84.0.dp,
-                bottom = 135.0.dp
-            )
-        ).tappable(onTap = startButton).fillMaxWidth(1.0f).fillMaxHeight(1.0f)
+        modifier = modifier.tappable(onTap = startButton).requiredWidth(178.0.dp).requiredHeight(142.0.dp)
     )
 }
 
@@ -216,14 +226,7 @@ fun Close(
     RelayContainer(
         isStructured = false,
         content = content,
-        modifier = modifier.padding(
-            paddingValues = PaddingValues(
-                start = 155.0.dp,
-                top = 430.0.dp,
-                end = 143.0.dp,
-                bottom = 0.0.dp
-            )
-        ).tappable(onTap = closeButton).fillMaxWidth(1.0f).fillMaxHeight(1.0f)
+        modifier = modifier.tappable(onTap = closeButton).requiredWidth(60.0.dp).requiredHeight(60.0.dp)
     )
 }
 
