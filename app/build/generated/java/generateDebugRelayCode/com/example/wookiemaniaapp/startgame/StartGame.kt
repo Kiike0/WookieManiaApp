@@ -30,6 +30,8 @@ import com.google.relay.compose.tappable
 @Composable
 fun StartGame(
     modifier: Modifier = Modifier,
+    loginButton: () -> Unit = {},
+    registerButton: () -> Unit = {},
     invitadoButton: () -> Unit = {}
 ) {
     TopLevel(modifier = modifier) {
@@ -70,6 +72,7 @@ fun StartGame(
             )
         )
         IniciarSesiN(
+            loginButton = loginButton,
             modifier = Modifier.boxAlign(
                 alignment = Alignment.Center,
                 offset = DpOffset(
@@ -79,6 +82,7 @@ fun StartGame(
             )
         )
         Registrarse(
+            registerButton = registerButton,
             modifier = Modifier.boxAlign(
                 alignment = Alignment.Center,
                 offset = DpOffset(
@@ -106,6 +110,8 @@ private fun StartGamePreview() {
     MaterialTheme {
         RelayContainer {
             StartGame(
+                loginButton = {},
+                registerButton = {},
                 invitadoButton = {},
                 modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
             )
@@ -119,6 +125,12 @@ fun PlayNow(modifier: Modifier = Modifier) {
         content = "Play Now!",
         fontSize = 32.0.sp,
         fontFamily = rubikMonoOne,
+        color = Color(
+            alpha = 255,
+            red = 139,
+            green = 52,
+            blue = 99
+        ),
         height = 1.2380000352859497.em,
         maxLines = -1,
         modifier = modifier.requiredWidth(393.0.dp)
@@ -131,12 +143,6 @@ fun Wookiemania(modifier: Modifier = Modifier) {
         content = "Wookiemania",
         fontSize = 36.0.sp,
         fontFamily = rubikWetPaint,
-        color = Color(
-            alpha = 255,
-            red = 255,
-            green = 214,
-            blue = 0
-        ),
         height = 1.2000000762939453.em,
         maxLines = -1,
         modifier = modifier.requiredWidth(279.0.dp).requiredHeight(53.0.dp)
@@ -160,7 +166,10 @@ fun CajaReg(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun IniciarSesiN(modifier: Modifier = Modifier) {
+fun IniciarSesiN(
+    loginButton: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     RelayText(
         content = "Iniciar Sesión",
         fontSize = 20.0.sp,
@@ -174,12 +183,15 @@ fun IniciarSesiN(modifier: Modifier = Modifier) {
         height = 1.2.em,
         fontWeight = FontWeight(600.0.toInt()),
         maxLines = -1,
-        modifier = modifier.requiredWidth(279.0.dp)
+        modifier = modifier.tappable(onTap = loginButton).requiredWidth(279.0.dp)
     )
 }
 
 @Composable
-fun Registrarse(modifier: Modifier = Modifier) {
+fun Registrarse(
+    registerButton: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     RelayText(
         content = "Registrarse",
         fontSize = 20.0.sp,
@@ -187,7 +199,7 @@ fun Registrarse(modifier: Modifier = Modifier) {
         height = 1.2.em,
         fontWeight = FontWeight(600.0.toInt()),
         maxLines = -1,
-        modifier = modifier.requiredWidth(279.0.dp)
+        modifier = modifier.tappable(onTap = registerButton).requiredWidth(279.0.dp)
     )
 }
 

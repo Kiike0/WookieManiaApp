@@ -21,11 +21,15 @@ fun FirstScreenView(
     navController: NavHostController
 ) {
     Box(
-        modifier = Modifier.fillMaxSize().background(ColorApp),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(ColorApp),
         contentAlignment = Alignment.Center
     ) {
         StartGame(
-            modifier= Modifier,
+            modifier = Modifier,
+            loginButton = { navController.navigate(Routes.Login.route) },
+            registerButton = { navController.navigate(Routes.Register.route) },
             invitadoButton = { navController.navigate(Routes.Home.route) }
         )
     }

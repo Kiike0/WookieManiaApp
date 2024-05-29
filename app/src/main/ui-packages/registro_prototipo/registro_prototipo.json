@@ -1,0 +1,503 @@
+{
+  "name": "registro_prototipo",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "216:123",
+    "version": "5873603837",
+    "component-id": "4b90847bb4f82e10472af6c222d24eb148838307"
+  },
+  "default": "RegistroPrototipo",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "BoxAtras"
+      },
+      {
+        "type": "group",
+        "id": "BoxRegistrarseButton"
+      },
+      {
+        "type": "vector",
+        "id": "RectangleName"
+      },
+      {
+        "type": "text",
+        "id": "Nombre"
+      },
+      {
+        "type": "vector",
+        "id": "RectApellidos"
+      },
+      {
+        "type": "text",
+        "id": "Apellidos"
+      },
+      {
+        "type": "vector",
+        "id": "RectUsername"
+      },
+      {
+        "type": "text",
+        "id": "Username"
+      },
+      {
+        "type": "vector",
+        "id": "RectangleCont"
+      },
+      {
+        "type": "text",
+        "id": "Contraseña"
+      },
+      {
+        "type": "vector",
+        "id": "RectEmail"
+      },
+      {
+        "type": "text",
+        "id": "Email"
+      },
+      {
+        "type": "vector",
+        "id": "BoxVolverAInicio"
+      },
+      {
+        "type": "text",
+        "id": "VolverTexto"
+      },
+      {
+        "type": "vector",
+        "id": "BoxRegistrarse"
+      },
+      {
+        "type": "text",
+        "id": "Registrarse"
+      }
+    ],
+    "modes": {
+      "RegistroPrototipo": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "BoxAtras",
+              "BoxRegistrarseButton",
+              "RectangleName",
+              "Nombre",
+              "RectApellidos",
+              "Apellidos",
+              "RectUsername",
+              "Username",
+              "RectangleCont",
+              "Contraseña",
+              "RectEmail",
+              "Email"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "BoxAtras",
+            "margin": {
+              "top": 434.0,
+              "right": 165.0
+            },
+            "border-radius": 10.0,
+            "tap-handler": "$VolverAInicioBoton",
+            "is-structured": false,
+            "children": [
+              "BoxVolverAInicio",
+              "VolverTexto"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "BoxRegistrarseButton",
+            "margin": {
+              "left": 165.0,
+              "top": 434.0
+            },
+            "border-radius": 10.0,
+            "tap-handler": "$RegistrarseBoton",
+            "is-structured": false,
+            "children": [
+              "BoxRegistrarse",
+              "Registrarse"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "RectangleName",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -186.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 299.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 41.0
+              }
+            },
+            "vector-content": "rectangle_name.svg"
+          },
+          {
+            "id": "Nombre",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -111.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -231.5
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Nombre",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.2000000476837158,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "RectApellidos",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -106.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 299.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 41.0
+              }
+            },
+            "vector-content": "rect_apellidos.svg"
+          },
+          {
+            "id": "Apellidos",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -102.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -146.5
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Apellido/s",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.2000000476837158,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "RectUsername",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -26.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 299.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 41.0
+              }
+            },
+            "vector-content": "rect_username.svg"
+          },
+          {
+            "id": "Username",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -70.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -66.5
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Nombre de usuario",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.2000000476837158,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "RectangleCont",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 133.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 299.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 41.0
+              }
+            },
+            "vector-content": "rectangle_cont.svg"
+          },
+          {
+            "id": "Contraseña",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -99.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 93.5
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Contraseña",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.2000000476837158,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "RectEmail",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 53.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 299.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 41.0
+              }
+            },
+            "vector-content": "rect_email.svg"
+          },
+          {
+            "id": "Email",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -120.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 13.5
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Email",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.2000000476837158,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "BoxVolverAInicio",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 134.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 48.0
+              }
+            },
+            "vector-content": "box_volver_ainicio.svg"
+          },
+          {
+            "id": "VolverTexto",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -0.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 133.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Volver",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "BoxRegistrarse",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 134.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 48.0
+              }
+            },
+            "vector-content": "box_registrarse.svg"
+          },
+          {
+            "id": "Registrarse",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 134.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 600.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 50.35294117647059,
+              "saturation": 1.0,
+              "value": 1.0
+            },
+            "text-content": "Registrarse",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "VolverAInicioBoton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "RegistrarseBoton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "RegistroPrototipo",
+      "size": {
+        "width": 299.0,
+        "height": 482.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

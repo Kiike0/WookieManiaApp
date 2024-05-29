@@ -23,6 +23,8 @@ import com.example.wookiemaniaapp.ui.views.RankingScreen
 import com.example.wookiemaniaapp.ui.views.creation.CorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.IncorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
+import com.example.wookiemaniaapp.ui.views.login.LoginScreen
+import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +56,21 @@ class MainActivity : ComponentActivity() {
                                 navController = navController
                             )
                         }
+
+                        // Ruta desde el login
+                        composable(Routes.Login.route) {
+                            LoginScreen(
+                                navController = navController
+                            )
+                        }
+
+                        // Ruta desde la pantalla de registro
+                        composable(Routes.Register.route) {
+                            RegisterScreen(
+                                navController = navController
+                            )
+                        }
+
                         // Composable con la ruta a la pantalla Home
                         composable(Routes.Home.route) {
                             HomeScreen(

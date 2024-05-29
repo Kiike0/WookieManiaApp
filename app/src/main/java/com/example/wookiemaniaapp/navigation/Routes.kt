@@ -14,6 +14,16 @@ sealed class Routes(val route: String) {
 
     object FirstScreen : Routes("firstScreen")
 
+    /**
+     * Objeto que representa la pantalla de Inicio de Sesión (Acceso).
+     */
+    object Login : Routes("loginScreen")
+
+    /**
+     * Objeto que representa la pantalla de Registro de usuario.
+     */
+    object Register : Routes("registerScreen")
+
 
     /**
      * Pantalla Home de juego.

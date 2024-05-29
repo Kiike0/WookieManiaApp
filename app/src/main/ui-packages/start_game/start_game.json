@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "bfhXjivzgOL5z45xSZTSnR",
     "node": "161:136",
-    "version": "5839990766",
+    "version": "5873722658",
     "component-id": "d3d9392fc742067cf5cd158eabd728e4e0fe84ed"
   },
   "default": "StartGame",
@@ -83,6 +83,12 @@
                 "sizing-mode": "shrink"
               }
             },
+            "color": {
+              "alpha": 1.0,
+              "hue": 327.58620689655174,
+              "saturation": 0.6258992805755396,
+              "value": 0.5450980392156862
+            },
             "text-content": "Play Now!",
             "overflow": "visible",
             "max-lines": -1,
@@ -111,12 +117,6 @@
                 "sizing-mode": "fixed",
                 "value": 53.0
               }
-            },
-            "color": {
-              "alpha": 1.0,
-              "hue": 50.35294117647059,
-              "saturation": 1.0,
-              "value": 1.0
             },
             "text-content": "Wookiemania",
             "overflow": "visible",
@@ -187,6 +187,7 @@
                 "offset": -29.0
               }
             },
+            "tap-handler": "$LoginButton",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "fixed",
@@ -222,6 +223,7 @@
                 "offset": 26.0
               }
             },
+            "tap-handler": "$RegisterButton",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "fixed",
@@ -275,6 +277,16 @@
     }
   },
   "parameters": {
+    "LoginButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "RegisterButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
     "InvitadoButton": {
       "data-type": "void-callback",
       "required": false,
