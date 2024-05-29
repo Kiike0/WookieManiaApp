@@ -1,0 +1,183 @@
+{
+  "name": "cabecera_tipo3",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "211:88",
+    "version": "5872881239",
+    "component-id": "eed4b48550f84413fe1d4019953bb2b40acfd4fa"
+  },
+  "default": "CabeceraTipo3",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "BoxScreenType"
+      },
+      {
+        "type": "text",
+        "id": "ScreenText"
+      },
+      {
+        "type": "group",
+        "id": "BackIcon"
+      },
+      {
+        "type": "vector",
+        "id": "VectorBack2"
+      }
+    ],
+    "modes": {
+      "CabeceraTipo3": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "BoxScreenType",
+              "ScreenText",
+              "BackIcon"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "BoxScreenType",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 400.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 101.0
+              }
+            },
+            "vector-content": "box_screen_type.svg"
+          },
+          {
+            "id": "ScreenText",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -32.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 8.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 182.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 38.0
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "$ScreenText",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 22.0,
+            "line-height": 1.2000000762939453,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "BackIcon",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -163.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.5
+              }
+            },
+            "tap-handler": "$BackButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 30.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 30.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "VectorBack2"
+            ]
+          },
+          {
+            "id": "VectorBack2",
+            "margin": {
+              "left": 5.0,
+              "top": 6.2484130859375,
+              "right": 5.000003814697266,
+              "bottom": 6.250019073486328
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_back2.svg"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "ScreenText": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "BackButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "CabeceraTipo3",
+      "size": {
+        "width": 400.0,
+        "height": 101.0
+      },
+      "parameters": {
+        "ScreenText": "Creación"
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

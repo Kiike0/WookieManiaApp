@@ -180,7 +180,7 @@ fun Categories(
                     modifier = Modifier,
                     homeButton = {navController.navigate(Routes.Home.route)},
                     profileButton= {},
-                    addButton = {}
+                    addButton = {navController.navigate(Routes.QuestionTitle.route)}
                 )
 
             }

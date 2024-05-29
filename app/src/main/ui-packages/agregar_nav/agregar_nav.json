@@ -1,0 +1,140 @@
+{
+  "name": "agregar_nav",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "211:94",
+    "version": "5873188019",
+    "component-id": "06d3eee1fb27080f67daf7d2cc83356724547639"
+  },
+  "default": "AgregarNav",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "image",
+        "id": "BoxAdd"
+      },
+      {
+        "type": "group",
+        "id": "AddIcon"
+      },
+      {
+        "type": "vector",
+        "id": "VectorAdd"
+      }
+    ],
+    "modes": {
+      "AgregarNav": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "BoxAdd",
+              "AddIcon"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "BoxAdd",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 392.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 244.0
+              }
+            },
+            "image-content": "box_add.png",
+            "scale": "cover"
+          },
+          {
+            "id": "AddIcon",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 45.0
+              }
+            },
+            "tap-handler": "$AddButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 60.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 60.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "VectorAdd"
+            ]
+          },
+          {
+            "id": "VectorAdd",
+            "margin": {
+              "left": 5.0,
+              "top": 5.0,
+              "right": 4.999996185302734,
+              "bottom": 4.999996185302734
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector_add.svg"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "AddButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "AgregarNav",
+      "size": {
+        "width": 392.0,
+        "height": 244.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

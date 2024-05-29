@@ -34,6 +34,24 @@ sealed class Routes(val route: String) {
     object Ranking : Routes("rankingView")
 
     /**
+     * Pantalla de la creación de la pregunta.
+     */
+
+    object QuestionTitle : Routes("questionTitleView")
+
+    /**
+     * Pantalla de la creación de la pregunta.
+     */
+
+    object CorrectAnswer : Routes("correctAnswerView")
+
+    /**
+     * Pantalla de la creación de la pregunta.
+     */
+
+    object IncorrectAnswer : Routes("incorrectAnswerView")
+
+    /**
      * Pantalla de la Categoría elegida o modo normal de juego.
      */
 

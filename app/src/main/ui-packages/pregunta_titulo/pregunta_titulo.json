@@ -1,0 +1,302 @@
+{
+  "name": "pregunta_titulo",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "210:66",
+    "version": "5872832951",
+    "component-id": "ec056893238c2fcc1bf0f2cf9d75a60108bbb63a"
+  },
+  "default": "PreguntaTitulo",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "BoxPregunta"
+      },
+      {
+        "type": "text",
+        "id": "TituloPregunta"
+      },
+      {
+        "type": "text",
+        "id": "TextoPregunta"
+      },
+      {
+        "type": "text",
+        "id": "TextoElige"
+      },
+      {
+        "type": "vector",
+        "id": "BoxCategoria"
+      },
+      {
+        "type": "group",
+        "id": "vectorflecha"
+      },
+      {
+        "type": "vector",
+        "id": "Flecha2"
+      },
+      {
+        "type": "vector",
+        "id": "Flecha"
+      }
+    ],
+    "modes": {
+      "PreguntaTitulo": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "BoxPregunta",
+              "TituloPregunta",
+              "TextoPregunta",
+              "TextoElige",
+              "BoxCategoria",
+              "vectorflecha"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "BoxPregunta",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -0.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 72.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 311.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 168.0
+              }
+            },
+            "vector-content": "box_pregunta.svg"
+          },
+          {
+            "id": "TituloPregunta",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -5.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 70.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 260.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 130.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Aqui tienes que poner la pregunta que quieres añadir",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.2000000476837158,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "TextoPregunta",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -62.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -41.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 187.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 23.0
+              }
+            },
+            "font-weight": 700.0,
+            "text-content": "Escribe la pregunta:",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "TextoElige",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -62.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -145.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 187.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 23.0
+              }
+            },
+            "font-weight": 700.0,
+            "text-content": "Elige categoría:",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          },
+          {
+            "id": "BoxCategoria",
+            "border-radius": 5.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -93.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 312.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 45.0
+              }
+            },
+            "vector-content": "box_categoria.svg"
+          },
+          {
+            "id": "vectorflecha",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -127.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": -92.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Flecha2",
+              "Flecha"
+            ]
+          },
+          {
+            "id": "Flecha2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            }
+          },
+          {
+            "id": "Flecha",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -0.009248733520507812
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.1710376739501953
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 14.295711517333984
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.65530776977539
+              }
+            },
+            "vector-content": "flecha.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "PreguntaTitulo",
+      "size": {
+        "width": 312.0,
+        "height": 313.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

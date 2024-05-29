@@ -20,6 +20,9 @@ import com.example.wookiemaniaapp.ui.views.FirstScreenView
 import com.example.wookiemaniaapp.ui.views.HomeScreen
 import com.example.wookiemaniaapp.ui.views.NormalMode
 import com.example.wookiemaniaapp.ui.views.RankingScreen
+import com.example.wookiemaniaapp.ui.views.creation.CorrectAnswer
+import com.example.wookiemaniaapp.ui.views.creation.IncorrectAnswer
+import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,6 +71,27 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla del Ranking global
                         composable(Routes.Ranking.route) {
                             RankingScreen(
+                                navController = navController
+                            )
+                        }
+
+                        // Composable con la ruta a la pantalla de la creación de la pregunta
+                        composable(Routes.QuestionTitle.route) {
+                            QuestionTitle(
+                                navController = navController
+                            )
+                        }
+
+                        // Composable con la ruta a la pantalla de la creación de la pregunta
+                        composable(Routes.CorrectAnswer.route) {
+                            CorrectAnswer(
+                                navController = navController
+                            )
+                        }
+
+                        // Composable con la ruta a la pantalla de la creación de la pregunta
+                        composable(Routes.IncorrectAnswer.route) {
+                            IncorrectAnswer(
                                 navController = navController
                             )
                         }

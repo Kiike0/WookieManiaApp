@@ -75,6 +75,8 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable agregar_nav_box_add
+drawable agregar_nav_vector_add
 drawable barra_navegacion_nav
 drawable barra_navegacion_profile_button
 drawable barra_navegacion_vector
@@ -89,6 +91,8 @@ drawable cabecera_caja_category
 drawable cabecera_star_vector
 drawable cabecera_tipo2_caja_interrogantes
 drawable cabecera_tipo2_interrogante10
+drawable cabecera_tipo3_box_screen_type
+drawable cabecera_tipo3_vector_back2
 drawable cabecera_vector_categ
 drawable cabecera_vector_notif
 drawable cabecera_vector_play
@@ -123,6 +127,9 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable pregunta_titulo_box_categoria
+drawable pregunta_titulo_box_pregunta
+drawable pregunta_titulo_flecha
 drawable question_answer_a
 drawable question_answer_b
 drawable question_answer_c
