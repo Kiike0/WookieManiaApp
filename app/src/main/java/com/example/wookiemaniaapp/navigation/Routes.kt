@@ -22,6 +22,12 @@ sealed class Routes(val route: String) {
     object Home : Routes("homeView")
 
     /**
+     * Pantalla de todas las Categorías para elegir.
+     */
+
+    object Categories : Routes("categoriesView")
+
+    /**
      * Pantalla de la Categoría elegida o modo normal de juego.
      */
 
@@ -29,7 +35,7 @@ sealed class Routes(val route: String) {
 
 
     /**
-     * Pantalla de la Categoría elegida o modo normal de juego.
+     * Pantalla de las preguntas del modo normal de juego.
      */
 
     object NormalMode : Routes("normalModeView")

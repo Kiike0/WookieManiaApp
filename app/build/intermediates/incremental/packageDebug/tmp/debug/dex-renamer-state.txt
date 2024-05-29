@@ -1,17 +1,17 @@
-#Fri May 24 21:21:53 CEST 2024
-base.0=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.10=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.11=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.12=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.2=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
-base.4=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.5=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.6=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.7=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
-base.8=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
-base.9=D\:\\AndroidProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+#Wed May 29 10:00:51 CEST 2024
+base.0=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.10=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+base.11=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.12=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+base.2=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.4=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.5=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.6=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.7=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
+base.8=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+base.9=C\:\\Users\\enrique.villegas\\AndroidStudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.10=7/classes.dex

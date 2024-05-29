@@ -4,7 +4,7 @@
             "outputFile": "com.example.wookiemaniaapp.test.app-mergeDebugAndroidTestResources-32:/values-my/values-my.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-3\\29bf2fdad1cd350346da65763c4131d7\\transformed\\core-1.13.1\\res\\values-my\\values-my.xml",
+                    "source": "C:\\Users\\enrique.villegas\\.gradle\\caches\\transforms-3\\29bf2fdad1cd350346da65763c4131d7\\transformed\\core-1.13.1\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-3\\3b6159d732305352ef45a5d004b1cf73\\transformed\\ui-release\\res\\values-my\\values-my.xml",
+                    "source": "C:\\Users\\enrique.villegas\\.gradle\\caches\\transforms-3\\3b6159d732305352ef45a5d004b1cf73\\transformed\\ui-release\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

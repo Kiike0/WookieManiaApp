@@ -30,6 +30,8 @@ drawable categoria_elegida_ellipse_2
 drawable categoria_elegida_rectangle_50
 drawable categoria_elegida_rectangle_51
 drawable categoria_elegida_vector
+drawable category_type_comp_rectangulo1fondo
+drawable category_type_comp_rectangulo2fondo_negro
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable question_answer_a

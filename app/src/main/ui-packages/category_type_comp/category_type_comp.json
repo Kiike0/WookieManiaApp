@@ -1,0 +1,153 @@
+{
+  "name": "category_type_comp",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "bfhXjivzgOL5z45xSZTSnR",
+    "node": "161:108",
+    "version": "5870537993",
+    "component-id": "a120433ff217281387af5faa6945d7ea972abe1c"
+  },
+  "default": "CategoryTypeComp",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangulo2FondoNegro"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangulo1Fondo"
+      },
+      {
+        "type": "text",
+        "id": "Terror"
+      }
+    ],
+    "modes": {
+      "CategoryTypeComp": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "Rectangulo2FondoNegro",
+              "Rectangulo1Fondo",
+              "Terror"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Rectangulo2FondoNegro",
+            "border-radius": 20.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -0.28124237060546875
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "tap-handler": "$CategoryButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 149.43751525878906
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 127.0
+              }
+            },
+            "vector-content": "rectangulo2fondo_negro.svg"
+          },
+          {
+            "id": "Rectangulo1Fondo",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 20.036842346191406
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 150.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 86.92628479003906
+              }
+            },
+            "vector-content": "rectangulo1fondo.svg"
+          },
+          {
+            "id": "Terror",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -0.5
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 16.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 149.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 33.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 50.35294117647059,
+              "saturation": 1.0,
+              "value": 1.0
+            },
+            "text-content": "Terror",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 20.0,
+            "line-height": 1.2,
+            "typeface": "Fira Sans"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "CategoryButton": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "CategoryTypeComp",
+      "size": {
+        "width": 150.0,
+        "height": 127.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

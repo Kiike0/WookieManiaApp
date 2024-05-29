@@ -4,7 +4,7 @@
             "outputFile": "com.example.wookiemaniaapp.test.app-mergeDebugAndroidTestResources-32:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-3\\d612a30cdea9db6a43456d82dfa324ec\\transformed\\core-1.5.0\\res\\values-v18\\values.xml",
+                    "source": "C:\\Users\\enrique.villegas\\.gradle\\caches\\transforms-3\\d612a30cdea9db6a43456d82dfa324ec\\transformed\\core-1.5.0\\res\\values-v18\\values.xml",
                     "from": {
                         "startLines": "4,12",
                         "startColumns": "0,0",

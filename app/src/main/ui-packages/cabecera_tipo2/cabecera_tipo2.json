@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "bfhXjivzgOL5z45xSZTSnR",
     "node": "161:107",
-    "version": "5843520904",
+    "version": "5870459633",
     "component-id": "498753c6188148c1452b6574d2224a792d767995"
   },
   "default": "CabeceraTipo2",
@@ -108,19 +108,6 @@
               "top": 34.0,
               "right": 6.0,
               "bottom": 22.0
-            },
-            "drop-shadow": {
-              "color": {
-                "alpha": 0.24705882352941178,
-                "hue": 0.0,
-                "saturation": 0.0,
-                "value": 0.0
-              },
-              "blur": 4.0,
-              "offset-x": 13.0,
-              "offset-y": 4.0,
-              "spread": 0.0,
-              "blend-mode": "normal"
             },
             "is-structured": false,
             "children": [

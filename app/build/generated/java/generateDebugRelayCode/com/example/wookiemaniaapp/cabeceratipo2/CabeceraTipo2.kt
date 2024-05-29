@@ -10,7 +10,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,7 +20,6 @@ import com.google.relay.compose.RelayContainer
 import com.google.relay.compose.RelayContainerScope
 import com.google.relay.compose.RelayImage
 import com.google.relay.compose.RelayVector
-import com.google.relay.compose.relayDropShadow
 
 /**
  * This composable was generated from the UI Package 'cabecera_tipo2'.
@@ -258,19 +256,7 @@ fun Interrogantes(
                 end = 6.0.dp,
                 bottom = 22.0.dp
             )
-        ).fillMaxWidth(1.0f).fillMaxHeight(1.0f).relayDropShadow(
-            color = Color(
-                alpha = 63,
-                red = 0,
-                green = 0,
-                blue = 0
-            ),
-            borderRadius = 0.0.dp,
-            blur = 4.0.dp,
-            offsetX = 13.0.dp,
-            offsetY = 4.0.dp,
-            spread = 0.0.dp
-        )
+        ).fillMaxWidth(1.0f).fillMaxHeight(1.0f)
     )
 }
 

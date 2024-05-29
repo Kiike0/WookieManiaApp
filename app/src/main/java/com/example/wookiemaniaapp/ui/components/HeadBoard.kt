@@ -1,21 +1,18 @@
 package com.example.wookiemaniaapp.ui.components
 
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.border
+
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.requiredWidth
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
@@ -38,7 +35,7 @@ fun HeadBoard(
     rankingButton: () -> Unit = {},
     playButton: () -> Unit = {},
     survivalButton: () -> Unit = {},
-    categoryButton: () -> Unit = {},
+    categoriesButton: () -> Unit = {},
     starButton: () -> Unit = {},
     notifButton: () -> Unit = {}
 ) {
@@ -128,7 +125,7 @@ fun HeadBoard(
             }
         }
         CategoryButtonComposable(
-            categoryButton = categoryButton,
+            categoryButton = categoriesButton,
             modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f)
         ) {
             CajaCategoryComposable(

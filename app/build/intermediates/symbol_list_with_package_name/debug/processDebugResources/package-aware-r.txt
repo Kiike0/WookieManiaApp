@@ -98,6 +98,8 @@ drawable categoria_elegida_ellipse_2
 drawable categoria_elegida_rectangle_50
 drawable categoria_elegida_rectangle_51
 drawable categoria_elegida_vector
+drawable category_type_comp_rectangulo1fondo
+drawable category_type_comp_rectangulo2fondo_negro
 drawable circular_vignette_bottom
 drawable circular_vignette_top
 drawable ic_call_answer
