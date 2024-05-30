@@ -4,7 +4,7 @@ cover: .gitbook/assets/assortment-cinema-supplies.jpg
 coverY: 0
 ---
 
-# Quezynema App
+# WookieMania
 
 Con nuestra aplicación, te sumergirás en un mundo de diversión y aprendizaje, todo en un solo lugar.&#x20;
 
