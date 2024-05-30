@@ -20,11 +20,9 @@ import com.example.wookiemaniaapp.R
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.rankingposition.RankingPosition
 import com.example.wookiemaniaapp.ui.components.CustomizedTypeText
-import com.example.wookiemaniaapp.ui.components.HeadBoard
 import com.example.wookiemaniaapp.ui.components.HeadBoard2
 import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.theme.ColorApp
-import com.google.relay.compose.EmptyPainter
 
 /**
  * Función composable que representa la pantalla Home del juego.
@@ -64,7 +62,7 @@ fun RankingScreen(
             Spacer(modifier = Modifier.height(62.dp))
 
             val tamanyoTotal = 10 // Este es el tamaño total de usuarios
-            LazyColumn() {
+            LazyColumn {
                 item {
                     CustomizedTypeText(contenido = "Tu posición en el ranking")
                     Spacer(modifier = Modifier.height(15.dp))

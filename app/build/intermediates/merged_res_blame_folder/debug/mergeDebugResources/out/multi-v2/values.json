@@ -40,6 +40,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\enriv\\AndroidStudioProjects\\WookieManiaApp\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "7,2,3,4,5,6,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "293,57,105,153,201,247,336",
+                        "endColumns": "41,46,46,46,44,44,41",
+                        "endOffsets": "330,99,147,195,241,287,373"
+                    },
+                    "to": {
+                        "startLines": "5,10,11,12,13,14,15",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "370,675,722,769,816,861,906",
+                        "endColumns": "41,46,46,46,44,44,41",
+                        "endOffsets": "407,717,764,811,856,901,943"
+                    }
+                },
+                {
                     "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\e90df30d1ef065b85a85d5014ff80c84\\transformed\\activity-1.9.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3",
@@ -93,20 +110,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\enriv\\StudioProjects\\WookieManiaApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\enriv\\AndroidStudioProjects\\WookieManiaApp\\app\\src\\main\\res\\values\\themes.xml",
                     "from": {
-                        "startLines": "1",
+                        "startLines": "3",
                         "startColumns": "4",
-                        "startOffsets": "17",
-                        "endColumns": "51",
-                        "endOffsets": "64"
+                        "startOffsets": "59",
+                        "endColumns": "91",
+                        "endOffsets": "146"
                     },
                     "to": {
-                        "startLines": "107",
+                        "startLines": "216",
                         "startColumns": "4",
-                        "startOffsets": "6388",
-                        "endColumns": "51",
-                        "endOffsets": "6435"
+                        "startOffsets": "13393",
+                        "endColumns": "90",
+                        "endOffsets": "13479"
                     }
                 },
                 {
@@ -126,6 +143,23 @@
                         "endLines": "108,109,110,111,121,122,123,124,125,128,129,130,131,132,133,134,135,136,137,138,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,159,161,164,171,173,175,179,180,181,182,183,184,185,186,187,188,189,190,193,194",
                         "endColumns": "83,81,76,79,47,60,78,101,81,13,49,64,56,64,84,90,69,92,88,93,13,86,83,91,93,59,63,82,89,62,67,67,96,104,71,64,43,45,68,52,52,67,45,49,66,66,65,64,53,71,66,69,81,45,65,60",
                         "endOffsets": "6519,6601,6678,6758,7436,7497,7576,7678,7760,7876,7926,7991,8048,8113,8198,8289,8359,8452,8541,8635,8780,8867,8951,9043,9137,9197,9261,9344,9434,9497,9565,9633,9730,9835,9907,9972,10183,10287,10468,10811,10910,11049,11268,11318,11385,11452,11518,11583,11637,11709,11776,11846,11928,11974,12151,12212"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\enriv\\AndroidStudioProjects\\WookieManiaApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endColumns": "51",
+                        "endOffsets": "64"
+                    },
+                    "to": {
+                        "startLines": "107",
+                        "startColumns": "4",
+                        "startOffsets": "6388",
+                        "endColumns": "51",
+                        "endOffsets": "6435"
                     }
                 },
                 {
@@ -213,40 +247,6 @@
                         "startOffsets": "6078",
                         "endColumns": "53",
                         "endOffsets": "6127"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\enriv\\StudioProjects\\WookieManiaApp\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "7,2,3,4,5,6,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "293,57,105,153,201,247,336",
-                        "endColumns": "41,46,46,46,44,44,41",
-                        "endOffsets": "330,99,147,195,241,287,373"
-                    },
-                    "to": {
-                        "startLines": "5,10,11,12,13,14,15",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "370,675,722,769,816,861,906",
-                        "endColumns": "41,46,46,46,44,44,41",
-                        "endOffsets": "407,717,764,811,856,901,943"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\enriv\\StudioProjects\\WookieManiaApp\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "59",
-                        "endColumns": "91",
-                        "endOffsets": "146"
-                    },
-                    "to": {
-                        "startLines": "216",
-                        "startColumns": "4",
-                        "startOffsets": "13393",
-                        "endColumns": "90",
-                        "endOffsets": "13479"
                     }
                 },
                 {

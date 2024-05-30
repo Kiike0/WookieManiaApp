@@ -11,3 +11,5 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val ColorApp = Color(0xFFFFD600)
+
+val ColorBoxNormalQuestion = Color(0xFFECFFB8)
