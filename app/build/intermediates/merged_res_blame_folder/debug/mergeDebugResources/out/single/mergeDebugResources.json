@@ -44,6 +44,10 @@
         "source": "com.example.wookiemaniaapp-relay-53:/drawable-nodpi/question_answer_b.xml"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable_imagenprueba2.jpg.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/drawable/imagenprueba2.jpg"
+    },
+    {
         "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_extrabold.ttf.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_extrabold.ttf"
     },
@@ -78,6 +82,10 @@
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_light.ttf.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_light.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable_imagenprueba1.jpg.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/drawable/imagenprueba1.jpg"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_agregar_nav_vector_add.xml.flat",
@@ -174,6 +182,10 @@
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/font_relay_fira_sans_semibold.ttf.flat",
         "source": "com.example.wookiemaniaapp-relay-53:/font/relay_fira_sans_semibold.ttf"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-57:/drawable_imagenprueba3.jpg.flat",
+        "source": "com.example.wookiemaniaapp-main-59:/drawable/imagenprueba3.jpg"
     },
     {
         "merged": "com.example.wookiemaniaapp-debug-57:/drawable-nodpi_start_game_caja_reg.xml.flat",

@@ -56,7 +56,7 @@ fun CategoryQuestion(
         ) {
             Spacer(modifier = Modifier.height(320.dp))
             CategoriaElegida(
-                modifier = Modifier.size(500.dp, 500.dp),
+                modifier = Modifier.size(500.dp, 390.dp),
                 startButton = { navController.navigate(Routes.NormalMode.route) },
                 closeButton = { navController.navigate(Routes.Home.route) }
             )

@@ -2,6 +2,7 @@ package com.example.wookiemaniaapp.ui.components
 
 
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,6 +18,20 @@ import com.google.relay.compose.RelayText
 /**
  * Funciones customizadas de como se muestran diferentes textos en la aplicación
  */
+
+@Composable
+fun CustomizedBasicText(
+    modifier: Modifier = Modifier,
+    contenido: String
+){
+    Text(
+        text = contenido,
+        fontWeight = FontWeight.Bold,
+        fontFamily = firaSans,
+        fontSize = 18.sp,
+        color = Color.Black
+    )
+}
 @Composable
 fun CustomizedCategoryText(
     modifier: Modifier = Modifier,

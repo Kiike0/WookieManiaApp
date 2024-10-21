@@ -38,6 +38,9 @@ drawable category_type_comp_rectangulo1fondo
 drawable category_type_comp_rectangulo2fondo_negro
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable imagenprueba1
+drawable imagenprueba2
+drawable imagenprueba3
 drawable login_prototipo_boton_box_acc
 drawable login_prototipo_box_atras
 drawable login_prototipo_text_field1

@@ -61,7 +61,6 @@ fun NormalQuestion(
         contentAlignment = Alignment.TopStart
     ) {
 
-
         Column (
             modifier = Modifier
                 .fillMaxWidth()
@@ -96,7 +95,7 @@ fun NormalQuestion(
                 border = BorderStroke(3.dp, Color.Black),
                 shape = RoundedCornerShape(10.dp),
                 modifier = Modifier
-                    .padding(16.dp)
+                    .padding(12.dp)
                     .size(500.dp, 50.dp)
             ) {
                 Text(
@@ -115,7 +114,7 @@ fun NormalQuestion(
                 border = BorderStroke(3.dp, Color.Black),
                 shape = RoundedCornerShape(10.dp),
                 modifier = Modifier
-                    .padding(16.dp)
+                    .padding(12.dp)
                     .size(500.dp, 50.dp)
             ) {
                 Text(
@@ -134,7 +133,7 @@ fun NormalQuestion(
                 border = BorderStroke(3.dp, Color.Black),
                 shape = RoundedCornerShape(10.dp),
                 modifier = Modifier
-                    .padding(16.dp)
+                    .padding(12.dp)
                     .size(500.dp, 50.dp)
             ) {
                 Text(
@@ -153,7 +152,7 @@ fun NormalQuestion(
                 border = BorderStroke(3.dp, Color.Black),
                 shape = RoundedCornerShape(10.dp),
                 modifier = Modifier
-                    .padding(16.dp)
+                    .padding(12.dp)
                     .size(500.dp, 50.dp)
             ) {
                 Text(

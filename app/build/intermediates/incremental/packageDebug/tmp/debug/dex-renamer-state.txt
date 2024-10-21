@@ -1,4 +1,4 @@
-#Mon Oct 21 19:15:31 CEST 2024
+#Mon Oct 21 20:52:52 CEST 2024
 base.0=C\:\\Users\\enriv\\StudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\enriv\\StudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=C\:\\Users\\enriv\\StudioProjects\\WookieManiaApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
