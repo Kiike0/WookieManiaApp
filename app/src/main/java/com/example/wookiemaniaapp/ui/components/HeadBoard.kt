@@ -26,8 +26,11 @@ import com.google.relay.compose.RelayVector
 import com.google.relay.compose.tappable
 
 /**
- * This composable was generated from the UI Package 'cabecera'.
- * Generated code; do not edit directly
+ * Esta es la funcion donde aparecen los botones en la pantalla de home arriba
+ * - Botón para iniciar partida aleatoria
+ * - Botón para iniciar el modo supervivencia (con contador de vidas)
+ * - Botón para ver las categorías y así elegir la que más te guste
+ * - Botón para ver el ranking de la puntuación de los usuarios.
  */
 @Composable
 fun HeadBoard(

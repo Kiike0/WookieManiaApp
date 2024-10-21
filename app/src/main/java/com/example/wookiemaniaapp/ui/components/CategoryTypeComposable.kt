@@ -21,8 +21,7 @@ import com.google.relay.compose.RelayVector
 import com.google.relay.compose.tappable
 
 /**
- * This composable was generated from the UI Package 'category_type_comp'.
- * Generated code; do not edit directly
+ * Esta es la función donde aparecen todas las categorías de cine de la app
  */
 @Composable
 fun CategoryTypeComposable(

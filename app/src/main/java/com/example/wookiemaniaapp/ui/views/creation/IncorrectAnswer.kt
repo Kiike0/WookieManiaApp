@@ -17,7 +17,8 @@ import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.preguntatitulo.PreguntaTitulo
-import com.example.wookiemaniaapp.ui.components.ToAddComposable
+import com.example.wookiemaniaapp.ui.components.AddingButtonComposable
+import com.example.wookiemaniaapp.ui.components.IncorrectsFields
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 
 /**
@@ -55,10 +56,10 @@ fun IncorrectAnswer(
                     backButton = { navController.navigate(Routes.CorrectAnswer.route) }
                 )
             }
-            Spacer(modifier = Modifier.height(50.dp))
+            Spacer(modifier = Modifier.height(150.dp))
 
             //Pregunta prototipo
-            PreguntaTitulo(modifier = Modifier)
+            IncorrectsFields(modifier = Modifier)
         }
 
         Box(
@@ -69,7 +70,7 @@ fun IncorrectAnswer(
                 .align(Alignment.BottomEnd)
                 .padding(bottom = 122.dp)
         ) {
-            ToAddComposable(
+            AddingButtonComposable(
                 modifier = Modifier,
                 addButton = {navController.navigate(Routes.Home.route)}
             )

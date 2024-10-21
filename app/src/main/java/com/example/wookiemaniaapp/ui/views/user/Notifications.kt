@@ -16,9 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.navigation.Routes
-import com.example.wookiemaniaapp.preguntatitulo.PreguntaTitulo
 import com.example.wookiemaniaapp.ui.components.NavigationBar
-import com.example.wookiemaniaapp.ui.components.ToAddComposable
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 
 /**

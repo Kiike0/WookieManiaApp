@@ -38,8 +38,7 @@ import com.google.relay.compose.RelayVector
 import com.google.relay.compose.tappable
 
 /**
- * This composable was generated from the UI Package 'question'.
- * Generated code; do not edit directly
+ * Es la funcion composable que muestra una pregunta del modo normal
  */
 @Composable
 fun NormalQuestion(

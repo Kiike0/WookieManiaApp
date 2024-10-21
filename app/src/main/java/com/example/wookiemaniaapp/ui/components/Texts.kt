@@ -14,6 +14,9 @@ import com.example.wookiemaniaapp.categorytypecomp.firaSans
 import com.google.relay.compose.BoxScopeInstance.boxAlign
 import com.google.relay.compose.RelayText
 
+/**
+ * Funciones customizadas de como se muestran diferentes textos en la aplicación
+ */
 @Composable
 fun CustomizedCategoryText(
     modifier: Modifier = Modifier,

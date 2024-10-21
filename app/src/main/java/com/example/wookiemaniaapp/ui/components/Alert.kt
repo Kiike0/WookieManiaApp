@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 
 /**
- * Muestra un diálogo de alerta composable. Se utiliza para mostrar mensajes de error o confirmaciones.
+ * Diálogo de alerta composable para señalar un error o también para confirmaciones.
  */
 @Composable
 fun Alert(

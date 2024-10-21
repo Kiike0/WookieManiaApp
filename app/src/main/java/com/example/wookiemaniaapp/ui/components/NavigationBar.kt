@@ -22,8 +22,10 @@ import com.google.relay.compose.RelayVector
 import com.google.relay.compose.tappable
 
 /**
- * This composable was generated from the UI Package 'barra_navegacion'.
- * Generated code; do not edit directly
+ * Es la función que representa la barra de navegación:
+ * - Pantalla home
+ * - Pantalla agregar pregunta
+ * - Pantalla usuario
  */
 @Composable
 fun NavigationBar(

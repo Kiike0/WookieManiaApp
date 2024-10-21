@@ -21,11 +21,10 @@ import com.google.relay.compose.RelayVector
 import com.google.relay.compose.tappable
 
 /**
- * This composable was generated from the UI Package 'agregar_nav'.
- * Generated code; do not edit directly
+ * Esta es la función que representa el icono de agregar pregunta
  */
 @Composable
-fun ToAddComposable(
+fun AddingButtonComposable(
     modifier: Modifier = Modifier,
     addButton: () -> Unit = {}
 ) {
