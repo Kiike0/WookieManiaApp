@@ -39,7 +39,7 @@ import androidx.compose.ui.unit.toSize
 @Composable
 fun AddingTittleComposable(modifier: Modifier = Modifier) {
 
-    Column(){
+    Column{
         DropDownMenu()
         QuestionTextField()
     }
