@@ -10,6 +10,7 @@ import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.loginprototipo.LoginPrototipo
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.registroprototipo.RegistroPrototipo
+import com.example.wookiemaniaapp.ui.components.RegisterComposable
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 
 /**
@@ -27,7 +28,7 @@ fun RegisterScreen(
             .background(ColorApp),
         contentAlignment = Alignment.Center
     ) {
-        RegistroPrototipo(
+        RegisterComposable(
             modifier = Modifier,
             volverAInicioBoton = {navController.navigate(Routes.FirstScreen.route)},
             registrarseBoton = {}

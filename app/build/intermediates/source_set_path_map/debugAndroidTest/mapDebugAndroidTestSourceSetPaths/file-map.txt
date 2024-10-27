@@ -29,7 +29,7 @@ com.example.wookiemaniaapp.test.app-savedstate-1.2.1-27 C:\Users\enriv\.gradle\c
 com.example.wookiemaniaapp.test.app-activity-1.9.0-28 C:\Users\enriv\.gradle\caches\transforms-4\e90df30d1ef065b85a85d5014ff80c84\transformed\activity-1.9.0\res
 com.example.wookiemaniaapp.test.app-ui-test-release-29 C:\Users\enriv\.gradle\caches\transforms-4\ee69f8915ddfc09253068b81cf967089\transformed\ui-test-release\res
 com.example.wookiemaniaapp.test.app-ui-geometry-release-30 C:\Users\enriv\.gradle\caches\transforms-4\f0ed806c6d84e833b3babb801859b3c8\transformed\ui-geometry-release\res
-com.example.wookiemaniaapp.test.app-androidTest-31 C:\Users\enriv\StudioProjects\WookieManiaApp\app\build\generated\res\resValues\androidTest\debug
-com.example.wookiemaniaapp.test.app-mergeDebugAndroidTestResources-32 C:\Users\enriv\StudioProjects\WookieManiaApp\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.example.wookiemaniaapp.test.app-mergeDebugAndroidTestResources-33 C:\Users\enriv\StudioProjects\WookieManiaApp\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.example.wookiemaniaapp.test.app-debugAndroidTest-34 C:\Users\enriv\StudioProjects\WookieManiaApp\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.example.wookiemaniaapp.test.app-androidTest-31 C:\Users\enriv\AndroidStudioProjects\WookieManiaApp\app\build\generated\res\resValues\androidTest\debug
+com.example.wookiemaniaapp.test.app-mergeDebugAndroidTestResources-32 C:\Users\enriv\AndroidStudioProjects\WookieManiaApp\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.wookiemaniaapp.test.app-mergeDebugAndroidTestResources-33 C:\Users\enriv\AndroidStudioProjects\WookieManiaApp\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.wookiemaniaapp.test.app-debugAndroidTest-34 C:\Users\enriv\AndroidStudioProjects\WookieManiaApp\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

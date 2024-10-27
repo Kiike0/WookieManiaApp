@@ -15,6 +15,7 @@ import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.loginprototipo.LoginPrototipo
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.components.HeadBoard
+import com.example.wookiemaniaapp.ui.components.LoginComposable
 import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 
@@ -33,7 +34,7 @@ fun LoginScreen(
             .background(ColorApp),
         contentAlignment = Alignment.Center
     ) {
-        LoginPrototipo(
+        LoginComposable(
             modifier = Modifier,
             backToStartButton = {navController.navigate(Routes.FirstScreen.route)},
             accessButton = {}
