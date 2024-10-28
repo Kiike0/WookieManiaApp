@@ -8,5 +8,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">WookieManiaApp</string>
+    <string name="gcm_defaultSenderId" translatable="false">14538118193</string>
+    <string name="google_api_key" translatable="false">AIzaSyAC-LvUod2oOWHz4APXBH539fx8z1dLqMo</string>
+    <string name="google_app_id" translatable="false">1:14538118193:android:8be3ef3ee9fceae97b7110</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAC-LvUod2oOWHz4APXBH539fx8z1dLqMo</string>
+    <string name="google_storage_bucket" translatable="false">wookiemania-2cb44.appspot.com</string>
+    <string name="project_id" translatable="false">wookiemania-2cb44</string>
     <style name="Theme.WookieManiaApp" parent="android:Theme.Material.Light.NoActionBar"/>
 </resources>

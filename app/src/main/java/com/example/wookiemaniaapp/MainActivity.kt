@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -25,8 +26,10 @@ import com.example.wookiemaniaapp.ui.views.creation.IncorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
+import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 class MainActivity : ComponentActivity() {
+    private val userViewModel: UserViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -67,6 +70,7 @@ class MainActivity : ComponentActivity() {
                         // Ruta desde la pantalla de registro
                         composable(Routes.Register.route) {
                             RegisterScreen(
+                                newUserVM = userViewModel,
                                 navController = navController
                             )
                         }

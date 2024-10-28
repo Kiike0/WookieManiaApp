@@ -7,11 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import com.example.wookiemaniaapp.loginprototipo.LoginPrototipo
-import com.example.wookiemaniaapp.navigation.Routes
-import com.example.wookiemaniaapp.registroprototipo.RegistroPrototipo
 import com.example.wookiemaniaapp.ui.components.RegisterComposable
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
  * Función composable que representa la pantalla Home del juego.
@@ -20,6 +18,7 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun RegisterScreen(
+    newUserVM: UserViewModel,
     navController: NavHostController
 ) {
     Box(
@@ -29,32 +28,9 @@ fun RegisterScreen(
         contentAlignment = Alignment.Center
     ) {
         RegisterComposable(
-            modifier = Modifier,
-            volverAInicioBoton = {navController.navigate(Routes.FirstScreen.route)},
-            registrarseBoton = {}
+            newUserVM = newUserVM,
+            navController = navController
         )
 
-
     }
-
-
 }
-
-/*
-/**
- * Función composable que representa la pantalla principal para registrarse.
- *
- * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
- * @param newUserVM El ViewModel responsable de gestionar la lógica del usuario.
- */
-@Composable
-fun Register(
-    navController: NavHostController,
-    newUserVM: UserViewModel
-) {
-    RegisterComposable(
-        newUserVM = newUserVM,
-        navController = navController
-    )
-}
-*/

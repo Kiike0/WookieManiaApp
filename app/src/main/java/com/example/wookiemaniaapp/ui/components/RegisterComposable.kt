@@ -30,8 +30,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.loginprototipo.firaSans
+import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
  * This composable was generated from the UI Package 'login_prototipo'.
@@ -39,30 +42,29 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun RegisterComposable(
-    modifier: Modifier = Modifier,
-    volverAInicioBoton : () -> Unit = {},
-    registrarseBoton: () -> Unit = {}
+    newUserVM: UserViewModel,
+    navController: NavHostController
 ) {
     Column (modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,  // Centra horizontalmente el contenido
         verticalArrangement = Arrangement.Center){
-        OutlinedTextField1Custom()
+        OutlinedTextField1Custom(newUserVM = newUserVM)
         Spacer(modifier = Modifier.height(20.dp))
-        OutlinedTextField2Custom()
+        OutlinedTextField2Custom(newUserVM = newUserVM)
         Spacer(modifier = Modifier.height(20.dp))
-        OutlinedTextField3Custom()
+        OutlinedTextField3Custom(newUserVM = newUserVM)
         Spacer(modifier = Modifier.height(20.dp))
-        OutlinedTextField4Custom()
+        OutlinedTextField4Custom(newUserVM = newUserVM)
         Spacer(modifier = Modifier.height(20.dp))
-        OutlinedTextField5Custom()
+        OutlinedTextField5Custom(newUserVM = newUserVM)
         Spacer(modifier = Modifier.height(40.dp))
         Row {
             BotonVolverR(
-                backToStartButton = volverAInicioBoton
+                backToStartButton = {navController.navigate(Routes.FirstScreen.route)}
             )
             Spacer(modifier = Modifier.width(20.dp))
             BotonAccederR(
-                accessButton = registrarseBoton
+                accessButton = {newUserVM.createUser{navController.navigate(Routes.Home.route)}}
             )
 
         }
@@ -75,7 +77,7 @@ fun BotonAccederR(
     accessButton: () -> Unit
 ) {
     Button(
-        onClick = { /* Acción del botón */ },
+        onClick = accessButton,
         modifier = Modifier
             .defaultMinSize(minWidth = 150.dp, minHeight = 50.dp),  // Ajusta el tamaño mínimo si es necesario
         colors = ButtonDefaults.buttonColors(
@@ -117,11 +119,12 @@ fun BotonVolverR(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OutlinedTextField1Custom() {
-    var userInput by remember { mutableStateOf("") }
+fun OutlinedTextField1Custom(
+    newUserVM: UserViewModel
+) {
     OutlinedTextField(
-        value = userInput,
-        onValueChange = { userInput = it },
+        value = newUserVM.name,
+        onValueChange = { newUserVM.changeName(it) },
         modifier = Modifier
             .width(350.dp)
             .height(70.dp) // Controla la altura total del campo
@@ -143,12 +146,12 @@ fun OutlinedTextField1Custom() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OutlinedTextField2Custom() {
-    var userInput by remember { mutableStateOf("") }
-
+fun OutlinedTextField2Custom(
+    newUserVM: UserViewModel
+) {
     OutlinedTextField(
-        value = userInput,
-        onValueChange = { userInput = it },
+        value = newUserVM.surname,
+        onValueChange = { newUserVM.changeSurname(it) },
         modifier = Modifier
             .width(350.dp)
             .height(70.dp) // Controla la altura total del campo
@@ -170,12 +173,12 @@ fun OutlinedTextField2Custom() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OutlinedTextField3Custom() {
-    var userInput by remember { mutableStateOf("") }
-
+fun OutlinedTextField3Custom(
+    newUserVM: UserViewModel
+) {
     OutlinedTextField(
-        value = userInput,
-        onValueChange = { userInput = it },
+        value = newUserVM.nickName,
+        onValueChange = { newUserVM.changeUserName(it) },
         modifier = Modifier
             .width(350.dp)
             .height(70.dp) // Controla la altura total del campo
@@ -197,12 +200,12 @@ fun OutlinedTextField3Custom() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OutlinedTextField4Custom() {
-    var userInput by remember { mutableStateOf("") }
-
+fun OutlinedTextField4Custom(
+    newUserVM: UserViewModel
+) {
     OutlinedTextField(
-        value = userInput,
-        onValueChange = { userInput = it },
+        value = newUserVM.email,
+        onValueChange = { newUserVM.changeEmail(it) },
         modifier = Modifier
             .width(350.dp)
             .height(70.dp) // Controla la altura total del campo
@@ -224,12 +227,12 @@ fun OutlinedTextField4Custom() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OutlinedTextField5Custom() {
-    var userInput by remember { mutableStateOf("") }
-
+fun OutlinedTextField5Custom(
+    newUserVM: UserViewModel
+) {
     OutlinedTextField(
-        value = userInput,
-        onValueChange = { userInput = it },
+        value = newUserVM.password,
+        onValueChange = { newUserVM.changePassword(it) },
         modifier = Modifier
             .width(350.dp)
             .height(70.dp) // Controla la altura total del campo

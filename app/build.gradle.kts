@@ -2,10 +2,10 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 
-    /*
+
     //Google dependencies
     id("com.google.gms.google-services")
-    */
+
 
     //Relay dependencies
     id("com.google.relay") version "0.3.11"
@@ -68,7 +68,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    /*
+
     // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
 
@@ -80,7 +80,7 @@ dependencies {
     // DCS - Base de datos Firestore
     implementation(libs.firebase.firestore.ktx)
 
-     */
+     
 
     //Navigation
     //noinspection UseTomlInstead

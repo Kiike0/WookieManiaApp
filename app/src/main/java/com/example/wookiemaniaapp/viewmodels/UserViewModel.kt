@@ -1,9 +1,21 @@
 package com.example.wookiemaniaapp.viewmodels
 
-class UserViewModel {
-}
+import android.content.ContentValues.TAG
+import android.util.Log
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.wookiemaniaapp.model.UserModel
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
+import com.google.firebase.firestore.firestore
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-/*
+
 /**
  * ViewModel responsable de gestionar la lógica de autenticación de usuarios.
  * Proporciona funciones para el inicio de sesión y registro de usuarios utilizando Firebase Auth.
@@ -25,6 +37,10 @@ class UserViewModel : ViewModel() {
     var email by mutableStateOf("")
         private set
     var password by mutableStateOf("")
+        private set
+    var name by mutableStateOf("")
+        private set
+    var surname by mutableStateOf("")
         private set
     var nickName by mutableStateOf("")
         private set
@@ -107,7 +123,7 @@ class UserViewModel : ViewModel() {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             // DCS - Si se realiza con éxito, almacenamos el usuario en la colección "Users"
-                            saveUser(nickName)
+                            saveUser(name, surname, nickName)
                             onSuccess()
                         } else {
                             Log.d("ERROR EN FIREBASE", "Error al crear usuario")
@@ -125,17 +141,20 @@ class UserViewModel : ViewModel() {
      *
      * @param nickName Nombre de usuario a guardar.
      */
-    private fun saveUser(nickName: String) {
+    private fun saveUser(name: String, surname: String, nickName: String) {
         val id = auth.currentUser?.uid
         val email = auth.currentUser?.email
 
         viewModelScope.launch(Dispatchers.IO) {
             val user = UserModel(
+                name = name,
+                surname = surname,
                 userId = id.toString(),
                 email = email.toString(),
                 nickname = nickName,
-                totalCompleted = 0,
-                points = 0
+                totalAdded = 0,
+                points = 0,
+                trophiesNumber = 0
 
             )
             // DCS - Añade el usuario a la colección "Users" en la base de datos Firestore
@@ -193,6 +212,23 @@ class UserViewModel : ViewModel() {
         this.nickName = userName
     }
 
+    /**
+     * Actualiza el nombre.
+     *
+     * @param userName Nuevo nombre a establecer.
+     */
+    fun changeName(name: String) {
+        this.name = name
+    }
+
+    /**
+     * Actualiza el apellido.
+     *
+     * @param userName Nuevo apellido de usuario a establecer.
+     */
+    fun changeSurname(surname: String) {
+        this.surname = surname
+    }
+
 }
 
-*/

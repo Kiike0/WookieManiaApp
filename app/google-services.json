@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "14538118193",
+    "project_id": "wookiemania-2cb44",
+    "storage_bucket": "wookiemania-2cb44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14538118193:android:8be3ef3ee9fceae97b7110",
+        "android_client_info": {
+          "package_name": "com.example.wookiemaniaapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC-LvUod2oOWHz4APXBH539fx8z1dLqMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
