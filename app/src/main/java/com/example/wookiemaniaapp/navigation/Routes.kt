@@ -44,6 +44,12 @@ sealed class Routes(val route: String) {
     object Ranking : Routes("rankingView")
 
     /**
+     * Pantalla del Perfil del usuario.
+     */
+
+    object Profile : Routes("profileScreen")
+
+    /**
      * Pantalla de la creación de la pregunta.
      */
 

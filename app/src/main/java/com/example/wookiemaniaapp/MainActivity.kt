@@ -26,6 +26,7 @@ import com.example.wookiemaniaapp.ui.views.creation.IncorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
+import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 class MainActivity : ComponentActivity() {
@@ -80,6 +81,14 @@ class MainActivity : ComponentActivity() {
                         composable(Routes.Home.route) {
                             HomeScreen(
                                 navController = navController
+                            )
+                        }
+
+                        // Ruta desde la pantalla de perfil
+                        composable(Routes.Profile.route) {
+                            ProfileScreen(
+                                navController = navController,
+                                currentUserViewModel = userViewModel
                             )
                         }
 
