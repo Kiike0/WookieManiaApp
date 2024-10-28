@@ -63,7 +63,8 @@ class MainActivity : ComponentActivity() {
                         // Ruta desde el login
                         composable(Routes.Login.route) {
                             LoginScreen(
-                                navController = navController
+                                navController = navController,
+                                accessUser = userViewModel
                             )
                         }
 

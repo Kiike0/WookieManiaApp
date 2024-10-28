@@ -1,5 +1,6 @@
 package com.example.wookiemaniaapp.ui.views.login
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,6 +19,7 @@ import com.example.wookiemaniaapp.ui.components.HeadBoard
 import com.example.wookiemaniaapp.ui.components.LoginComposable
 import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
  * Función composable que representa la pantalla Home del juego.
@@ -26,7 +28,8 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun LoginScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    accessUser: UserViewModel
 ) {
     Box(
         modifier = Modifier
@@ -35,9 +38,14 @@ fun LoginScreen(
         contentAlignment = Alignment.Center
     ) {
         LoginComposable(
-            modifier = Modifier,
             backToStartButton = {navController.navigate(Routes.FirstScreen.route)},
-            accessButton = {}
+            accessButton = { accessUser.login {
+                // Agrega un registro para confirmar que onSuccess se está llamando correctamente
+                Log.d("LOGIN_SUCCESS", "Inicio de sesión exitoso")
+                navController.navigate(Routes.Home.route)
+            }
+            },
+            accessUser = accessUser
         )
 
 
