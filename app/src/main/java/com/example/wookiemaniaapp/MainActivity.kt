@@ -27,10 +27,12 @@ import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
 import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
+import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 class MainActivity : ComponentActivity() {
     private val userViewModel: UserViewModel by viewModels()
+    private val questionViewModel: QuestionViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -109,21 +111,24 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla de la creación de la pregunta
                         composable(Routes.QuestionTitle.route) {
                             QuestionTitle(
-                                navController = navController
+                                navController = navController,
+                                newQuestionVM = questionViewModel
                             )
                         }
 
                         // Composable con la ruta a la pantalla de la creación de la pregunta
                         composable(Routes.CorrectAnswer.route) {
                             CorrectAnswer(
-                                navController = navController
+                                navController = navController,
+                                newQuestionVM = questionViewModel
                             )
                         }
 
                         // Composable con la ruta a la pantalla de la creación de la pregunta
                         composable(Routes.IncorrectAnswer.route) {
                             IncorrectAnswer(
-                                navController = navController
+                                navController = navController,
+                                newQuestionVM = questionViewModel
                             )
                         }
 

@@ -16,9 +16,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.navigation.Routes
-import com.example.wookiemaniaapp.ui.components.AddingButtonComposable
-import com.example.wookiemaniaapp.ui.components.IncorrectsFields
+import com.example.wookiemaniaapp.ui.components.creation.AddingButtonComposable
+import com.example.wookiemaniaapp.ui.components.creation.IncorrectsFields
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 
 /**
  * Función composable que representa la pantalla Home del juego.
@@ -27,7 +28,8 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun IncorrectAnswer(
-    navController: NavHostController
+    navController: NavHostController,
+    newQuestionVM : QuestionViewModel
 ) {
     Box(
         modifier = Modifier
@@ -58,7 +60,7 @@ fun IncorrectAnswer(
             Spacer(modifier = Modifier.height(150.dp))
 
             //Pregunta prototipo
-            IncorrectsFields(modifier = Modifier)
+            IncorrectsFields(newQuestionVM = newQuestionVM)
         }
 
         Box(
@@ -71,7 +73,7 @@ fun IncorrectAnswer(
         ) {
             AddingButtonComposable(
                 modifier = Modifier,
-                addButton = {navController.navigate(Routes.Home.route)}
+                addButton = {newQuestionVM.addNewQuestion{navController.navigate(Routes.Home.route)}}
             )
 
         }

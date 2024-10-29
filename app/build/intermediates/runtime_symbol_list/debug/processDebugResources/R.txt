@@ -99,6 +99,7 @@ int dimen notification_top_pad 0x7f030016
 int dimen notification_top_pad_large_text 0x7f030017
 int drawable agregar_nav_box_add 0x7f040002
 int drawable agregar_nav_vector_add 0x7f040003
+int drawable avatarprueba 0x7f040076
 int drawable barra_navegacion_nav 0x7f040004
 int drawable barra_navegacion_profile_button 0x7f040005
 int drawable barra_navegacion_vector 0x7f040006

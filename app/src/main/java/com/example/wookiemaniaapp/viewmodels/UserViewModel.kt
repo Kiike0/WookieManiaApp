@@ -215,7 +215,7 @@ class UserViewModel : ViewModel() {
     /**
      * Actualiza el nombre.
      *
-     * @param userName Nuevo nombre a establecer.
+     * @param name Nuevo nombre a establecer.
      */
     fun changeName(name: String) {
         this.name = name
@@ -224,7 +224,7 @@ class UserViewModel : ViewModel() {
     /**
      * Actualiza el apellido.
      *
-     * @param userName Nuevo apellido de usuario a establecer.
+     * @param surname Nuevo apellido de usuario a establecer.
      */
     fun changeSurname(surname: String) {
         this.surname = surname

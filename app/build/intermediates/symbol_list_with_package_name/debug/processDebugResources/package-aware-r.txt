@@ -100,6 +100,7 @@ dimen notification_top_pad
 dimen notification_top_pad_large_text
 drawable agregar_nav_box_add
 drawable agregar_nav_vector_add
+drawable avatarprueba
 drawable barra_navegacion_nav
 drawable barra_navegacion_profile_button
 drawable barra_navegacion_vector

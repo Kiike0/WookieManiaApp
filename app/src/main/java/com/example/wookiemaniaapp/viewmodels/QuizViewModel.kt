@@ -1,7 +1,25 @@
 package com.example.wookiemaniaapp.viewmodels
 
-class QuizViewModel {
-}
+import androidx.lifecycle.ViewModel
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
+import com.google.firebase.firestore.firestore
+import kotlinx.coroutines.flow.MutableStateFlow
+/*
+class QuizViewModel : ViewModel() {
+    private val auth: FirebaseAuth = Firebase.auth
+    private val firestore = Firebase.firestore
+
+    private val _quizData = MutableStateFlow<List<QuizModel>>(emptyList())
+    val quizData: StateFlow<List<QuizModel>> = _quizData
+
+    var state by mutableStateOf(QuizModel())
+        private set
+
+
+
+}*/
 
 /*
 /**

@@ -16,9 +16,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.navigation.Routes
-import com.example.wookiemaniaapp.ui.components.AddingButtonComposable
-import com.example.wookiemaniaapp.ui.components.AddingTittleComposable
+import com.example.wookiemaniaapp.ui.components.creation.AddingButtonComposable
+import com.example.wookiemaniaapp.ui.components.creation.AddingTittleComposable
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 
 /**
  * Función composable que representa la pantalla Home del juego.
@@ -27,7 +28,8 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun QuestionTitle(
-    navController: NavHostController
+    navController: NavHostController,
+    newQuestionVM: QuestionViewModel
 ) {
     Box(
         modifier = Modifier
@@ -60,7 +62,9 @@ fun QuestionTitle(
             /**
              * Esta es la función donde añadiremos el título de la pregunta
              */
-            AddingTittleComposable()
+            AddingTittleComposable(
+                newQuestionVM = newQuestionVM
+            )
         }
 
         Box(
