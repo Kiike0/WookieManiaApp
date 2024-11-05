@@ -22,7 +22,7 @@ fun CircularImage() {
         modifier = Modifier
             .size(100.dp) // Define el tamaño de la imagen
             .clip(CircleShape) // Aplica la forma circular
-            .border(2.dp, Color.Black, CircleShape)
+            .border(3.dp, Color.Black, CircleShape)
     )
 }
 

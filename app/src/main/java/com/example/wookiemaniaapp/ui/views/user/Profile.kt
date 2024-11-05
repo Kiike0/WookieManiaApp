@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -60,12 +59,28 @@ fun ProfileScreen(
     ) {
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.End
+            modifier = Modifier.fillMaxWidth().padding(top = 30.dp),
+            verticalAlignment = Alignment.CenterVertically // Alinea el contenido verticalmente al centro
         ) {
+            // Texto centrado en la fila
+            Text(
+                text = "@" + currentUserViewModel.getCurrentNickName(),
+                modifier = Modifier
+                    .weight(1f) // Permite que el texto ocupe el espacio disponible
+                    .padding(start = 20.dp), // Padding a la izquierda
+                textAlign = TextAlign.Start, // Alinea el texto a la izquierda
+                fontWeight = FontWeight.Bold,
+                fontFamily = firaSans,
+                fontSize = 18.sp
+            )
+
+            // Spacer que empuja la imagen hacia la derecha
+            Spacer(modifier = Modifier.weight(1f)) // Ocupa el espacio restante
+
+            // Imagen a la derecha
             Box(
                 modifier = Modifier
-                    .padding(top = 30.dp, end = 20.dp)
+                    .padding(end = 20.dp)
                     .clickable(onClick = {
                         navController.navigate(Routes.Settings.route)
                     })
@@ -89,16 +104,13 @@ fun ProfileScreen(
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // Texto centrado debajo de la imagen
-        Text(
-            text = "@"+currentUserViewModel.getCurrentNickName(),
-            modifier = Modifier
-                .fillMaxWidth(),
-            textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Bold,
-            fontFamily = firaSans,
-            fontSize = 18.sp
-        )
+        // Envuelve PlayerStatusBox en un Box para centrarlo
+        Box(
+            modifier = Modifier.fillMaxWidth(),
+            contentAlignment = Alignment.Center // Centra horizontalmente
+        ) {
+            PlayerStatusBox(playerStatus = "Jugador amateur") // Llama a la función con el texto deseado
+        }
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -195,6 +207,27 @@ fun ProfileScreen(
 
     }
 
+}
 
-
+@Composable
+fun PlayerStatusBox(playerStatus: String) {
+    Box(
+        modifier = Modifier
+            .width(220.dp) // Ancho de la Box
+            .height(40.dp) // Alto de la Box
+            .border(2.dp, Color.Black, RoundedCornerShape(16.dp)) // Borde negro con esquinas redondeadas
+            .background(Color.Black, RoundedCornerShape(16.dp)) // Fondo negro con esquinas redondeadas
+            .padding(8.dp) // Padding interno
+    ) {
+        Text(
+            text = playerStatus, // Usa el texto pasado como argumento
+            modifier = Modifier
+                .fillMaxSize(), // Ocupa todo el espacio de la Box
+            textAlign = TextAlign.Center, // Centra el texto horizontalmente
+            fontWeight = FontWeight.Bold,
+            fontSize = 14.sp, // Reducir el tamaño de la fuente
+            fontFamily = firaSans,
+            color = ColorApp // Color blanco para mayor visibilidad
+        )
+    }
 }

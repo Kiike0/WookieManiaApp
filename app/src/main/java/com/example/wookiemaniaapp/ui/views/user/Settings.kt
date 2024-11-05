@@ -17,26 +17,19 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.R
-import com.example.wookiemaniaapp.categorytypecomp.firaSans
 import com.example.wookiemaniaapp.navigation.Routes
-import com.example.wookiemaniaapp.ui.components.CircularImage
 import com.example.wookiemaniaapp.ui.components.IconsImage
-import com.example.wookiemaniaapp.ui.components.NavigationBar
-import com.example.wookiemaniaapp.ui.components.RoundedCornerSquareImage
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
-import com.google.relay.compose.ColumnScopeInstanceImpl.align
 
 /**
  * Función composable que representa la pantalla de configuración del usuario.
