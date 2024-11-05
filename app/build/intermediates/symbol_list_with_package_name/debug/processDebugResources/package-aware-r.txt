@@ -98,6 +98,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable addicon
 drawable agregar_nav_box_add
 drawable agregar_nav_vector_add
 drawable avatarprueba
@@ -130,6 +131,7 @@ drawable category_type_comp_rectangulo1fondo
 drawable category_type_comp_rectangulo2fondo_negro
 drawable circular_vignette_bottom
 drawable circular_vignette_top
+drawable closeicon
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -149,6 +151,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable editicon
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_call_answer
@@ -165,10 +168,12 @@ drawable ic_password
 drawable imagenprueba1
 drawable imagenprueba2
 drawable imagenprueba3
+drawable infoicon
 drawable login_prototipo_boton_box_acc
 drawable login_prototipo_box_atras
 drawable login_prototipo_text_field1
 drawable login_prototipo_text_field2
+drawable logouticon
 drawable next_nav_nav_next_box
 drawable next_nav_next_vector1
 drawable next_nav_vector_next1
@@ -189,6 +194,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable politicsicon
 drawable pregunta_titulo_box_categoria
 drawable pregunta_titulo_box_pregunta
 drawable pregunta_titulo_flecha
@@ -213,6 +219,8 @@ drawable registro_prototipo_rect_email
 drawable registro_prototipo_rect_username
 drawable registro_prototipo_rectangle_cont
 drawable registro_prototipo_rectangle_name
+drawable ruedaconfiguracion
+drawable serverstateicon
 drawable start_game_caja_log
 drawable start_game_caja_reg
 font relay_fira_sans_black

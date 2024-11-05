@@ -29,7 +29,8 @@ fun CustomizedBasicText(
         fontWeight = FontWeight.Bold,
         fontFamily = firaSans,
         fontSize = 18.sp,
-        color = Color.Black
+        color = Color.Black,
+        modifier = Modifier
     )
 }
 @Composable

@@ -27,6 +27,7 @@ import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
 import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
+import com.example.wookiemaniaapp.ui.views.user.SettingsScreen
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
@@ -89,6 +90,14 @@ class MainActivity : ComponentActivity() {
                         // Ruta desde la pantalla de perfil
                         composable(Routes.Profile.route) {
                             ProfileScreen(
+                                navController = navController,
+                                currentUserViewModel = userViewModel
+                            )
+                        }
+
+                        // Ruta desde la pantalla de perfil
+                        composable(Routes.Settings.route) {
+                            SettingsScreen(
                                 navController = navController,
                                 currentUserViewModel = userViewModel
                             )

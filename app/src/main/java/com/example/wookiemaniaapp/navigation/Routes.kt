@@ -50,6 +50,12 @@ sealed class Routes(val route: String) {
     object Profile : Routes("profileScreen")
 
     /**
+     * Pantalla de la configuracion.
+     */
+
+    object Settings : Routes("settingsScreen")
+
+    /**
      * Pantalla de la creación de la pregunta.
      */
 
