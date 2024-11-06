@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import com.example.wookiemaniaapp.ui.components.RegisterComposable
+import com.example.wookiemaniaapp.ui.components.user.RegisterComposable
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 

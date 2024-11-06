@@ -84,7 +84,7 @@ fun CustomizedBiggerTextBold(
     Text(
         text = customizedText,
         style = TextStyle(
-            color = Color.White,
+            color = Color.Black,
             fontSize = 20.0.sp,
             fontFamily = firaSans,
             fontWeight = FontWeight.Bold // Esta línea establece el texto en negrita

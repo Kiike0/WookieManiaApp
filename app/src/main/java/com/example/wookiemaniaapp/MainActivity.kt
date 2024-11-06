@@ -29,6 +29,9 @@ import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
 import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
 import com.example.wookiemaniaapp.ui.views.user.SettingsScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.AboutScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.PoliticsScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.ServerStateScreen
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
@@ -108,6 +111,24 @@ class MainActivity : ComponentActivity() {
                             SettingsScreen(
                                 navController = navController,
                                 currentUserViewModel = userViewModel
+                            )
+                        }
+
+                        composable(Routes.AboutScreen.route) {
+                            AboutScreen(
+                                navController = navController
+                            )
+                        }
+
+                        composable(Routes.PoliticsScreen.route) {
+                            PoliticsScreen(
+                                navController = navController
+                            )
+                        }
+
+                        composable(Routes.ServerStateScreen.route) {
+                            ServerStateScreen(
+                                navController = navController
                             )
                         }
 

@@ -172,7 +172,9 @@ int drawable login_prototipo_boton_box_acc 0x7f040044
 int drawable login_prototipo_box_atras 0x7f040045
 int drawable login_prototipo_text_field1 0x7f040046
 int drawable login_prototipo_text_field2 0x7f040047
+int drawable logoapp 0x7f04007f
 int drawable logouticon 0x7f04007c
+int drawable nameapp 0x7f040080
 int drawable next_nav_nav_next_box 0x7f040048
 int drawable next_nav_next_vector1 0x7f040049
 int drawable next_nav_vector_next1 0x7f04004a
@@ -211,6 +213,7 @@ int drawable ranking_position_avatar 0x7f040069
 int drawable ranking_position_box_button 0x7f04006a
 int drawable rectangular_vignette_bottom 0x7f04006b
 int drawable rectangular_vignette_top 0x7f04006c
+int drawable redesimage 0x7f040081
 int drawable registro_prototipo_box_registrarse 0x7f04006d
 int drawable registro_prototipo_box_volver_ainicio 0x7f04006e
 int drawable registro_prototipo_rect_apellidos 0x7f04006f
@@ -220,6 +223,7 @@ int drawable registro_prototipo_rectangle_cont 0x7f040072
 int drawable registro_prototipo_rectangle_name 0x7f040073
 int drawable ruedaconfiguracion 0x7f040077
 int drawable serverstateicon 0x7f04007e
+int drawable serverstatelogo 0x7f040082
 int drawable start_game_caja_log 0x7f040074
 int drawable start_game_caja_reg 0x7f040075
 int font relay_fira_sans_black 0x7f050000

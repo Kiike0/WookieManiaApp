@@ -173,7 +173,9 @@ drawable login_prototipo_boton_box_acc
 drawable login_prototipo_box_atras
 drawable login_prototipo_text_field1
 drawable login_prototipo_text_field2
+drawable logoapp
 drawable logouticon
+drawable nameapp
 drawable next_nav_nav_next_box
 drawable next_nav_next_vector1
 drawable next_nav_vector_next1
@@ -212,6 +214,7 @@ drawable ranking_position_avatar
 drawable ranking_position_box_button
 drawable rectangular_vignette_bottom
 drawable rectangular_vignette_top
+drawable redesimage
 drawable registro_prototipo_box_registrarse
 drawable registro_prototipo_box_volver_ainicio
 drawable registro_prototipo_rect_apellidos
@@ -221,6 +224,7 @@ drawable registro_prototipo_rectangle_cont
 drawable registro_prototipo_rectangle_name
 drawable ruedaconfiguracion
 drawable serverstateicon
+drawable serverstatelogo
 drawable start_game_caja_log
 drawable start_game_caja_reg
 font relay_fira_sans_black

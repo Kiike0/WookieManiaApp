@@ -87,7 +87,7 @@ fun SettingsScreen(
         ClickableSettings(
             iconResId = R.drawable.infoicon,
             text = "Información",
-            onClick = {}
+            onClick = {navController.navigate(Routes.AboutScreen.route)}
         )
 
         Spacer(modifier = Modifier.height(35.dp))
@@ -95,7 +95,7 @@ fun SettingsScreen(
         ClickableSettings(
             iconResId = R.drawable.serverstateicon,
             text = "Estado servidor",
-            onClick = {}
+            onClick = {navController.navigate(Routes.ServerStateScreen.route)}
         )
 
         Spacer(modifier = Modifier.height(35.dp))
@@ -103,7 +103,7 @@ fun SettingsScreen(
         ClickableSettings(
             iconResId = R.drawable.politicsicon,
             text = "Política y privacidad",
-            onClick = {}
+            onClick = {navController.navigate(Routes.PoliticsScreen.route)}
         )
 
         Spacer(modifier = Modifier.height(35.dp))

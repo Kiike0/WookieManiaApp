@@ -11,13 +11,11 @@ sealed class Routes(val route: String) {
     /**
      * Pantalla Inicial.
      */
-
     object FirstScreen : Routes("firstScreen")
 
     /**
      * Pantalla vacía.
      */
-
     object EmptyScreen : Routes("emptyScreen")
 
     /**
@@ -34,32 +32,43 @@ sealed class Routes(val route: String) {
     /**
      * Pantalla Home de juego.
      */
-
     object Home : Routes("homeView")
 
     /**
      * Pantalla de todas las Categorías para elegir.
      */
-
     object Categories : Routes("categoriesView")
 
     /**
      * Pantalla del Ranking.
      */
-
     object Ranking : Routes("rankingView")
 
     /**
      * Pantalla del Perfil del usuario.
      */
-
     object Profile : Routes("profileScreen")
 
     /**
      * Pantalla de la configuracion.
      */
-
     object Settings : Routes("settingsScreen")
+
+
+    /**
+     * Pantalla información.
+     */
+    object AboutScreen : Routes("aboutScreen")
+
+    /**
+     * Pantalla política y privacidad.
+     */
+    object PoliticsScreen : Routes("politicsScreen")
+
+    /**
+     * Pantalla estado del servidor.
+     */
+    object ServerStateScreen : Routes("serverStateScreen")
 
     /**
      * Pantalla de la creación de la pregunta.
