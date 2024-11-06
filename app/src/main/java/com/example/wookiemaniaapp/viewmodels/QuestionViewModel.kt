@@ -38,13 +38,14 @@ class QuestionViewModel : ViewModel() {
 
     private var _allQuestions: MutableLiveData<ArrayList<QuestionModel>> =
         MutableLiveData<ArrayList<QuestionModel>>()
-    // val allQuizzes: LiveData<ArrayList<QuizModel>> = _allQuizzes
+    val allQuestions: LiveData<ArrayList<QuestionModel>> = _allQuestions
 
     private var _questionsIdsList: MutableLiveData<ArrayList<String>> =
         MutableLiveData<ArrayList<String>>()
     val questionsIdsList: LiveData<ArrayList<String>> = _questionsIdsList
 
     //var currentList = _quizIdsList.value ?: ArrayList()
+
 
     // ---------------------------------------------------------------------------------------- //
 
@@ -65,6 +66,11 @@ class QuestionViewModel : ViewModel() {
     var incorrectAnswer3 by mutableStateOf("")
         private set
 
+
+    // Obtiene una sola pregunta por su ID
+    fun getQuestionById(questionId: String): QuestionModel? {
+        return _allQuestions.value?.firstOrNull { it.idQuiz == questionId }
+    }
 
     /**
      * Actualiza el id de la quiz actual, para leer las preguntas en la quiz seleccionada.
@@ -104,6 +110,55 @@ class QuestionViewModel : ViewModel() {
                 Log.d("ERROR CREAR USUARIO", "ERROR: ${e.localizedMessage}")
             }
         }
+    }
+    /**
+     * Recupera todas las preguntas de la base de datos.
+     */
+    fun fetchAllQuestions() {
+        firestore.collection("Questions")
+            .get()
+            .addOnSuccessListener { snapshot ->
+                val questionsList = snapshot.documents.mapNotNull {
+                    it.toObject(QuestionModel::class.java)?.apply {
+                        idQuiz = it.id // Aquí obtenemos el ID del documento
+                    }
+                }
+                // Convertimos la lista a ArrayList antes de asignarla
+                _allQuestions.value = ArrayList(questionsList)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("QuestionViewModel", "Error al recuperar preguntas: $exception")
+            }
+    }
+
+    /**
+     * Actualiza una pregunta en Firestore.
+     */
+    fun updateQuestion(questionId: String, updatedQuestion: QuestionModel, onSuccess: () -> Unit) {
+        val questionRef = firestore.collection("Questions").document(questionId)
+        questionRef.set(updatedQuestion)
+            .addOnSuccessListener {
+                Log.d(TAG, "Pregunta actualizada exitosamente.")
+                onSuccess()
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "Error al actualizar la pregunta: $exception")
+            }
+    }
+
+    /**
+     * Elimina una pregunta de Firestore por ID.
+     */
+    fun deleteQuestion(questionId: String, onSuccess: () -> Unit) {
+        firestore.collection("Questions").document(questionId)
+            .delete()
+            .addOnSuccessListener {
+                Log.d(TAG, "Pregunta eliminada correctamente.")
+                onSuccess()
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "Error al eliminar la pregunta: $exception")
+            }
     }
 
     /**

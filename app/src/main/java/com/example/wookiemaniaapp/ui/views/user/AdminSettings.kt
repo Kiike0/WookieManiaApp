@@ -63,7 +63,7 @@ fun AdminSettingsScreen(
         ClickableSettings(
             iconResId = R.drawable.adminquestionslogo,
             text = "Ver preguntas",
-            onClick = {}
+            onClick = {navController.navigate(Routes.AdminMode.route)}
         )
 
         Spacer(modifier = Modifier.height(35.dp))

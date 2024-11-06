@@ -28,6 +28,7 @@ import com.example.wookiemaniaapp.ui.views.login.EmptyView
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
 import com.example.wookiemaniaapp.ui.views.user.AdminSettingsScreen
+import com.example.wookiemaniaapp.ui.views.user.AdminView
 import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
 import com.example.wookiemaniaapp.ui.views.user.SettingsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.AboutScreen
@@ -120,6 +121,14 @@ class MainActivity : ComponentActivity() {
                             AdminSettingsScreen(
                                 navController = navController,
                                 currentUserViewModel = userViewModel
+                            )
+                        }
+
+                        // Ruta desde la pantalla de perfil
+                        composable(Routes.AdminMode.route) {
+                            AdminView(
+                                navController = navController,
+                                questionViewModel = questionViewModel
                             )
                         }
 

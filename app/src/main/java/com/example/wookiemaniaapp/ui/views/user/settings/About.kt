@@ -22,15 +22,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import androidx.wear.compose.material.MaterialTheme
 import com.example.wookiemaniaapp.R
 import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.categorytypecomp.firaSans
 import com.example.wookiemaniaapp.navigation.Routes
-import com.example.wookiemaniaapp.ui.components.creation.AddingButtonComposable
-import com.example.wookiemaniaapp.ui.components.creation.CorrectAnswerField
 import com.example.wookiemaniaapp.ui.theme.ColorApp
-import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 
 /**
  * Función composable que representa la pantalla Información de la app.
