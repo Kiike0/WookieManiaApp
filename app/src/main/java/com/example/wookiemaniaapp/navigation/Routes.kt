@@ -15,6 +15,12 @@ sealed class Routes(val route: String) {
     object FirstScreen : Routes("firstScreen")
 
     /**
+     * Pantalla vacía.
+     */
+
+    object EmptyScreen : Routes("emptyScreen")
+
+    /**
      * Objeto que representa la pantalla de Inicio de Sesión (Acceso).
      */
     object Login : Routes("loginScreen")

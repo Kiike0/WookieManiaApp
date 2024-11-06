@@ -111,7 +111,9 @@ fun SettingsScreen(
         ClickableSettings(
             iconResId = R.drawable.logouticon,
             text = "Cerrar sesión",
-            onClick = {}
+            onClick = {
+                currentUserViewModel.signOut()
+                navController.navigate(Routes.FirstScreen.route)}
         )
     }
 }

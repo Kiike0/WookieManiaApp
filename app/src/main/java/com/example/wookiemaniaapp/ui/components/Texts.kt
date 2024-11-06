@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
@@ -72,5 +73,22 @@ fun CustomizedTypeText(
                 y = 0.dp
             )
         )
+    )
+}
+
+@Composable
+fun CustomizedBiggerTextBold(
+    customizedText: String,
+    modifier: Modifier
+) {
+    Text(
+        text = customizedText,
+        style = TextStyle(
+            color = Color.White,
+            fontSize = 20.0.sp,
+            fontFamily = firaSans,
+            fontWeight = FontWeight.Bold // Esta línea establece el texto en negrita
+        ),
+        modifier = modifier
     )
 }

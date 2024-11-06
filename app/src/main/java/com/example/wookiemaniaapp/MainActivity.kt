@@ -24,6 +24,7 @@ import com.example.wookiemaniaapp.ui.views.RankingScreen
 import com.example.wookiemaniaapp.ui.views.creation.CorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.IncorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
+import com.example.wookiemaniaapp.ui.views.login.EmptyView
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
 import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
@@ -55,8 +56,15 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(
                         navController = navController,
-                        startDestination = Routes.FirstScreen.route
+                        startDestination = Routes.EmptyScreen.route
                     ) {
+
+                        composable(Routes.EmptyScreen.route) {
+                            EmptyView(
+                                navController = navController
+                            )
+                        }
+
                         // Ruta desde la primera Screen
                         composable(Routes.FirstScreen.route) {
                             FirstScreenView(
