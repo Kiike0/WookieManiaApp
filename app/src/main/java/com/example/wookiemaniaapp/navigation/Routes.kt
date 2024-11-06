@@ -54,6 +54,10 @@ sealed class Routes(val route: String) {
      */
     object Settings : Routes("settingsScreen")
 
+    /**
+     * Pantalla de la configuracion del administrador.
+     */
+    object AdminSettings : Routes("adminSettingsScreen")
 
     /**
      * Pantalla información.

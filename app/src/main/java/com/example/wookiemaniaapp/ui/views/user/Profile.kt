@@ -66,7 +66,6 @@ fun ProfileScreen(
             Text(
                 text = "@" + currentUserViewModel.getCurrentNickName(),
                 modifier = Modifier
-                    .weight(1f) // Permite que el texto ocupe el espacio disponible
                     .padding(start = 20.dp), // Padding a la izquierda
                 textAlign = TextAlign.Start, // Alinea el texto a la izquierda
                 fontWeight = FontWeight.Bold,
@@ -82,7 +81,11 @@ fun ProfileScreen(
                 modifier = Modifier
                     .padding(end = 20.dp)
                     .clickable(onClick = {
-                        navController.navigate(Routes.Settings.route)
+                        if (currentUserViewModel.currentUserEmail == "adminprueba@gmail.com") {
+                            navController.navigate(Routes.AdminSettings.route)
+                        } else {
+                            navController.navigate(Routes.Settings.route)
+                        }
                     })
             ) {
                 Image(

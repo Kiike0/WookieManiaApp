@@ -99,6 +99,7 @@ dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
 drawable addicon
+drawable adminquestionslogo
 drawable agregar_nav_box_add
 drawable agregar_nav_vector_add
 drawable avatarprueba

@@ -98,6 +98,7 @@ int dimen notification_subtext_size 0x7f030015
 int dimen notification_top_pad 0x7f030016
 int dimen notification_top_pad_large_text 0x7f030017
 int drawable addicon 0x7f040078
+int drawable adminquestionslogo 0x7f040083
 int drawable agregar_nav_box_add 0x7f040002
 int drawable agregar_nav_vector_add 0x7f040003
 int drawable avatarprueba 0x7f040076

@@ -47,6 +47,9 @@ class UserViewModel : ViewModel() {
 
     private var currentNickname by mutableStateOf("")
 
+    // Propiedad que devuelve el correo electrónico del usuario autenticado actualmente
+    val currentUserEmail: String?
+        get() = auth.currentUser?.email
 
     /**
      * El login del usuario
