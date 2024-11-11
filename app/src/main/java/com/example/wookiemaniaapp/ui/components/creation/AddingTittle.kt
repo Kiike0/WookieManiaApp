@@ -52,7 +52,8 @@ fun DropDownMenu(
     newQuestionVM: QuestionViewModel
 ) {
     var expanded by remember { mutableStateOf(false) }
-    val suggestions = listOf("Acción", "Terror", "Comedia", "Fantasía")
+    val suggestions = listOf("Aventura", "Terror", "Ciencia Ficción", "Drama", "Acción",
+        "Fantasía", "Comedia", "Animación", "Historia", "Suspense", "Romance", "Western")
     var selectedText by remember { mutableStateOf(newQuestionVM.category) }
 
     val icon = if (expanded)

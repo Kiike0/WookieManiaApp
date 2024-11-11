@@ -1,5 +1,7 @@
 package com.example.wookiemaniaapp.model
 
+import com.google.firebase.firestore.PropertyName
+
 data class QuestionModel(
     var idQuiz: String = "",
     val category: String,
@@ -8,10 +10,8 @@ data class QuestionModel(
     val incorrectAnswer1: String,
     val incorrectAnswer2: String,
     val incorrectAnswer3: String,
-    val isValid: Boolean,
+    @PropertyName("valid") val isValid: Boolean,  // Mapea "valid" en la base de datos a "isValid" en el modelo
     val favourite: ArrayList<String> = arrayListOf()
-
 ) {
-    // Constructor sin argumentos requerido por Firestore
     constructor() : this("","","","","","","",false)
 }

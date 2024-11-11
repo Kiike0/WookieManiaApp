@@ -2,8 +2,10 @@ package com.example.wookiemaniaapp.ui.views.user
 
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,11 +13,19 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -36,18 +46,18 @@ import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 @Composable
 fun AdminView(
     navController: NavHostController,
-    questionViewModel: QuestionViewModel // Obtén el ViewModel
+    questionViewModel: QuestionViewModel
 ) {
-    // Observa la lista de todas las preguntas
+    // Observa solo `allQuestions` que será filtrado a `invalidQuestions`
     val allQuestions by questionViewModel.allQuestions.observeAsState(emptyList())
+    val invalidQuestions = allQuestions.filter { !it.isValid }
 
-    // Llama a fetchAllQuestions para cargar las preguntas cuando se inicie la pantalla
     LaunchedEffect(Unit) {
-        questionViewModel.fetchAllQuestions()
+        questionViewModel.fetchAllQuestionsFalse()
     }
 
-    // Selecciona la primera pregunta de la lista o la pregunta que quieras filtrar
-    val question = allQuestions.firstOrNull() // Aquí seleccionas la pregunta que quieres mostrar
+    var currentQuestionIndex by rememberSaveable { mutableStateOf(0) }
+    val isEndOfQuestions = currentQuestionIndex >= invalidQuestions.size
 
     Box(
         modifier = Modifier
@@ -75,30 +85,28 @@ fun AdminView(
                 )
             }
 
-            // Verifica si la pregunta existe
-            question?.let { question ->
+            if (invalidQuestions.isNotEmpty() && !isEndOfQuestions) {
+                val question = invalidQuestions[currentQuestionIndex]
+
                 Spacer(modifier = Modifier.height(200.dp))
 
                 Box(
                     modifier = Modifier
-                        .width(370.dp) // El ancho de la Box es más pequeño que el de la pantalla
-                        .height(250.dp) // Altura de la Box
-                        .background(Color.White, shape = RoundedCornerShape(8.dp)) // Fondo blanco con bordes redondeados
-                        .padding(16.dp) // Espaciado interno
+                        .width(370.dp)
+                        .height(380.dp)
+                        .background(Color.White, shape = RoundedCornerShape(8.dp))
+                        .padding(16.dp)
                 ) {
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(end = 50.dp) // Deja espacio para las imágenes alineadas a la derecha
+                            .padding(end = 50.dp)
                     ) {
-                        // Mostrar el título de la pregunta
                         Text(
-                            text = question.tittle, // Mostrar el título de la pregunta
+                            text = question.tittle,
                             style = MaterialTheme.typography.title1,
                             modifier = Modifier.padding(bottom = 8.dp)
                         )
-
-                        // Mostrar las respuestas
                         Text(
                             text = "Correcta: ${question.correctAnswer}",
                             style = MaterialTheme.typography.body1,
@@ -119,16 +127,60 @@ fun AdminView(
                             style = MaterialTheme.typography.body1,
                             modifier = Modifier.padding(bottom = 8.dp)
                         )
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Row(
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            // Botón "Añadir"
+                            Button(
+                                onClick = {
+                                    val updatedQuestion = question.copy(isValid = true)
+                                    questionViewModel.updateQuestion(
+                                        question.idQuiz,
+                                        updatedQuestion
+                                    ) {
+                                        // Avanza a la siguiente pregunta después de actualizar
+                                        currentQuestionIndex++
+                                    }
+                                },
+                                colors = ButtonDefaults.buttonColors(Color.Gray)
+                            ) {
+                                Text(text = "Añadir", color = Color.White)
+                            }
+
+                            // Botón "Borrar"
+                            Button(
+                                onClick = {
+                                    questionViewModel.deleteQuestion(question.idQuiz) {
+                                        currentQuestionIndex++
+                                    }
+                                },
+                                colors = ButtonDefaults.buttonColors(Color.Black)
+                            ) {
+                                Text(text = "Borrar", color = Color.White)
+                            }
+                        }
                     }
                 }
-            } ?: run {
-                Spacer(modifier = Modifier.height(50.dp))
-                // Si no se encuentra la pregunta, mostrar un mensaje
-                Text(
-                    text = "Cargando pregunta...",
-                    style = MaterialTheme.typography.title1,
-                    modifier = Modifier.padding(16.dp)
-                )
+            } else {
+                Spacer(modifier = Modifier.height(200.dp))
+                Box(
+                    modifier = Modifier
+                        .width(370.dp)
+                        .height(100.dp)
+                        .background(Color.White, shape = RoundedCornerShape(8.dp))
+                        .padding(16.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "No hay más preguntas",
+                        style = MaterialTheme.typography.title1,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
             }
 
             Spacer(modifier = Modifier.weight(1f))
@@ -141,12 +193,14 @@ fun AdminView(
                     .padding(bottom = 10.dp)
             ) {
                 NextNav(
-                    modifier = Modifier.fillMaxWidth(1f),
-                    nextButton = {}
+                    modifier = Modifier.fillMaxWidth(),
+                    nextButton = {
+                        if (!isEndOfQuestions) {
+                            currentQuestionIndex++
+                        }
+                    }
                 )
-
             }
-
         }
     }
 }

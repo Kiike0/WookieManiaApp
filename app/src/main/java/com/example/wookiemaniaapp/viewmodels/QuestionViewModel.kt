@@ -130,6 +130,33 @@ class QuestionViewModel : ViewModel() {
                 Log.e("QuestionViewModel", "Error al recuperar preguntas: $exception")
             }
     }
+    /**
+     * Recupera todas las preguntas en false de la base de datos.
+     */
+    fun fetchAllQuestionsFalse() {
+        firestore.collection("Questions")
+            .whereEqualTo("valid", false)  // Cambiar "isValid" por "valid" aquí
+            .get()
+            .addOnSuccessListener { snapshot ->
+                if (snapshot.isEmpty) {
+                    Log.d("QuestionViewModel", "No questions found with valid = false")
+                } else {
+                    snapshot.documents.forEach {
+                        Log.d("QuestionViewModel", "Fetched question: ${it.data}")
+                    }
+                }
+
+                val questionsList = snapshot.documents.mapNotNull {
+                    it.toObject(QuestionModel::class.java)?.apply {
+                        idQuiz = it.id
+                    }
+                }
+                _allQuestions.value = ArrayList(questionsList)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("QuestionViewModel", "Error al recuperar preguntas: $exception")
+            }
+    }
 
     /**
      * Actualiza una pregunta en Firestore.
