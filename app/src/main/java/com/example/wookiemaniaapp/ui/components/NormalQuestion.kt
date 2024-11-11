@@ -44,14 +44,16 @@ import com.google.relay.compose.tappable
 fun NormalQuestion(
     textCategory: String = "",
     questionTitle: String = "",
-    dislikeIcon: () -> Unit = {},
-    likeIcon: () -> Unit = {},
     closeIcon: () -> Unit = {},
     saveIcon: () -> Unit = {},
     buttonTextAnswerA: () -> Unit = {},
     buttonTextAnswerB: () -> Unit = {},
     buttonTextAnswerC: () -> Unit = {},
-    buttonTextAnswerD: () -> Unit = {}
+    buttonTextAnswerD: () -> Unit = {},
+    questionAnswer1: String = "",
+    questionAnswer2: String = "",
+    questionAnswer3: String = "",
+    questionAnswer4: String = ""
 ) {
     Box(
         modifier = Modifier
@@ -61,10 +63,10 @@ fun NormalQuestion(
         contentAlignment = Alignment.TopStart
     ) {
 
-        Column (
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-        ){
+        ) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -78,8 +80,7 @@ fun NormalQuestion(
                 )
                 Spacer(modifier = Modifier.width(30.dp))
                 TextCategoryComposable(
-                    textCategory= textCategory,
-                    modifier = Modifier
+                    textCategory = textCategory
                 )
             }
             TituloPreguntaComposable(
@@ -88,7 +89,7 @@ fun NormalQuestion(
             )
 
             Button(
-                onClick = { buttonTextAnswerA },
+                onClick = { buttonTextAnswerA() }, // Ejecuta la función al hacer clic
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White
                 ),
@@ -99,7 +100,7 @@ fun NormalQuestion(
                     .size(500.dp, 50.dp)
             ) {
                 Text(
-                    text = "A. Hedwig",
+                    text = "A. $questionAnswer1",
                     color = Color.Black,
                     fontSize = 18.0.sp,
                     fontFamily = firaSans,
@@ -107,7 +108,7 @@ fun NormalQuestion(
                 )
             }
             Button(
-                onClick = { buttonTextAnswerB },
+                onClick = { buttonTextAnswerB() },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White
                 ),
@@ -118,7 +119,7 @@ fun NormalQuestion(
                     .size(500.dp, 50.dp)
             ) {
                 Text(
-                    text = "B. Pluto",
+                    text = "B. $questionAnswer2",
                     color = Color.Black,
                     fontSize = 18.0.sp,
                     fontFamily = firaSans,
@@ -126,7 +127,7 @@ fun NormalQuestion(
                 )
             }
             Button(
-                onClick = { buttonTextAnswerC },
+                onClick = { buttonTextAnswerC() },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White
                 ),
@@ -137,7 +138,7 @@ fun NormalQuestion(
                     .size(500.dp, 50.dp)
             ) {
                 Text(
-                    text = "C. Simon",
+                    text = "C. $questionAnswer3",
                     color = Color.Black,
                     fontSize = 18.0.sp,
                     fontFamily = firaSans,
@@ -145,7 +146,7 @@ fun NormalQuestion(
                 )
             }
             Button(
-                onClick = { buttonTextAnswerD },
+                onClick = { buttonTextAnswerD() },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White
                 ),
@@ -156,7 +157,7 @@ fun NormalQuestion(
                     .size(500.dp, 50.dp)
             ) {
                 Text(
-                    text = "D. Pepito",
+                    text = "D. $questionAnswer4",
                     color = Color.Black,
                     fontSize = 18.0.sp,
                     fontFamily = firaSans,
@@ -169,38 +170,16 @@ fun NormalQuestion(
                     .fillMaxWidth()
                     .padding(top = 30.dp)
             ) {
-                Spacer(modifier = Modifier.width(40.dp))
-                TeHaGustadoComposable(modifier = Modifier)
-                Spacer(modifier = Modifier.width(100.dp))
+                Spacer(modifier = Modifier.weight(1f))
                 SaveComposable(
                     saveIcon = saveIcon,
-                    modifier = Modifier
+                    modifier = Modifier.padding(end = 20.dp)
                 ) {
                     VectorSaveComposable(modifier = Modifier)
                 }
-                Spacer(modifier = Modifier.width(10.dp))
-                LikeIconComposable(
-                    likeIcon = likeIcon,
-                    modifier = Modifier
-                ) {
-                    VectorLikeComposable(modifier = Modifier)
-                }
-                Spacer(modifier = Modifier.width(10.dp))
-                DislikeIconComposable(
-                    dislikeIcon = dislikeIcon,
-                    modifier = Modifier
-                ) {
-                    VectorDislikeComposable(modifier = Modifier)
-                }
-
-
-
             }
-
-
         }
     }
-
 }
 @Composable
 fun TituloPreguntaComposable(
@@ -232,8 +211,7 @@ fun TituloPreguntaComposable(
 
 @Composable
 fun TextCategoryComposable(
-    textCategory: String,
-    modifier: Modifier = Modifier
+    textCategory: String
 ) {
     Text(
         text = textCategory,
@@ -251,62 +229,6 @@ fun CloseIconComposable(
     RelayVector(
         vector = painterResource(R.drawable.question_vector_close),
         modifier = modifier.tappable(onTap = onCloseIcon)
-    )
-}
-
-
-@Composable
-fun TeHaGustadoComposable(modifier: Modifier = Modifier) {
-    RelayText(
-        content = "¿Te ha gustado?",
-        fontSize = 20.0.sp,
-        fontFamily = firaSans,
-        height = 1.2.em,
-        fontWeight = FontWeight(600.0.toInt()),
-        maxLines = -1,
-        modifier = modifier
-    )
-}
-
-@Composable
-fun VectorDislikeComposable(modifier: Modifier = Modifier) {
-    RelayVector(
-        vector = painterResource(R.drawable.question_vector_dislike),
-        modifier = modifier
-    )
-}
-
-@Composable
-fun DislikeIconComposable(
-    dislikeIcon: () -> Unit,
-    modifier: Modifier = Modifier,
-    content: @Composable RelayContainerScope.() -> Unit
-) {
-    RelayContainer(
-        isStructured = false,
-        content = content,
-        modifier = modifier
-    )
-}
-
-@Composable
-fun VectorLikeComposable(modifier: Modifier = Modifier) {
-    RelayVector(
-        vector = painterResource(R.drawable.question_vector_like),
-        modifier = modifier
-    )
-}
-
-@Composable
-fun LikeIconComposable(
-    likeIcon: () -> Unit,
-    modifier: Modifier = Modifier,
-    content: @Composable RelayContainerScope.() -> Unit
-) {
-    RelayContainer(
-        isStructured = false,
-        content = content,
-        modifier = modifier
     )
 }
 

@@ -27,10 +27,10 @@ import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
 import com.example.wookiemaniaapp.ui.views.login.EmptyView
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
-import com.example.wookiemaniaapp.ui.views.user.AdminSettingsScreen
-import com.example.wookiemaniaapp.ui.views.user.AdminView
+import com.example.wookiemaniaapp.ui.views.user.settings.AdminSettingsScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.AdminView
 import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
-import com.example.wookiemaniaapp.ui.views.user.SettingsScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.SettingsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.AboutScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.PoliticsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.ServerStateScreen
@@ -160,7 +160,8 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla del Ranking global
                         composable(Routes.Ranking.route) {
                             RankingScreen(
-                                navController = navController
+                                navController = navController,
+                                userViewModel = userViewModel
                             )
                         }
 
@@ -198,7 +199,8 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla del modo Normal
                         composable(Routes.NormalMode.route) {
                             NormalMode(
-                                navController = navController
+                                navController = navController,
+                                questionViewModel = questionViewModel
                             )
                         }
                     }

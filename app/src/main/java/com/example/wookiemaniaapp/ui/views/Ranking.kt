@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -23,6 +24,7 @@ import com.example.wookiemaniaapp.ui.components.CustomizedTypeText
 import com.example.wookiemaniaapp.ui.components.HeadBoard2
 import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
  * Función composable que representa la pantalla Home del juego.
@@ -31,8 +33,14 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun RankingScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    userViewModel: UserViewModel
 ) {
+    LaunchedEffect(Unit) {
+        userViewModel.getNickName()
+        userViewModel.getUserPoints()
+    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -68,9 +76,9 @@ fun RankingScreen(
                     Spacer(modifier = Modifier.height(15.dp))
                     RankingPosition(
                         modifier = Modifier,
-                        username = "@rikimaru",
+                        username = "@"+userViewModel.getCurrentNickName(),
                         avatar = painterResource(R.drawable.ranking_position_avatar),
-                        points = "123",
+                        points = userViewModel.fetchCurrentPoints(),
                         position = "1",
                         boxToProfileButton = {}
                     )

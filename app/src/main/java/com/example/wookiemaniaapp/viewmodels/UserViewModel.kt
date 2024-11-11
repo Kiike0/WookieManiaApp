@@ -2,9 +2,13 @@ package com.example.wookiemaniaapp.viewmodels
 
 import android.content.ContentValues.TAG
 import android.util.Log
+import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wookiemaniaapp.model.UserModel
@@ -45,11 +49,39 @@ class UserViewModel : ViewModel() {
     var nickName by mutableStateOf("")
         private set
 
+    private val _user = MutableLiveData<UserModel?>()
+    val user: LiveData<UserModel?> get() = _user
+
     private var currentNickname by mutableStateOf("")
+
+    private var currentPoints by mutableStateOf("")
 
     // Propiedad que devuelve el correo electrónico del usuario autenticado actualmente
     val currentUserEmail: String?
         get() = auth.currentUser?.email
+
+    // Método para obtener y establecer los datos del usuario actual
+    fun getUserData() {
+        val uid = auth.currentUser?.uid
+        if (uid != null) {
+            firestore.collection("Users")
+                .document(uid)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document != null) {
+                        val userModel = document.toObject(UserModel::class.java)
+                        if (userModel != null) {
+                            _user.value = userModel
+                        }
+                    } else {
+                        Log.d("GET_USER_DATA", "No such document")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d("GET_USER_DATA", "Error al obtener el documento del usuario: $exception")
+                }
+        }
+    }
 
     /**
      * El login del usuario
@@ -83,7 +115,6 @@ class UserViewModel : ViewModel() {
         }
     }
 
-
     fun getCurrentNickName() = currentNickname.ifBlank { "" }
 
     /**
@@ -101,6 +132,38 @@ class UserViewModel : ViewModel() {
                         //Log.d(TAG, "${document.id} => ${document.data.get("nickname")}")
                         //Log.d(TAG, "${document.data.get("nickname").toString()}")
                         currentNickname = document.data["nickname"].toString()
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d(TAG, "Error al obtener el documento del usuario: $exception")
+                }
+        }
+
+    }
+
+    /**
+     * Cambia el valor de currentPoints a lo que se haya obtenido
+     * en los datos del usuario.
+     */
+    fun fetchCurrentPoints(): String {
+        return currentPoints.toString().ifBlank { "" }
+    }
+
+    /**
+     * Accede a los datos del usuario para poder mostrarlos por pantalla.
+     *
+     */
+    fun getUserPoints() {
+        val uid = auth.currentUser?.uid
+        if (uid != null) {
+            firestore.collection("Users")
+                .whereEqualTo("userId", uid)
+                .get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        //Log.d(TAG, "${document.id} => ${document.data.get("nickname")}")
+                        //Log.d(TAG, "${document.data.get("nickname").toString()}")
+                        currentPoints = document.data["points"].toString()
                     }
                 }
                 .addOnFailureListener { exception ->
@@ -173,7 +236,6 @@ class UserViewModel : ViewModel() {
         }
     }
 
-
     /**
      * Cierra la sesión del usuario actual en Firebase Auth.
      */
@@ -232,6 +294,4 @@ class UserViewModel : ViewModel() {
     fun changeSurname(surname: String) {
         this.surname = surname
     }
-
 }
-

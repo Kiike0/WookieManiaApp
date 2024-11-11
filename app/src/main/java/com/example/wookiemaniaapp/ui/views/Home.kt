@@ -48,9 +48,9 @@ fun HomeScreen(
             HeadBoard(
                 modifier= Modifier,
                 rankingButton = {navController.navigate(Routes.Ranking.route)},
-                playButton = { navController.navigate(Routes.Category.route) },
+                playButton = {navController.navigate(Routes.NormalMode.route) },
                 survivalButton = {},
-                categoriesButton = { navController.navigate(Routes.Categories.route) },
+                categoriesButton = {navController.navigate(Routes.Categories.route)},
                 starButton = {},
                 notifButton = {}
             )

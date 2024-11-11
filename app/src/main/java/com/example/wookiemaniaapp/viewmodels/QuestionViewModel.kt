@@ -159,6 +159,34 @@ class QuestionViewModel : ViewModel() {
     }
 
     /**
+     * Recupera todas las preguntas validadas de la base de datos.
+     */
+    fun fetchAllQuestionsValid() {
+        firestore.collection("Questions")
+            .whereEqualTo("valid", true)  // Filtrar las preguntas donde valid es true
+            .get()
+            .addOnSuccessListener { snapshot ->
+                if (snapshot.isEmpty) {
+                    Log.d("QuestionViewModel", "No questions found with valid = true")
+                } else {
+                    snapshot.documents.forEach {
+                        Log.d("QuestionViewModel", "Fetched question: ${it.data}")
+                    }
+                }
+
+                val questionsList = snapshot.documents.mapNotNull {
+                    it.toObject(QuestionModel::class.java)?.apply {
+                        idQuiz = it.id
+                    }
+                }
+                _allQuestions.value = ArrayList(questionsList)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("QuestionViewModel", "Error al recuperar preguntas: $exception")
+            }
+    }
+
+    /**
      * Actualiza una pregunta en Firestore.
      */
     fun updateQuestion(questionId: String, updatedQuestion: QuestionModel, onSuccess: () -> Unit) {
