@@ -2,15 +2,14 @@ package com.example.wookiemaniaapp.viewmodels
 
 import android.content.ContentValues.TAG
 import android.util.Log
-import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.wookiemaniaapp.model.RankingModel
 import com.example.wookiemaniaapp.model.UserModel
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -29,14 +28,18 @@ import kotlinx.coroutines.launch
  * @property showAlert Estado que determina si se debe mostrar una alerta de error en la UI.
  * @property email Email del usuario, utilizado para el inicio de sesión y registro.
  * @property password Contraseña del usuario, utilizada para el inicio de sesión y registro.
- * @property nickName Nombre de usuario, utilizado solo en el proceso de registro.
+ * @property getCurrentUserData Nombre de usuario, utilizado solo en el proceso de registro.
  */
 class UserViewModel : ViewModel() {
 
     private val auth: FirebaseAuth = Firebase.auth
     private val firestore = Firebase.firestore
 
-    var showAlert by mutableStateOf(false)
+    private val rankingViewModel = RankingViewModel() // Instanciamos el RankingViewModel
+
+    private var showAlert by mutableStateOf(false)
+
+    var nickname by mutableStateOf("")
         private set
     var email by mutableStateOf("")
         private set
@@ -46,42 +49,28 @@ class UserViewModel : ViewModel() {
         private set
     var surname by mutableStateOf("")
         private set
-    var nickName by mutableStateOf("")
-        private set
+
 
     private val _user = MutableLiveData<UserModel?>()
     val user: LiveData<UserModel?> get() = _user
 
+    //private var _allUsers: MutableLiveData<ArrayList<UserModel>> =
+      //  MutableLiveData<ArrayList<UserModel>>()
+    //val allUsers: LiveData<ArrayList<UserModel>> = _allUsers
+
     private var currentNickname by mutableStateOf("")
 
-    private var currentPoints by mutableStateOf("")
+    private var currentName: String = ""
+        get() = field.ifBlank { "" }
+
+    private var currentSurname: String = ""
+        get() = field.ifBlank { "" }
+
 
     // Propiedad que devuelve el correo electrónico del usuario autenticado actualmente
     val currentUserEmail: String?
         get() = auth.currentUser?.email
 
-    // Método para obtener y establecer los datos del usuario actual
-    fun getUserData() {
-        val uid = auth.currentUser?.uid
-        if (uid != null) {
-            firestore.collection("Users")
-                .document(uid)
-                .get()
-                .addOnSuccessListener { document ->
-                    if (document != null) {
-                        val userModel = document.toObject(UserModel::class.java)
-                        if (userModel != null) {
-                            _user.value = userModel
-                        }
-                    } else {
-                        Log.d("GET_USER_DATA", "No such document")
-                    }
-                }
-                .addOnFailureListener { exception ->
-                    Log.d("GET_USER_DATA", "Error al obtener el documento del usuario: $exception")
-                }
-        }
-    }
 
     /**
      * El login del usuario
@@ -115,13 +104,16 @@ class UserViewModel : ViewModel() {
         }
     }
 
-    fun getCurrentNickName() = currentNickname.ifBlank { "" }
+    fun fetchCurrentName() = currentName.ifBlank { "" }
+    fun fetchCurrentSurname() = currentSurname.ifBlank { "" }
+    fun fetchCurrentNickName() = currentNickname.ifBlank { "" }
+
 
     /**
      * Accede a los datos del usuario para poder mostrarlos por pantalla.
      *
      */
-    fun getNickName() {
+    fun getCurrentUserData() {
         val uid = auth.currentUser?.uid
         if (uid != null) {
             firestore.collection("Users")
@@ -131,6 +123,8 @@ class UserViewModel : ViewModel() {
                     for (document in documents) {
                         //Log.d(TAG, "${document.id} => ${document.data.get("nickname")}")
                         //Log.d(TAG, "${document.data.get("nickname").toString()}")
+                        currentName = document.data["name"].toString()
+                        currentSurname = document.data["surname"].toString()
                         currentNickname = document.data["nickname"].toString()
                     }
                 }
@@ -141,41 +135,32 @@ class UserViewModel : ViewModel() {
 
     }
 
-    /**
-     * Cambia el valor de currentPoints a lo que se haya obtenido
-     * en los datos del usuario.
-     */
-    fun fetchCurrentPoints(): String {
-        return currentPoints.toString().ifBlank { "" }
-    }
-
-    /**
-     * Accede a los datos del usuario para poder mostrarlos por pantalla.
-     *
-     */
-    fun getUserPoints() {
-        val uid = auth.currentUser?.uid
-        if (uid != null) {
-            firestore.collection("Users")
-                .whereEqualTo("userId", uid)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        //Log.d(TAG, "${document.id} => ${document.data.get("nickname")}")
-                        //Log.d(TAG, "${document.data.get("nickname").toString()}")
-                        currentPoints = document.data["points"].toString()
+    /*
+    fun fetchAllUsers() {
+        firestore.collection("Users") // Nombre de tu colección
+            .get()
+            .addOnSuccessListener { snapshot ->
+                val usersList = snapshot.documents.mapNotNull {
+                    it.toObject(UserModel::class.java)?.apply {
+                        // Si necesitas agregar el ID del documento como un campo adicional:
+                        userId = it.id
                     }
                 }
-                .addOnFailureListener { exception ->
-                    Log.d(TAG, "Error al obtener el documento del usuario: $exception")
-                }
-        }
-
+                // Convertimos la lista a ArrayList antes de asignarla (si es necesario)
+                _allUsers.value = ArrayList(usersList)
+            }
+            .addOnFailureListener { exception ->
+                Log.e("UserViewModel", "Error al recuperar usuarios: $exception")
+            }
     }
+
+     */
+
+
 
     /**
      * Crea un nuevo usuario con el email y la contraseña proporcionados.
-     * Si el registro es exitoso, guarda la información del usuario y ejecuta la acción de éxito proporcionada.
+     * Si el registro es exitoso, guarda la información del usuario en Firestore y ejecuta la acción de éxito proporcionada.
      * En caso de error, actualiza el estado para mostrar el mensaje de alerta.
      *
      * @param onSuccess Acción a ejecutar si el registro es exitoso.
@@ -183,21 +168,36 @@ class UserViewModel : ViewModel() {
     fun createUser(onSuccess: () -> Unit) {
         viewModelScope.launch {
             try {
-                // DCS - Utiliza el servicio de autenticación de Firebase para registrar al usuario
-                // por email y contraseña
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            // DCS - Si se realiza con éxito, almacenamos el usuario en la colección "Users"
-                            saveUser(name, surname, nickName)
-                            onSuccess()
+                            val currentUser = auth.currentUser
+                            if (currentUser != null) {
+                                saveUser(name, surname, nickname) // Aquí usas los datos ingresados
+
+                                // Crear un modelo de ranking y añadirlo a la colección de ranking
+                                val ranking = RankingModel(
+                                    idRanking = currentUser.uid,  // Usa el UID del usuario como el ID de ranking
+                                    position = 0,                 // Puedes inicializar la posición según la lógica del ranking
+                                    nickname = nickname,
+                                    points = 0                    // Puntos iniciales
+                                )
+
+                                rankingViewModel.addRanking(ranking)  // Llama a la función addRanking del RankingViewModel
+
+                                onSuccess()
+                            } else {
+                                Log.d("ERROR EN FIREBASE", "Usuario creado pero no encontrado")
+                                showAlert = true
+                            }
                         } else {
-                            Log.d("ERROR EN FIREBASE", "Error al crear usuario")
+                            Log.d("ERROR EN FIREBASE", "Error al crear usuario: ${task.exception?.message}")
                             showAlert = true
                         }
                     }
             } catch (e: Exception) {
                 Log.d("ERROR CREAR USUARIO", "ERROR: ${e.localizedMessage}")
+                showAlert = true
             }
         }
     }
@@ -219,7 +219,6 @@ class UserViewModel : ViewModel() {
                 email = email.toString(),
                 nickname = nickName,
                 totalAdded = 0,
-                points = 0,
                 trophiesNumber = 0
 
             )
@@ -235,6 +234,7 @@ class UserViewModel : ViewModel() {
                 .addOnFailureListener { Log.d("ERROR AL GUARDAR", "ERROR al guardar en Firestore") }
         }
     }
+
 
     /**
      * Cierra la sesión del usuario actual en Firebase Auth.
@@ -268,14 +268,17 @@ class UserViewModel : ViewModel() {
         this.password = password
     }
 
+
     /**
      * Actualiza el nombre de usuario.
      *
-     * @param userName Nuevo nombre de usuario a establecer.
+     * @param nickName Nuevo nombre de usuario a establecer.
      */
-    fun changeUserName(userName: String) {
-        this.nickName = userName
+    fun changeNickName(nickName: String) {
+        this.nickname = nickName
     }
+
+
 
     /**
      * Actualiza el nombre.

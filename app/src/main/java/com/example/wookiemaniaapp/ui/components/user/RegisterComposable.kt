@@ -20,6 +20,8 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -173,27 +175,26 @@ fun OutlinedTextField3Custom(
     newUserVM: UserViewModel
 ) {
     OutlinedTextField(
-        value = newUserVM.nickName,
-        onValueChange = { newUserVM.changeUserName(it) },
+        value = newUserVM.nickname, // Utiliza el estado del nombre del nuevo usuario
+        onValueChange = { newUserVM.changeNickName(it) }, // Actualiza el nombre en el ViewModel
         modifier = Modifier
             .width(350.dp)
-            .height(70.dp) // Controla la altura total del campo
+            .height(70.dp)
             .background(Color.White, shape = MaterialTheme.shapes.medium)
             .border(
-                BorderStroke(3.dp, Color.Black), // Borde negro personalizado
+                BorderStroke(3.dp, Color.Black),
                 shape = MaterialTheme.shapes.medium
             ),
-        placeholder = { Text("Ingresa tu nombre de usuario") }, // Texto de marcador
+        placeholder = { Text("Ingresa tu nombre de usuario") },
         label = { Text("Nombre de usuario") },
         maxLines = 1,
         minLines = 1,
         colors = TextFieldDefaults.outlinedTextFieldColors(
-            unfocusedBorderColor = Color.Transparent, // Borde original invisible
-            focusedBorderColor = Color.Transparent // Borde original invisible al enfocarse
+            unfocusedBorderColor = Color.Transparent,
+            focusedBorderColor = Color.Transparent
         )
     )
 }
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OutlinedTextField4Custom(

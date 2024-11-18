@@ -18,6 +18,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -34,6 +36,7 @@ import com.example.wookiemaniaapp.ui.components.CircularImage
 import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.components.RoundedCornerSquareImage
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 
@@ -46,12 +49,23 @@ import com.example.wookiemaniaapp.viewmodels.UserViewModel
 @Composable
 fun ProfileScreen(
     navController: NavHostController,
-    currentUserViewModel: UserViewModel
+    currentUserViewModel: UserViewModel,
+    rankingViewModel: RankingViewModel
 ) {
+    // Observa la lista de rankings en lugar de los usuarios
+    val allRankingUsers by rankingViewModel.rankingList.observeAsState(emptyList())
 
     LaunchedEffect(Unit) {
-        currentUserViewModel.getNickName()
+        currentUserViewModel.getCurrentUserData()
+        rankingViewModel.fetchRankingData()
     }
+
+    // Busca al usuario actual en el ranking
+    val userRanking = allRankingUsers.find { it.nickname == currentUserViewModel.fetchCurrentNickName() }
+
+    // Si no se encuentra al usuario, coloca un valor por defecto
+    val userPosition = userRanking?.position?.toString() ?: "1"
+    val userPoints = userRanking?.points?.toString() ?: "0"
 
 
     Column(
@@ -64,7 +78,7 @@ fun ProfileScreen(
         ) {
             // Texto centrado en la fila
             Text(
-                text = "@" + currentUserViewModel.getCurrentNickName(),
+                text = "@" + currentUserViewModel.fetchCurrentNickName(),
                 modifier = Modifier
                     .padding(start = 20.dp), // Padding a la izquierda
                 textAlign = TextAlign.Start, // Alinea el texto a la izquierda
@@ -107,6 +121,24 @@ fun ProfileScreen(
 
         Spacer(modifier = Modifier.height(20.dp))
 
+        Box(
+            modifier = Modifier.fillMaxWidth(),
+            contentAlignment = Alignment.Center // Centra horizontalmente
+        ) {
+            // Texto centrado debajo de la imagen
+            Text(
+                text = currentUserViewModel.fetchCurrentName() +" "+currentUserViewModel.fetchCurrentSurname(),
+                modifier = Modifier
+                    .fillMaxWidth(),
+                textAlign = TextAlign.Center,
+                fontWeight = FontWeight.Bold,
+                fontFamily = firaSans,
+                fontSize = 16.sp
+            )
+        }
+
+        Spacer(modifier = Modifier.height(15.dp))
+
         // Envuelve PlayerStatusBox en un Box para centrarlo
         Box(
             modifier = Modifier.fillMaxWidth(),
@@ -117,7 +149,6 @@ fun ProfileScreen(
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // Texto centrado debajo de la imagen
         Text(
             text = "Posición en el ranking",
             modifier = Modifier
@@ -147,7 +178,7 @@ fun ProfileScreen(
             ) {
                 // Primer texto
                 Text(
-                    text = "34",
+                    text = userPosition,
                     modifier = Modifier.padding(start = 20.dp), // Padding a la izquierda
                     textAlign = TextAlign.Left,
                     fontWeight = FontWeight.Bold,
@@ -167,7 +198,7 @@ fun ProfileScreen(
 
                 // Segundo texto
                 Text(
-                    text = currentUserViewModel.getCurrentNickName(),
+                    text = currentUserViewModel.fetchCurrentNickName(),
                     modifier = Modifier.padding(end = 10.dp), // Padding a la derecha
                     fontWeight = FontWeight.Bold,
                     fontSize = 17.sp
@@ -178,7 +209,7 @@ fun ProfileScreen(
 
                 // Tercer texto alineado a la derecha
                 Text(
-                    text = "119",
+                    text = userPoints,
                     modifier = Modifier.padding(end = 20.dp),
                     textAlign = TextAlign.End,
                     fontWeight = FontWeight.Bold,

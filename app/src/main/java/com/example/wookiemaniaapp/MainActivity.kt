@@ -35,11 +35,13 @@ import com.example.wookiemaniaapp.ui.views.user.settings.AboutScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.PoliticsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.ServerStateScreen
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
+import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 class MainActivity : ComponentActivity() {
     private val userViewModel: UserViewModel by viewModels()
     private val questionViewModel: QuestionViewModel by viewModels()
+    private val rankingViewModel: RankingViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -104,7 +106,8 @@ class MainActivity : ComponentActivity() {
                         composable(Routes.Profile.route) {
                             ProfileScreen(
                                 navController = navController,
-                                currentUserViewModel = userViewModel
+                                currentUserViewModel = userViewModel,
+                                rankingViewModel = rankingViewModel
                             )
                         }
 
@@ -161,7 +164,8 @@ class MainActivity : ComponentActivity() {
                         composable(Routes.Ranking.route) {
                             RankingScreen(
                                 navController = navController,
-                                userViewModel = userViewModel
+                                userViewModel = userViewModel,
+                                rankingViewModel = rankingViewModel
                             )
                         }
 
@@ -200,7 +204,10 @@ class MainActivity : ComponentActivity() {
                         composable(Routes.NormalMode.route) {
                             NormalMode(
                                 navController = navController,
-                                questionViewModel = questionViewModel
+                                questionViewModel = questionViewModel,
+                                currentUserViewModel = userViewModel,
+                                rankingViewModel = rankingViewModel
+
                             )
                         }
                     }

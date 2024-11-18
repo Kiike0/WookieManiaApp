@@ -1,6 +1,6 @@
 package com.example.wookiemaniaapp.ui.views.login
 
-import androidx.compose.foundation.Image
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,10 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.navigation.NavController
-import com.example.wookiemaniaapp.R
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.components.CustomizedBiggerTextBold
 import com.example.wookiemaniaapp.ui.theme.ColorApp

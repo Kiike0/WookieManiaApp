@@ -1,5 +1,6 @@
 package com.example.wookiemaniaapp.ui.views
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -30,6 +31,8 @@ import com.example.wookiemaniaapp.question.firaSans
 import com.example.wookiemaniaapp.ui.components.NormalQuestion
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
+import com.example.wookiemaniaapp.viewmodels.RankingViewModel
+import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
  * Función composable que representa la pantalla Home del juego.
@@ -39,11 +42,16 @@ import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 @Composable
 fun NormalMode(
     navController: NavHostController,
-    questionViewModel: QuestionViewModel
+    questionViewModel: QuestionViewModel,
+    currentUserViewModel: UserViewModel,
+    rankingViewModel: RankingViewModel
 ) {
+    // Obtener la lista de todas las preguntas y barajarlas
     val allQuestions by questionViewModel.allQuestions.observeAsState(emptyList())
+    val shuffledQuestions = allQuestions.shuffled() // Barajamos las preguntas
+
     var currentQuestionIndex by rememberSaveable { mutableIntStateOf(0) }
-    val currentQuestion = allQuestions.getOrNull(currentQuestionIndex)
+    val currentQuestion = shuffledQuestions.getOrNull(currentQuestionIndex)
 
     // Estado para almacenar respuestas barajadas
     var shuffledAnswers by remember(currentQuestion) { mutableStateOf(emptyList<String>()) }
@@ -68,6 +76,7 @@ fun NormalMode(
     // Cargar preguntas válidas cuando la pantalla se muestra
     LaunchedEffect(Unit) {
         questionViewModel.fetchAllQuestionsValid()
+        currentUserViewModel.getCurrentUserData()  // Aseguramos que los datos del usuario se cargan
     }
 
     if (currentQuestion != null && shuffledAnswers.isNotEmpty()) {
@@ -118,7 +127,7 @@ fun NormalMode(
                 NextNav(
                     modifier = Modifier.fillMaxWidth(1f),
                     nextButton = {
-                        if (currentQuestionIndex < allQuestions.size - 1) {
+                        if (currentQuestionIndex < shuffledQuestions.size - 1) {
                             currentQuestionIndex++
                         } else {
                             currentQuestionIndex = 0
@@ -126,6 +135,22 @@ fun NormalMode(
                     }
                 )
             }
+        }
+
+        // Después de obtener los datos del usuario, ahora podemos realizar las actualizaciones
+        if (isCorrect) {
+            // Obtener el nickname del usuario
+            val nickname = currentUserViewModel.fetchCurrentNickName()
+
+            // Agregamos un log para verificar que el nickname se obtiene correctamente
+            Log.d("NormalMode", "Nickname del usuario actual: $nickname")
+
+            // Asegurarnos de que solo se actualicen una vez los puntos
+            // Actualizamos los puntos en la colección Ranking
+            rankingViewModel.updateRankingPoints(nickname)
+
+            // Log para verificar si las funciones se están ejecutando
+            Log.d("NormalMode", "Puntos actualizados para $nickname")
         }
 
         if (showAnswerResult) {
@@ -142,7 +167,7 @@ fun NormalMode(
                     Button(
                         onClick = {
                             showAnswerResult = false
-                            if (currentQuestionIndex < allQuestions.size - 1) {
+                            if (currentQuestionIndex < shuffledQuestions.size - 1) {
                                 currentQuestionIndex++
                             } else {
                                 currentQuestionIndex = 0
@@ -162,6 +187,5 @@ fun NormalMode(
                 containerColor = Color.White
             )
         }
-
     }
 }

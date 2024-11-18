@@ -10,39 +10,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wookiemaniaapp.model.QuestionModel
-import com.example.wookiemaniaapp.model.states.QuestionState
 import com.google.firebase.Firebase
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class QuestionViewModel : ViewModel() {
-    private val auth: FirebaseAuth = Firebase.auth
     private val firestore = Firebase.firestore
-
-    private val _questionData = MutableStateFlow<List<QuestionModel>>(emptyList())
-    val questionData: StateFlow<List<QuestionModel>> = _questionData
-
-    var state by mutableStateOf(QuestionModel())
-        private set
-
-    private val _stateFlow = MutableStateFlow<QuestionState>(QuestionState.Loading)
-    val stateFlow: StateFlow<QuestionState> = _stateFlow
-
-    private val _questionId = MutableLiveData<String>()
-    val questionId: LiveData<String> = _questionId
 
     private var _allQuestions: MutableLiveData<ArrayList<QuestionModel>> =
         MutableLiveData<ArrayList<QuestionModel>>()
     val allQuestions: LiveData<ArrayList<QuestionModel>> = _allQuestions
 
-    private var _questionsIdsList: MutableLiveData<ArrayList<String>> =
-        MutableLiveData<ArrayList<String>>()
-    val questionsIdsList: LiveData<ArrayList<String>> = _questionsIdsList
 
     //var currentList = _quizIdsList.value ?: ArrayList()
 
@@ -65,20 +44,6 @@ class QuestionViewModel : ViewModel() {
         private set
     var incorrectAnswer3 by mutableStateOf("")
         private set
-
-
-    // Obtiene una sola pregunta por su ID
-    fun getQuestionById(questionId: String): QuestionModel? {
-        return _allQuestions.value?.firstOrNull { it.idQuiz == questionId }
-    }
-
-    /**
-     * Actualiza el id de la quiz actual, para leer las preguntas en la quiz seleccionada.
-     *
-     */
-    fun changeQuestionId(questionId: String) {
-        _questionId.value = questionId
-    }
 
 
     // Método para agregar una nueva pregunta a la colección en Firestore
@@ -111,6 +76,8 @@ class QuestionViewModel : ViewModel() {
             }
         }
     }
+
+    /*
     /**
      * Recupera todas las preguntas de la base de datos.
      */
@@ -130,6 +97,9 @@ class QuestionViewModel : ViewModel() {
                 Log.e("QuestionViewModel", "Error al recuperar preguntas: $exception")
             }
     }
+
+     */
+
     /**
      * Recupera todas las preguntas en false de la base de datos.
      */

@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -24,6 +26,7 @@ import com.example.wookiemaniaapp.ui.components.CustomizedTypeText
 import com.example.wookiemaniaapp.ui.components.HeadBoard2
 import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
@@ -34,12 +37,26 @@ import com.example.wookiemaniaapp.viewmodels.UserViewModel
 @Composable
 fun RankingScreen(
     navController: NavHostController,
-    userViewModel: UserViewModel
+    userViewModel: UserViewModel,
+    rankingViewModel: RankingViewModel
 ) {
+
+    // Observa la lista de rankings en lugar de los usuarios
+    val allRankingUsers by rankingViewModel.rankingList.observeAsState(emptyList())
+
+
     LaunchedEffect(Unit) {
-        userViewModel.getNickName()
-        userViewModel.getUserPoints()
+        userViewModel.getCurrentUserData()
+        rankingViewModel.fetchRankingData()
     }
+
+    // Busca al usuario actual en el ranking
+    val userRanking = allRankingUsers.find { it.nickname == userViewModel.fetchCurrentNickName() }
+
+    // Si no se encuentra al usuario, coloca un valor por defecto
+    val userPosition = userRanking?.position?.toString() ?: "1"
+    val userPoints = userRanking?.points?.toString() ?: "0"
+
 
     Box(
         modifier = Modifier
@@ -69,17 +86,18 @@ fun RankingScreen(
             }
             Spacer(modifier = Modifier.height(62.dp))
 
-            val tamanyoTotal = 10 // Este es el tamaño total de usuarios
+            val tamanyoTotal = allRankingUsers.size
+            var contador = 0
             LazyColumn {
                 item {
                     CustomizedTypeText(contenido = "Tu posición en el ranking")
                     Spacer(modifier = Modifier.height(15.dp))
                     RankingPosition(
                         modifier = Modifier,
-                        username = "@"+userViewModel.getCurrentNickName(),
+                        username = "@${userViewModel.fetchCurrentNickName()}",
                         avatar = painterResource(R.drawable.ranking_position_avatar),
-                        points = userViewModel.fetchCurrentPoints(),
-                        position = "1",
+                        points = userPoints,
+                        position = userPosition,
                         boxToProfileButton = {}
                     )
                     Spacer(modifier = Modifier.height(7.dp))
@@ -89,12 +107,13 @@ fun RankingScreen(
                     Spacer(modifier = Modifier.height(15.dp))
                 }
                 items(tamanyoTotal) {
+                    val user = allRankingUsers[contador++]
                     RankingPosition(
                         modifier = Modifier,
-                        username = "@rikimaru",
+                        username = "@${user.nickname}",
                         avatar = painterResource(R.drawable.ranking_position_avatar),
-                        points = "123",
-                        position = "1",
+                        points = user.points.toString(),
+                        position = user.position.toString(),
                         boxToProfileButton = {}
                     )
                     Spacer(modifier = Modifier.height(15.dp))

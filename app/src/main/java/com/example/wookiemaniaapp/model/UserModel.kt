@@ -7,11 +7,10 @@ package com.example.wookiemaniaapp.model
 data class UserModel(
     val name: String,
     val surname: String,
-    val userId: String,
+    var userId: String,
     val email: String,
     val nickname: String,
     val totalAdded: Int,
-    val points: Int,
     val trophiesNumber: Int,
     val achievements: ArrayList<String> = arrayListOf()
 )

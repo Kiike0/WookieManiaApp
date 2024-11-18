@@ -197,7 +197,7 @@ fun TituloPreguntaComposable(
         )
         RelayText(
             content = questionTitle,
-            fontSize = 20.0.sp,
+            fontSize = 18.0.sp,
             fontFamily = firaSans,
             height = 1.2.em,
             textAlign = TextAlign.Left,

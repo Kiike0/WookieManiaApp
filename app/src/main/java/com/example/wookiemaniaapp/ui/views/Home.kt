@@ -51,8 +51,7 @@ fun HomeScreen(
                 playButton = {navController.navigate(Routes.NormalMode.route) },
                 survivalButton = {},
                 categoriesButton = {navController.navigate(Routes.Categories.route)},
-                starButton = {},
-                notifButton = {}
+                starButton = {}
             )
 
         }
