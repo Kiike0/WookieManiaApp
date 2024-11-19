@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import com.example.wookiemaniaapp.model.RankingModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.google.firebase.auth.FirebaseAuth
 
 class RankingViewModel : ViewModel() {
 
@@ -30,7 +29,7 @@ class RankingViewModel : ViewModel() {
         // Agregar el nuevo ranking en la colección "Ranking" en Firestore
         firestore.collection("Ranking")  // Aquí es "Ranking" en lugar de "Rankings"
             .add(rankingData)
-            .addOnSuccessListener { documentReference ->
+            .addOnSuccessListener {
                 // Si se agrega correctamente, actualizar la lista de rankings en vivo
                 updateRankingList()
             }
@@ -80,7 +79,6 @@ class RankingViewModel : ViewModel() {
     fun updateRankingPoints(nickname: String) {
         val rankingRef = firestore.collection("Ranking")
 
-        // Verificamos que el nickname no sea vacío antes de hacer la consulta
         if (nickname.isNotEmpty()) {
             rankingRef.whereEqualTo("nickname", nickname)
                 .get()
@@ -88,24 +86,22 @@ class RankingViewModel : ViewModel() {
                     if (documents.isEmpty) {
                         Log.d("RankingUpdate", "El usuario no está en el ranking.")
                     } else {
-                        // Solo actualizamos el primer documento que encontremos
-                        for (document in documents) {
+                        val document = documents.firstOrNull()
+                        if (document != null) {
                             val updatedRanking = document.toObject(RankingModel::class.java)
-                            Log.d("RankingUpdate", "Puntos actuales para $nickname: ${updatedRanking.points}")
-                            updatedRanking.points += 1
-                            Log.d("RankingUpdate", "Puntos después de incremento para $nickname: ${updatedRanking.points}")
+                            updatedRanking.let {
+                                Log.d("RankingUpdate", "Puntos actuales para $nickname: ${it.points}")
+                                it.points += 1
+                                Log.d("RankingUpdate", "Puntos después de incremento para $nickname: ${it.points}")
 
-                            // Actualizamos el documento en la colección Ranking
-                            rankingRef.document(document.id).set(updatedRanking)
-                                .addOnSuccessListener {
-                                    Log.d("RankingUpdate", "Puntos actualizados correctamente para $nickname.")
-                                }
-                                .addOnFailureListener { e ->
-                                    Log.e("RankingUpdateError", "Error al actualizar los puntos del ranking: $e")
-                                }
-
-                            // Ya hemos actualizado el primer documento, salimos del ciclo
-                            break
+                                rankingRef.document(document.id).set(it)
+                                    .addOnSuccessListener {
+                                        Log.d("RankingUpdate", "Puntos actualizados correctamente para $nickname.")
+                                    }
+                                    .addOnFailureListener { e ->
+                                        Log.e("RankingUpdateError", "Error al actualizar los puntos del ranking: $e")
+                                    }
+                            }
                         }
                     }
                 }
@@ -116,5 +112,6 @@ class RankingViewModel : ViewModel() {
             Log.e("RankingUpdateError", "Nickname vacío o nulo.")
         }
     }
+
 
 }
