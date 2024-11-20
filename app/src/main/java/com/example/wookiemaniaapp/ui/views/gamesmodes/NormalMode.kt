@@ -1,4 +1,4 @@
-package com.example.wookiemaniaapp.ui.views
+package com.example.wookiemaniaapp.ui.views.gamesmodes
 
 import android.os.Handler
 import android.os.Looper
@@ -35,22 +35,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.navigation.Routes
+import com.example.wookiemaniaapp.nextnav.NextNav
 import com.example.wookiemaniaapp.question.firaSans
-import com.example.wookiemaniaapp.ui.components.CloseIconComposableSurvival
-import com.example.wookiemaniaapp.ui.components.NextNavSurvival
-import com.example.wookiemaniaapp.ui.components.SaveComposableSurvival
-import com.example.wookiemaniaapp.ui.components.TituloPreguntaComposableSurvival
-import com.example.wookiemaniaapp.ui.components.VectorHeartComposableSurvival
-import com.example.wookiemaniaapp.ui.components.VectorSaveComposableSurvival
+import com.example.wookiemaniaapp.ui.components.CloseIconComposable
+import com.example.wookiemaniaapp.ui.components.SaveComposable
+import com.example.wookiemaniaapp.ui.components.TextCategoryComposable
+import com.example.wookiemaniaapp.ui.components.TituloPreguntaComposable
+import com.example.wookiemaniaapp.ui.components.VectorSaveComposable
 import com.example.wookiemaniaapp.ui.theme.ColorApp
-import com.example.wookiemaniaapp.ui.theme.ColorBoxSurvivalQuestion
-import com.example.wookiemaniaapp.ui.theme.ColorButtonSurvival
+import com.example.wookiemaniaapp.ui.theme.ColorBoxNormalQuestion
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
+/**
+ * Función composable que representa la pantalla Home del juego.
+ *
+ * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
+ */
 @Composable
-fun SurvivalMode(
+fun NormalMode(
     navController: NavHostController,
     questionViewModel: QuestionViewModel,
     currentUserViewModel: UserViewModel,
@@ -69,13 +73,9 @@ fun SurvivalMode(
     // Estados para los colores de los botones y la respuesta seleccionada
     var buttonColors by rememberSaveable { mutableStateOf(listOf(Color.White, Color.White, Color.White, Color.White)) }
     var buttonsEnabled by rememberSaveable { mutableStateOf(true) }
-    var nextButtonEnabled by rememberSaveable { mutableStateOf(true) }
 
     var selectedAnswer by rememberSaveable { mutableStateOf("") }
     var isCorrect by rememberSaveable { mutableStateOf(false) }
-
-    // Estado de los corazones
-    var lives by rememberSaveable { mutableIntStateOf(3) }
 
     // Cargar las preguntas una sola vez al principio
     LaunchedEffect(Unit) {
@@ -99,9 +99,8 @@ fun SurvivalMode(
             currentQuestion.incorrectAnswer2,
             currentQuestion.incorrectAnswer3
         ).shuffled()
-        buttonColors = listOf(ColorButtonSurvival, ColorButtonSurvival, ColorButtonSurvival, ColorButtonSurvival)
+        buttonColors = listOf(Color.White, Color.White, Color.White, Color.White)
         buttonsEnabled = true
-        nextButtonEnabled = lives > 0 // Habilitar el botón de siguiente pregunta solo si quedan vidas
     }
 
     if (isLoading) {
@@ -129,7 +128,7 @@ fun SurvivalMode(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(728.dp)
-                    .background(ColorBoxSurvivalQuestion),
+                    .background(ColorBoxNormalQuestion),
                 contentAlignment = Alignment.TopStart
             ) {
                 Column(modifier = Modifier.fillMaxWidth()) {
@@ -140,23 +139,13 @@ fun SurvivalMode(
                             .size(30.dp)
                     ) {
                         Spacer(modifier = Modifier.width(30.dp))
-                        CloseIconComposableSurvival(
+                        CloseIconComposable(
                             onCloseIcon = { navController.navigate(Routes.Home.route) },
                             modifier = Modifier.padding(top = 7.dp)
                         )
-                        Spacer(modifier = Modifier.weight(1f))
-                        if (lives >= 3) {
-                            VectorHeartComposableSurvival(modifier = Modifier.width(30.dp).padding(end = 10.dp))
-                        }
-                        if (lives >= 2) {
-                            VectorHeartComposableSurvival(modifier = Modifier.width(30.dp).padding(end = 10.dp))
-                        }
-                        if (lives >= 1) {
-                            VectorHeartComposableSurvival(modifier = Modifier.width(30.dp).padding(end = 20.dp))
-                        }
                     }
 
-                    TituloPreguntaComposableSurvival(
+                    TituloPreguntaComposable(
                         questionTitle = currentQuestion.tittle,
                         modifier = Modifier.padding(start = 40.dp, top = 20.dp)
                     )
@@ -180,15 +169,9 @@ fun SurvivalMode(
                                     // Actualizar puntos si la respuesta es correcta
                                     if (isCorrect) {
                                         val nickname = currentUserViewModel.fetchCurrentNickName()
-                                        Log.d("SurvivalMode", "Nickname del usuario actual: $nickname")
+                                        Log.d("NormalMode", "Nickname del usuario actual: $nickname")
                                         rankingViewModel.updateRankingPoints(nickname)
-                                        Log.d("SurvivalMode", "Puntos actualizados para $nickname")
-                                    } else {
-                                        // Reducir una vida si la respuesta es incorrecta
-                                        lives -= 1
-                                        if (lives <= 0) {
-                                            nextButtonEnabled = false // Deshabilitar el botón de siguiente pregunta si no quedan vidas
-                                        }
+                                        Log.d("NormalMode", "Puntos actualizados para $nickname")
                                     }
                                 }
                             },
@@ -198,12 +181,11 @@ fun SurvivalMode(
                             shape = RoundedCornerShape(10.dp),
                             modifier = Modifier
                                 .padding(12.dp)
-                                .fillMaxWidth()
-                                .height(50.dp)
+                                .size(500.dp, 50.dp)
                         ) {
                             Text(
                                 text = "${'A' + i}. ${shuffledAnswers[i]}",
-                                color = Color.White,
+                                color = Color.Black,
                                 fontSize = 18.0.sp,
                                 fontFamily = firaSans,
                                 fontWeight = FontWeight.Bold
@@ -217,11 +199,11 @@ fun SurvivalMode(
                             .padding(top = 30.dp)
                     ) {
                         Spacer(modifier = Modifier.weight(1f))
-                        SaveComposableSurvival(
+                        SaveComposable(
                             saveIcon = {},
                             modifier = Modifier.padding(end = 20.dp)
                         ) {
-                            VectorSaveComposableSurvival(modifier = Modifier)
+                            VectorSaveComposable(modifier = Modifier)
                         }
                     }
                 }
@@ -234,25 +216,19 @@ fun SurvivalMode(
                     .background(color = Color.Transparent)
                     .padding(bottom = 10.dp)
             ) {
-                NextNavSurvival(
-                    modifier = Modifier.fillMaxWidth(),
+                NextNav(
+                    modifier = Modifier.fillMaxWidth(1f),
                     nextButton = {
-                        if (nextButtonEnabled) {
-                            if (currentQuestionIndex < allQuestions.size - 1) {
-                                currentQuestionIndex++
-                            } else {
-                                currentQuestionIndex = 0
-                            }
-                            shuffledAnswers = emptyList()  // Restablecer las respuestas barajadas para la siguiente pregunta
+                        if (currentQuestionIndex < allQuestions.size - 1) {
+                            currentQuestionIndex++
+                        } else {
+                            currentQuestionIndex = 0
                         }
+                        shuffledAnswers = emptyList()  // Restablecer las respuestas barajadas para la siguiente pregunta
                     }
                 )
             }
         }
     }
 }
-
-
-
-
 

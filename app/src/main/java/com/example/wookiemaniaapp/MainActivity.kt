@@ -10,21 +10,23 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.core.view.WindowCompat
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.WookieManiaAppTheme
-import com.example.wookiemaniaapp.ui.views.Categories
-import com.example.wookiemaniaapp.ui.views.CategoryQuestion
+import com.example.wookiemaniaapp.ui.views.gamesmodes.Categories
 import com.example.wookiemaniaapp.ui.views.FirstScreenView
 import com.example.wookiemaniaapp.ui.views.HomeScreen
-import com.example.wookiemaniaapp.ui.views.NormalMode
+import com.example.wookiemaniaapp.ui.views.gamesmodes.NormalMode
 import com.example.wookiemaniaapp.ui.views.RankingScreen
-import com.example.wookiemaniaapp.ui.views.SurvivalMode
+import com.example.wookiemaniaapp.ui.views.gamesmodes.SurvivalMode
 import com.example.wookiemaniaapp.ui.views.creation.CorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.IncorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
+import com.example.wookiemaniaapp.ui.views.gamesmodes.CategoryMode
 import com.example.wookiemaniaapp.ui.views.login.EmptyView
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
@@ -194,10 +196,17 @@ class MainActivity : ComponentActivity() {
                             )
                         }
 
-                        // Composable con la ruta a la pantalla del modo Normal
-                        composable(Routes.Category.route) {
-                            CategoryQuestion(
-                                navController = navController
+                        composable(
+                            route = Routes.CategoryMode.route,
+                            arguments = listOf(navArgument("categorySelected") { type = NavType.StringType })
+                        ) { backStackEntry ->
+                            val categorySelected = backStackEntry.arguments?.getString("categorySelected") ?: ""
+                            CategoryMode(
+                                navController = navController,
+                                questionViewModel = questionViewModel,
+                                currentUserViewModel = userViewModel,
+                                rankingViewModel = rankingViewModel,
+                                categorySelected = categorySelected
                             )
                         }
 

@@ -17,3 +17,5 @@ val ColorBoxNormalQuestion = Color(0xFFECFFB8)
 val ColorButtonSurvival = Color(0xFF292929)
 
 val ColorBoxSurvivalQuestion = Color(0xFF8B3563)
+
+val ColorBoxCategoryQuestion = Color(0xFFB2F8EB)

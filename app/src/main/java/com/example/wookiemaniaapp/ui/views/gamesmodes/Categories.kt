@@ -1,4 +1,4 @@
-package com.example.wookiemaniaapp.ui.views
+package com.example.wookiemaniaapp.ui.views.gamesmodes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -74,84 +74,84 @@ fun Categories(
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Aventura"))},
                         contenido = "Aventura"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Terror"))},
                         contenido = "Terror"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Ciencia Ficción"))},
                         contenido = "Ciencia Ficción"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Drama"))},
                         contenido = "Drama"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Acción"))},
                         contenido = "Acción"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Fantasía"))},
                         contenido = "Fantasía"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Comedia"))},
                         contenido = "Comedia"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Animación"))},
                         contenido = "Animación"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Historia"))},
                         contenido = "Historia"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Suspense"))},
                         contenido = "Suspense"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Romance"))},
                         contenido = "Romance"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {},
+                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Western"))},
                         contenido = "Western"
                     )
                 }

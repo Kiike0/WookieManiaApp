@@ -29,6 +29,7 @@ sealed class Routes(val route: String) {
     object Register : Routes("registerScreen")
 
 
+
     /**
      * Pantalla Home de juego.
      */
@@ -38,6 +39,13 @@ sealed class Routes(val route: String) {
      * Pantalla de todas las Categorías para elegir.
      */
     object Categories : Routes("categoriesView")
+
+    // Ruta para el modo por categoría con un parámetro dinámico
+    object CategoryMode : Routes("categoryMode/{categorySelected}") {
+        fun createRoute(categorySelected: String): String {
+            return "categoryMode/$categorySelected"
+        }
+    }
 
     /**
      * Pantalla del Ranking.
