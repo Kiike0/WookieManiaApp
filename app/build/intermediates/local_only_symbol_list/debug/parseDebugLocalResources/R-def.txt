@@ -18,6 +18,7 @@ drawable barra_navegacion_vector
 drawable barra_navegacion_vector_home1
 drawable barra_navegacion_vector_home2
 drawable bocadillopregunta
+drawable bocadillopreguntanegro
 drawable cabecera_box_bar_game
 drawable cabecera_box_play
 drawable cabecera_box_ranking
@@ -40,7 +41,9 @@ drawable categoria_elegida_vector
 drawable category_type_comp_rectangulo1fondo
 drawable category_type_comp_rectangulo2fondo_negro
 drawable closeicon
+drawable closeiconsurvival
 drawable editicon
+drawable heartsurvival
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable imagenprueba1
@@ -61,6 +64,7 @@ drawable next_nav_vector_next2
 drawable next_nav_vector_next3
 drawable next_nav_vector_next4
 drawable next_nav_vector_next5
+drawable nexticonsurv
 drawable politicsicon
 drawable pregunta_titulo_box_categoria
 drawable pregunta_titulo_box_pregunta
@@ -75,6 +79,7 @@ drawable question_vector_close
 drawable question_vector_dislike
 drawable question_vector_like
 drawable question_vector_save
+drawable questionrandomblack
 drawable ranking_position_avatar
 drawable ranking_position_box_button
 drawable redesimage
@@ -86,10 +91,12 @@ drawable registro_prototipo_rect_username
 drawable registro_prototipo_rectangle_cont
 drawable registro_prototipo_rectangle_name
 drawable ruedaconfiguracion
+drawable saveiconsurvival
 drawable serverstateicon
 drawable serverstatelogo
 drawable start_game_caja_log
 drawable start_game_caja_reg
+drawable toolbarsurv
 font relay_fira_sans_black
 font relay_fira_sans_black_italic
 font relay_fira_sans_bold

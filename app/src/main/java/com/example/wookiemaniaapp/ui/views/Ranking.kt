@@ -80,8 +80,7 @@ fun RankingScreen(
             ) {
                 HeadBoard2(
                     modifier = Modifier,
-                    starButton = {},
-                    notifButton = {}
+                    starButton = {}
                 )
             }
             Spacer(modifier = Modifier.height(62.dp))

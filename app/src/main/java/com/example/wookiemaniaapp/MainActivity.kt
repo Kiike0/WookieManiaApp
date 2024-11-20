@@ -21,6 +21,7 @@ import com.example.wookiemaniaapp.ui.views.FirstScreenView
 import com.example.wookiemaniaapp.ui.views.HomeScreen
 import com.example.wookiemaniaapp.ui.views.NormalMode
 import com.example.wookiemaniaapp.ui.views.RankingScreen
+import com.example.wookiemaniaapp.ui.views.SurvivalMode
 import com.example.wookiemaniaapp.ui.views.creation.CorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.IncorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
@@ -203,6 +204,17 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla del modo Normal
                         composable(Routes.NormalMode.route) {
                             NormalMode(
+                                navController = navController,
+                                questionViewModel = questionViewModel,
+                                currentUserViewModel = userViewModel,
+                                rankingViewModel = rankingViewModel
+
+                            )
+                        }
+
+                        // Composable con la ruta a la pantalla del modo Normal
+                        composable(Routes.SurvivalMode.route) {
+                            SurvivalMode(
                                 navController = navController,
                                 questionViewModel = questionViewModel,
                                 currentUserViewModel = userViewModel,

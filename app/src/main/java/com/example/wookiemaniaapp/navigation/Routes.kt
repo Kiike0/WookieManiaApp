@@ -110,6 +110,12 @@ sealed class Routes(val route: String) {
 
     object NormalMode : Routes("normalModeView")
 
+    /**
+     * Pantalla de las preguntas del modo supervivencia de juego.
+     */
+
+    object SurvivalMode : Routes("survivalModeView")
+
     /*
 
         /**

@@ -32,8 +32,7 @@ import com.google.relay.compose.tappable
 @Composable
 fun HeadBoard2(
     modifier: Modifier = Modifier,
-    starButton: () -> Unit = {},
-    notifButton: () -> Unit = {}
+    starButton: () -> Unit = {}
 ) {
     TopLevelHeadBoard2(modifier = modifier) {
         BoxBarGameComposableHeadBoard2(
@@ -59,7 +58,7 @@ fun HeadBoard2(
             modifier = Modifier.boxAlign(
                 alignment = Alignment.Center,
                 offset = DpOffset(
-                    x = 108.0.dp,
+                    x = 157.0.dp,
                     y = (-35.0).dp
                 )
             )
@@ -67,18 +66,7 @@ fun HeadBoard2(
             BoxStarVectComposableHeadBoard2(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f))
             StarVectorComposableHeadBoard2(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f))
         }
-        NotifButtonComposableHeadBoard2(
-            notifButton = notifButton,
-            modifier = Modifier.boxAlign(
-                alignment = Alignment.Center,
-                offset = DpOffset(
-                    x = 157.0.dp,
-                    y = (-35.0).dp
-                )
-            )
-        ) {
-            VectorNotifComposableHeadBoard2(modifier = Modifier.rowWeight(1.0f).columnWeight(1.0f))
-        }
+
     }
 }
 
@@ -139,34 +127,6 @@ fun StarButtonComposableHeadBoard2(
         isStructured = false,
         content = content,
         modifier = modifier.tappable(onTap = starButton).requiredWidth(30.0.dp).requiredHeight(30.0.dp)
-    )
-}
-
-@Composable
-fun VectorNotifComposableHeadBoard2(modifier: Modifier = Modifier) {
-    RelayVector(
-        vector = painterResource(R.drawable.cabecera_vector_notif),
-        modifier = modifier.padding(
-            paddingValues = PaddingValues(
-                start = 2.8125.dp,
-                top = 0.9375.dp,
-                end = 2.8125.dp,
-                bottom = 1.875.dp
-            )
-        ).fillMaxWidth(1.0f).fillMaxHeight(1.0f)
-    )
-}
-
-@Composable
-fun NotifButtonComposableHeadBoard2(
-    notifButton: () -> Unit,
-    modifier: Modifier = Modifier,
-    content: @Composable RelayContainerScope.() -> Unit
-) {
-    RelayContainer(
-        isStructured = false,
-        content = content,
-        modifier = modifier.tappable(onTap = notifButton).requiredWidth(30.0.dp).requiredHeight(30.0.dp)
     )
 }
 
