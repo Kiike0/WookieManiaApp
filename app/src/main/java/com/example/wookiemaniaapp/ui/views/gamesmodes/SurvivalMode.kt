@@ -37,6 +37,7 @@ import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.nextnav.NextNav
 import com.example.wookiemaniaapp.question.firaSans
+import com.example.wookiemaniaapp.ui.components.CloseIconComposable
 import com.example.wookiemaniaapp.ui.components.CloseIconComposableSurvival
 import com.example.wookiemaniaapp.ui.components.NextNavSurvival
 import com.example.wookiemaniaapp.ui.components.SaveComposable
@@ -155,10 +156,10 @@ fun SurvivalMode(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(top = 37.dp)
-                            .height(30.dp) // Ajusta solo la altura de la Row si es necesario
+                            .size(30.dp) // Ajusta solo la altura de la Row si es necesario
                     ) {
                         Spacer(modifier = Modifier.width(30.dp))
-                        CloseIconComposableSurvival(
+                        CloseIconComposable(
                             onCloseIcon = { navController.navigate(Routes.Home.route) },
                             modifier = Modifier
                                 .padding(top = 7.dp)
@@ -254,11 +255,11 @@ fun SurvivalMode(
                             .padding(top = 30.dp)
                     ) {
                         Spacer(modifier = Modifier.weight(1f))
-                        SaveComposableSurvival(
+                        SaveComposable(
                             saveIcon = {},
                             modifier = Modifier.padding(end = 20.dp)
                         ) {
-                            VectorSaveComposableSurvival(modifier = Modifier)
+                            VectorSaveComposable(modifier = Modifier)
                         }
                     }
                 }
