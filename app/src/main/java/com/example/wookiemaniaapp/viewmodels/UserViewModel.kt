@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.wookiemaniaapp.model.AvatarModel
 import com.example.wookiemaniaapp.model.RankingModel
 import com.example.wookiemaniaapp.model.UserModel
 import com.google.firebase.Firebase
@@ -17,6 +18,7 @@ import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.UUID
 
 
 /**
@@ -50,13 +52,17 @@ class UserViewModel : ViewModel() {
     var surname by mutableStateOf("")
         private set
 
+    var userId by mutableStateOf("")
+        private set
+
+    // Propiedad que devuelve el id del usuario autenticado actualmente
+    val currentUserId: String?
+        get() = auth.currentUser?.uid
+
+    fun fetchCurrentUserId(): String? { return currentUserId }
 
     private val _user = MutableLiveData<UserModel?>()
     val user: LiveData<UserModel?> get() = _user
-
-    //private var _allUsers: MutableLiveData<ArrayList<UserModel>> =
-      //  MutableLiveData<ArrayList<UserModel>>()
-    //val allUsers: LiveData<ArrayList<UserModel>> = _allUsers
 
     private var currentNickname by mutableStateOf("")
 
@@ -66,11 +72,11 @@ class UserViewModel : ViewModel() {
     private var currentSurname: String = ""
         get() = field.ifBlank { "" }
 
-
     // Propiedad que devuelve el correo electrónico del usuario autenticado actualmente
     val currentUserEmail: String?
         get() = auth.currentUser?.email
 
+    fun fetchCurrentUserEmail(): String? { return currentUserEmail }
 
     /**
      * El login del usuario
@@ -108,7 +114,6 @@ class UserViewModel : ViewModel() {
     fun fetchCurrentSurname() = currentSurname.ifBlank { "" }
     fun fetchCurrentNickName() = currentNickname.ifBlank { "" }
 
-
     /**
      * Accede a los datos del usuario para poder mostrarlos por pantalla.
      *
@@ -132,31 +137,7 @@ class UserViewModel : ViewModel() {
                     Log.d(TAG, "Error al obtener el documento del usuario: $exception")
                 }
         }
-
     }
-
-    /*
-    fun fetchAllUsers() {
-        firestore.collection("Users") // Nombre de tu colección
-            .get()
-            .addOnSuccessListener { snapshot ->
-                val usersList = snapshot.documents.mapNotNull {
-                    it.toObject(UserModel::class.java)?.apply {
-                        // Si necesitas agregar el ID del documento como un campo adicional:
-                        userId = it.id
-                    }
-                }
-                // Convertimos la lista a ArrayList antes de asignarla (si es necesario)
-                _allUsers.value = ArrayList(usersList)
-            }
-            .addOnFailureListener { exception ->
-                Log.e("UserViewModel", "Error al recuperar usuarios: $exception")
-            }
-    }
-
-     */
-
-
 
     /**
      * Crea un nuevo usuario con el email y la contraseña proporcionados.
@@ -185,6 +166,15 @@ class UserViewModel : ViewModel() {
 
                                 rankingViewModel.addRanking(ranking)  // Llama a la función addRanking del RankingViewModel
 
+                                // Crear un modelo de avatar y añadirlo a la colección de avatars
+                                val avatar = AvatarModel(
+                                    id = UUID.randomUUID().toString(), // Genera un ID único para el avatar
+                                    userId = currentUser.uid,
+                                    imageUrl = "" // Inicialmente vacío
+                                )
+
+                                saveAvatarToFirestore(avatar)
+
                                 onSuccess()
                             } else {
                                 Log.d("ERROR EN FIREBASE", "Usuario creado pero no encontrado")
@@ -200,6 +190,18 @@ class UserViewModel : ViewModel() {
                 showAlert = true
             }
         }
+    }
+
+    private fun saveAvatarToFirestore(avatar: AvatarModel) {
+        firestore.collection("Avatars")
+            .document(avatar.id)
+            .set(avatar)
+            .addOnSuccessListener {
+                Log.d("AVATAR_CREATION_SUCCESS", "Avatar creado correctamente en Firestore")
+            }
+            .addOnFailureListener { exception ->
+                Log.d("ERROR AL GUARDAR AVATAR", "Error al guardar el avatar en Firestore: $exception")
+            }
     }
 
     /**
@@ -220,7 +222,6 @@ class UserViewModel : ViewModel() {
                 nickname = nickName,
                 totalAdded = 0,
                 trophiesNumber = 0
-
             )
             // DCS - Añade el usuario a la colección "Users" en la base de datos Firestore
             firestore.collection("Users")
@@ -234,7 +235,6 @@ class UserViewModel : ViewModel() {
                 .addOnFailureListener { Log.d("ERROR AL GUARDAR", "ERROR al guardar en Firestore") }
         }
     }
-
 
     /**
      * Cierra la sesión del usuario actual en Firebase Auth.
@@ -268,7 +268,6 @@ class UserViewModel : ViewModel() {
         this.password = password
     }
 
-
     /**
      * Actualiza el nombre de usuario.
      *
@@ -277,8 +276,6 @@ class UserViewModel : ViewModel() {
     fun changeNickName(nickName: String) {
         this.nickname = nickName
     }
-
-
 
     /**
      * Actualiza el nombre.

@@ -67,6 +67,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation("io.coil-kt:coil-compose:2.1.0")
 
 
     // Import the Firebase BoM
@@ -80,7 +81,13 @@ dependencies {
     // DCS - Base de datos Firestore
     implementation(libs.firebase.firestore.ktx)
 
-     
+    // For the images
+    implementation ("com.google.firebase:firebase-storage-ktx")
+    implementation ("com.google.firebase:firebase-firestore-ktx")
+    implementation ("androidx.activity:activity-compose:1.3.1")
+
+
+
 
     //Navigation
     //noinspection UseTomlInstead

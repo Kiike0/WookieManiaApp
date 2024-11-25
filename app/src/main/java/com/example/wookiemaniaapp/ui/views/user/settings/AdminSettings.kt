@@ -72,7 +72,7 @@ fun AdminSettingsScreen(
         ClickableSettings(
             iconResId = R.drawable.editicon,
             text = "Editar Usuario",
-            onClick = {}
+            onClick = {navController.navigate(Routes.UserEdit.route)}
         )
 
         Spacer(modifier = Modifier.height(35.dp))

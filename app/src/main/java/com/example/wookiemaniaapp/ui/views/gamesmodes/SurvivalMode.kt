@@ -35,12 +35,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.wookiemaniaapp.navigation.Routes
+import com.example.wookiemaniaapp.nextnav.NextNav
 import com.example.wookiemaniaapp.question.firaSans
 import com.example.wookiemaniaapp.ui.components.CloseIconComposableSurvival
 import com.example.wookiemaniaapp.ui.components.NextNavSurvival
+import com.example.wookiemaniaapp.ui.components.SaveComposable
 import com.example.wookiemaniaapp.ui.components.SaveComposableSurvival
 import com.example.wookiemaniaapp.ui.components.TituloPreguntaComposableSurvival
 import com.example.wookiemaniaapp.ui.components.VectorHeartComposableSurvival
+import com.example.wookiemaniaapp.ui.components.VectorSaveComposable
 import com.example.wookiemaniaapp.ui.components.VectorSaveComposableSurvival
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.ui.theme.ColorBoxSurvivalQuestion
@@ -67,7 +70,16 @@ fun SurvivalMode(
     var shuffledAnswers by rememberSaveable { mutableStateOf(emptyList<String>()) }
 
     // Estados para los colores de los botones y la respuesta seleccionada
-    var buttonColors by rememberSaveable { mutableStateOf(listOf(Color.White, Color.White, Color.White, Color.White)) }
+    var buttonColors by rememberSaveable {
+        mutableStateOf(
+            listOf(
+                Color.White,
+                Color.White,
+                Color.White,
+                Color.White
+            )
+        )
+    }
     var buttonsEnabled by rememberSaveable { mutableStateOf(true) }
     var nextButtonEnabled by rememberSaveable { mutableStateOf(true) }
 
@@ -99,9 +111,15 @@ fun SurvivalMode(
             currentQuestion.incorrectAnswer2,
             currentQuestion.incorrectAnswer3
         ).shuffled()
-        buttonColors = listOf(ColorButtonSurvival, ColorButtonSurvival, ColorButtonSurvival, ColorButtonSurvival)
+        buttonColors = listOf(
+            ColorButtonSurvival,
+            ColorButtonSurvival,
+            ColorButtonSurvival,
+            ColorButtonSurvival
+        )
         buttonsEnabled = true
-        nextButtonEnabled = lives > 0 // Habilitar el botón de siguiente pregunta solo si quedan vidas
+        nextButtonEnabled =
+            lives > 0 // Habilitar el botón de siguiente pregunta solo si quedan vidas
     }
 
     if (isLoading) {
@@ -137,24 +155,39 @@ fun SurvivalMode(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(top = 37.dp)
-                            .size(30.dp)
+                            .height(30.dp) // Ajusta solo la altura de la Row si es necesario
                     ) {
                         Spacer(modifier = Modifier.width(30.dp))
                         CloseIconComposableSurvival(
                             onCloseIcon = { navController.navigate(Routes.Home.route) },
-                            modifier = Modifier.padding(top = 7.dp)
+                            modifier = Modifier
+                                .padding(top = 7.dp)
+                                .size(30.dp)
                         )
-                        Spacer(modifier = Modifier.weight(1f))
+                        Spacer(modifier = Modifier.width(210.dp))
                         if (lives >= 3) {
-                            VectorHeartComposableSurvival(modifier = Modifier.width(30.dp).padding(end = 10.dp))
+                            VectorHeartComposableSurvival(
+                                modifier = Modifier
+                                    .width(30.dp)
+                                    .padding(end = 10.dp)
+                            )
                         }
                         if (lives >= 2) {
-                            VectorHeartComposableSurvival(modifier = Modifier.width(30.dp).padding(end = 10.dp))
+                            VectorHeartComposableSurvival(
+                                modifier = Modifier
+                                    .width(30.dp)
+                                    .padding(end = 10.dp)
+                            )
                         }
                         if (lives >= 1) {
-                            VectorHeartComposableSurvival(modifier = Modifier.width(30.dp).padding(end = 20.dp))
+                            VectorHeartComposableSurvival(
+                                modifier = Modifier
+                                    .width(30.dp)
+                                    .padding(end = 20.dp)
+                            )
                         }
                     }
+
 
                     TituloPreguntaComposableSurvival(
                         questionTitle = currentQuestion.tittle,
@@ -180,14 +213,18 @@ fun SurvivalMode(
                                     // Actualizar puntos si la respuesta es correcta
                                     if (isCorrect) {
                                         val nickname = currentUserViewModel.fetchCurrentNickName()
-                                        Log.d("SurvivalMode", "Nickname del usuario actual: $nickname")
+                                        Log.d(
+                                            "SurvivalMode",
+                                            "Nickname del usuario actual: $nickname"
+                                        )
                                         rankingViewModel.updateRankingPoints(nickname)
                                         Log.d("SurvivalMode", "Puntos actualizados para $nickname")
                                     } else {
                                         // Reducir una vida si la respuesta es incorrecta
                                         lives -= 1
                                         if (lives <= 0) {
-                                            nextButtonEnabled = false // Deshabilitar el botón de siguiente pregunta si no quedan vidas
+                                            nextButtonEnabled =
+                                                false // Deshabilitar el botón de siguiente pregunta si no quedan vidas
                                         }
                                     }
                                 }
@@ -234,7 +271,7 @@ fun SurvivalMode(
                     .background(color = Color.Transparent)
                     .padding(bottom = 10.dp)
             ) {
-                NextNavSurvival(
+                NextNav(
                     modifier = Modifier.fillMaxWidth(),
                     nextButton = {
                         if (nextButtonEnabled) {
@@ -243,7 +280,8 @@ fun SurvivalMode(
                             } else {
                                 currentQuestionIndex = 0
                             }
-                            shuffledAnswers = emptyList()  // Restablecer las respuestas barajadas para la siguiente pregunta
+                            shuffledAnswers =
+                                emptyList()  // Restablecer las respuestas barajadas para la siguiente pregunta
                         }
                     }
                 )

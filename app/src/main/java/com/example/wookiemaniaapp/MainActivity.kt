@@ -1,7 +1,10 @@
 package com.example.wookiemaniaapp
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -9,6 +12,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -17,26 +22,28 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.WookieManiaAppTheme
-import com.example.wookiemaniaapp.ui.views.gamesmodes.Categories
 import com.example.wookiemaniaapp.ui.views.FirstScreenView
 import com.example.wookiemaniaapp.ui.views.HomeScreen
-import com.example.wookiemaniaapp.ui.views.gamesmodes.NormalMode
 import com.example.wookiemaniaapp.ui.views.RankingScreen
-import com.example.wookiemaniaapp.ui.views.gamesmodes.SurvivalMode
 import com.example.wookiemaniaapp.ui.views.creation.CorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.IncorrectAnswer
 import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
+import com.example.wookiemaniaapp.ui.views.gamesmodes.Categories
 import com.example.wookiemaniaapp.ui.views.gamesmodes.CategoryMode
+import com.example.wookiemaniaapp.ui.views.gamesmodes.NormalMode
+import com.example.wookiemaniaapp.ui.views.gamesmodes.SurvivalMode
 import com.example.wookiemaniaapp.ui.views.login.EmptyView
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
+import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.AboutScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.AdminSettingsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.AdminView
-import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
-import com.example.wookiemaniaapp.ui.views.user.settings.SettingsScreen
-import com.example.wookiemaniaapp.ui.views.user.settings.AboutScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.PoliticsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.ServerStateScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.SettingsScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.UserEditScreen
+import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
@@ -45,15 +52,28 @@ class MainActivity : ComponentActivity() {
     private val userViewModel: UserViewModel by viewModels()
     private val questionViewModel: QuestionViewModel by viewModels()
     private val rankingViewModel: RankingViewModel by viewModels()
+    private val avatarViewModel: AvatarViewModel by viewModels()
+
+    companion object {
+        private const val REQUEST_CODE = 101
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Para ocultar la barra "toolbar" de arriba del movil
+        // Para ocultar la barra "toolbar" de arriba del móvil
         WindowCompat.setDecorFitsSystemWindows(window, false)
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
+
+        // Solicitar permisos de almacenamiento en tiempo de ejecución
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), REQUEST_CODE)
+        } else {
+            // Si los permisos ya están concedidos, inicializa aquí cualquier cosa que dependa de ellos
+        }
 
         setContent {
             WookieManiaAppTheme {
@@ -123,6 +143,15 @@ class MainActivity : ComponentActivity() {
                         }
 
                         // Ruta desde la pantalla de perfil
+                        composable(Routes.UserEdit.route) {
+                            UserEditScreen(
+                                navController = navController,
+                                userViewModel = userViewModel,
+                                avatarViewModel = avatarViewModel
+                            )
+                        }
+
+                        // Ruta desde la pantalla de perfil
                         composable(Routes.AdminSettings.route) {
                             AdminSettingsScreen(
                                 navController = navController,
@@ -156,7 +185,7 @@ class MainActivity : ComponentActivity() {
                             )
                         }
 
-                        // Composable con la ruta a la pantalla de las categorias a elegir
+                        // Composable con la ruta a la pantalla de las categorías a elegir
                         composable(Routes.Categories.route) {
                             Categories(
                                 navController = navController
@@ -233,6 +262,23 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CODE) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permiso concedido
+                // Aquí puedes inicializar cualquier cosa que dependa de los permisos
+            } else {
+                // Permiso denegado
+                Toast.makeText(this, "Permiso de almacenamiento denegado", Toast.LENGTH_SHORT).show()
             }
         }
     }

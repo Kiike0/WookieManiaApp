@@ -9,6 +9,8 @@
         android:targetSdkVersion="34" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
@@ -56,6 +58,9 @@
                 android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageLegacyRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
@@ -68,7 +73,19 @@
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
@@ -180,10 +197,6 @@
             android:visibleToInstantApps="true" />
 
         <activity
-            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
             android:name="androidx.activity.ComponentActivity"
             android:exported="true" />
         <activity
@@ -208,6 +221,11 @@
         <uses-library
             android:name="android.ext.adservices"
             android:required="false" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <meta-data
             android:name="com.google.android.gms.version"

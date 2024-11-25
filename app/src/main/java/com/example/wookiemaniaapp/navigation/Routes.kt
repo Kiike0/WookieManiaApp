@@ -9,7 +9,7 @@ sealed class Routes(val route: String) {
 
 
     /**
-     * Pantalla Inicial.
+     * Pantalla Inicial de la aplicación.
      */
     object FirstScreen : Routes("firstScreen")
 
@@ -53,14 +53,41 @@ sealed class Routes(val route: String) {
     object Ranking : Routes("rankingView")
 
     /**
+    * Pantalla de la Categoría elegida o modo normal de juego.
+    */
+
+    object Category : Routes("categoryView")
+
+
+    /**
+     * Pantalla de las preguntas del modo normal de juego.
+     */
+
+    object NormalMode : Routes("normalModeView")
+
+    /**
+     * Pantalla de las preguntas del modo supervivencia de juego.
+     */
+
+    object SurvivalMode : Routes("survivalModeView")
+
+    /**
      * Pantalla del Perfil del usuario.
      */
     object Profile : Routes("profileScreen")
+
+
+    //----------------------- Configuración --------------------//
 
     /**
      * Pantalla de la configuracion.
      */
     object Settings : Routes("settingsScreen")
+
+    /**
+     * Pantalla de la configuracion.
+     */
+    object UserEdit : Routes("userEditScreen")
 
     /**
      * Pantalla de la configuracion del administrador.
@@ -87,6 +114,9 @@ sealed class Routes(val route: String) {
      */
     object ServerStateScreen : Routes("serverStateScreen")
 
+
+    //----------------------- Creación de preguntas --------------------//
+
     /**
      * Pantalla de la creación de la pregunta.
      */
@@ -105,66 +135,6 @@ sealed class Routes(val route: String) {
 
     object IncorrectAnswer : Routes("incorrectAnswerView")
 
-    /**
-     * Pantalla de la Categoría elegida o modo normal de juego.
-     */
 
-    object Category : Routes("categoryView")
-
-
-    /**
-     * Pantalla de las preguntas del modo normal de juego.
-     */
-
-    object NormalMode : Routes("normalModeView")
-
-    /**
-     * Pantalla de las preguntas del modo supervivencia de juego.
-     */
-
-    object SurvivalMode : Routes("survivalModeView")
-
-    /*
-
-        /**
-         * Objeto que representa la pantalla vacia.
-         */
-        object EmptyScreen : Routes("emptyScreen")
-
-        /**
-         * Objeto que representa la pantalla de Inicio de Sesión (Acceso).
-         */
-        object AccessScreen : Routes("accessScreen")
-
-        /**
-         * Objeto que representa la pantalla de Registro de usuario.
-         */
-        object RegisterScreen : Routes("registerScreen")
-
-
-
-
-        /**
-         * Objeto que representa la pantalla Añadir quiz.
-         */
-        object AddQuizScreen : Routes("addQuizScreen")
-
-        /**
-         * Objeto que representa la pantalla del inicio de la quiz.
-         */
-        object QuizScreen : Routes("quizScreen")
-
-        /**
-         * Objeto que representa la pantalla de las preguntas.
-         */
-        object QuestionsScreen : Routes("questionsScreen")
-
-
-        /**
-         * Objeto que representa la pantalla de las Quiz disponibles.
-         */
-        object AllQuizzesScreen : Routes("allQuizzesScreen")
-
-     */
 
 }

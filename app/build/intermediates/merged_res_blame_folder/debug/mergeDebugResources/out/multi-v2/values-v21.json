@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.wookiemaniaapp-mergeDebugResources-66:/values-v21/values-v21.xml",
+            "outputFile": "com.example.wookiemaniaapp-mergeDebugResources-68:/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\cdf7c29e0b0c3cf9eba6f42cf23977bb\\transformed\\core-1.13.1\\res\\values-v21\\values-v21.xml",
