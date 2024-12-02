@@ -1,10 +1,8 @@
 package com.example.wookiemaniaapp
 
-import android.Manifest
-import android.content.pm.PackageManager
+
 import android.os.Bundle
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -12,8 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -31,12 +27,14 @@ import com.example.wookiemaniaapp.ui.views.creation.QuestionTitle
 import com.example.wookiemaniaapp.ui.views.gamesmodes.Categories
 import com.example.wookiemaniaapp.ui.views.gamesmodes.CategoryMode
 import com.example.wookiemaniaapp.ui.views.gamesmodes.NormalMode
+import com.example.wookiemaniaapp.ui.views.gamesmodes.QuizMode
 import com.example.wookiemaniaapp.ui.views.gamesmodes.SurvivalMode
 import com.example.wookiemaniaapp.ui.views.login.EmptyView
 import com.example.wookiemaniaapp.ui.views.login.LoginScreen
 import com.example.wookiemaniaapp.ui.views.login.RegisterScreen
 import com.example.wookiemaniaapp.ui.views.user.ProfileScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.AboutScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.AddQuizView
 import com.example.wookiemaniaapp.ui.views.user.settings.AdminSettingsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.AdminView
 import com.example.wookiemaniaapp.ui.views.user.settings.PoliticsScreen
@@ -45,6 +43,7 @@ import com.example.wookiemaniaapp.ui.views.user.settings.SettingsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.UserEditScreen
 import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
+import com.example.wookiemaniaapp.viewmodels.QuizViewModel
 import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
@@ -53,10 +52,7 @@ class MainActivity : ComponentActivity() {
     private val questionViewModel: QuestionViewModel by viewModels()
     private val rankingViewModel: RankingViewModel by viewModels()
     private val avatarViewModel: AvatarViewModel by viewModels()
-
-    companion object {
-        private const val REQUEST_CODE = 101
-    }
+    private val quizViewModel: QuizViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -114,7 +110,8 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla Home
                         composable(Routes.Home.route) {
                             HomeScreen(
-                                navController = navController
+                                navController = navController,
+                                quizVM = quizViewModel
                             )
                         }
 
@@ -149,6 +146,14 @@ class MainActivity : ComponentActivity() {
                             AdminSettingsScreen(
                                 navController = navController,
                                 currentUserViewModel = userViewModel
+                            )
+                        }
+
+                        // Ruta desde la pantalla de perfil
+                        composable(Routes.AddingQuiz.route) {
+                            AddQuizView(
+                                navController = navController,
+                                quizVM = quizViewModel
                             )
                         }
 
@@ -243,7 +248,18 @@ class MainActivity : ComponentActivity() {
                             )
                         }
 
-                        // Composable con la ruta a la pantalla del modo Normal
+                        // Composable con la ruta a la pantalla del modo Quiz
+                        composable(Routes.QuizMode.route) {
+                            QuizMode(
+                                navController = navController,
+                                quizVM = quizViewModel,
+                                currentUserViewModel = userViewModel,
+                                rankingViewModel = rankingViewModel
+
+                            )
+                        }
+
+                        // Composable con la ruta a la pantalla del modo Supervivencia
                         composable(Routes.SurvivalMode.route) {
                             SurvivalMode(
                                 navController = navController,

@@ -35,6 +35,7 @@ drawable cabecera_vector_notif
 drawable cabecera_vector_play
 drawable cabecera_vector_ranking
 drawable cabecera_vector_surv
+drawable camera
 drawable categoria_elegida_ellipse_2
 drawable categoria_elegida_rectangle_50
 drawable categoria_elegida_rectangle_51
@@ -43,7 +44,10 @@ drawable category_type_comp_rectangulo1fondo
 drawable category_type_comp_rectangulo2fondo_negro
 drawable closeicon
 drawable closeiconsurvival
+drawable congratsimg
 drawable editicon
+drawable filmreel
+drawable filmreeldrink
 drawable heartsurvival
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -67,6 +71,7 @@ drawable next_nav_vector_next4
 drawable next_nav_vector_next5
 drawable nexticonsurv
 drawable politicsicon
+drawable popcorns
 drawable pregunta_titulo_box_categoria
 drawable pregunta_titulo_box_pregunta
 drawable pregunta_titulo_flecha
@@ -81,6 +86,7 @@ drawable question_vector_dislike
 drawable question_vector_like
 drawable question_vector_save
 drawable questionrandomblack
+drawable quiz_explored_box_quiz
 drawable ranking_position_avatar
 drawable ranking_position_box_button
 drawable redesimage
@@ -95,8 +101,10 @@ drawable ruedaconfiguracion
 drawable saveiconsurvival
 drawable serverstateicon
 drawable serverstatelogo
+drawable sillon
 drawable start_game_caja_log
 drawable start_game_caja_reg
+drawable ticketsonline
 drawable toolbarsurv
 font relay_fira_sans_black
 font relay_fira_sans_black_italic

@@ -126,6 +126,7 @@ int drawable cabecera_vector_notif 0x7f04001a
 int drawable cabecera_vector_play 0x7f04001b
 int drawable cabecera_vector_ranking 0x7f04001c
 int drawable cabecera_vector_surv 0x7f04001d
+int drawable camera 0x7f04008d
 int drawable categoria_elegida_ellipse_2 0x7f04001e
 int drawable categoria_elegida_rectangle_50 0x7f04001f
 int drawable categoria_elegida_rectangle_51 0x7f040020
@@ -155,7 +156,10 @@ int drawable common_google_signin_btn_text_light 0x7f040037
 int drawable common_google_signin_btn_text_light_focused 0x7f040038
 int drawable common_google_signin_btn_text_light_normal 0x7f040039
 int drawable common_google_signin_btn_text_light_normal_background 0x7f04003a
+int drawable congratsimg 0x7f040094
 int drawable editicon 0x7f04003b
+int drawable filmreel 0x7f04008e
+int drawable filmreeldrink 0x7f04008f
 int drawable googleg_disabled_color_18 0x7f04003c
 int drawable googleg_standard_color_18 0x7f04003d
 int drawable heartsurvival 0x7f04003e
@@ -204,6 +208,7 @@ int drawable notification_template_icon_low_bg 0x7f040068
 int drawable notification_tile_bg 0x7f040069
 int drawable notify_panel_notification_icon_bg 0x7f04006a
 int drawable politicsicon 0x7f04006b
+int drawable popcorns 0x7f040090
 int drawable pregunta_titulo_box_categoria 0x7f04006c
 int drawable pregunta_titulo_box_pregunta 0x7f04006d
 int drawable pregunta_titulo_flecha 0x7f04006e
@@ -218,6 +223,7 @@ int drawable question_vector_dislike 0x7f040076
 int drawable question_vector_like 0x7f040077
 int drawable question_vector_save 0x7f040078
 int drawable questionrandomblack 0x7f040079
+int drawable quiz_explored_box_quiz 0x7f040091
 int drawable ranking_position_avatar 0x7f04007a
 int drawable ranking_position_box_button 0x7f04007b
 int drawable rectangular_vignette_bottom 0x7f04007c
@@ -234,8 +240,10 @@ int drawable ruedaconfiguracion 0x7f040086
 int drawable saveiconsurvival 0x7f040087
 int drawable serverstateicon 0x7f040088
 int drawable serverstatelogo 0x7f040089
+int drawable sillon 0x7f040092
 int drawable start_game_caja_log 0x7f04008a
 int drawable start_game_caja_reg 0x7f04008b
+int drawable ticketsonline 0x7f040093
 int drawable toolbarsurv 0x7f04008c
 int font relay_fira_sans_black 0x7f050000
 int font relay_fira_sans_black_italic 0x7f050001

@@ -16,10 +16,6 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-70:/drawable_saveiconsurvival.png.flat",
-        "source": "com.example.wookiemaniaapp-main-72:/drawable/saveiconsurvival.png"
-    },
-    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_ranking_position_box_button.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\ranking_position_box_button.xml"
     },
@@ -34,6 +30,10 @@
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_agregar_nav_vector_add.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\agregar_nav_vector_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_quiz_explored_box_quiz.xml.flat",
+        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\quiz_explored_box_quiz.xml"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_cabecera_star_vector.xml.flat",
@@ -152,12 +152,16 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\next_nav_vector_next5.xml"
     },
     {
+        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_logouticon.png.flat",
+        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\logouticon.png"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_cabecera_vector_play.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\cabecera_vector_play.xml"
     },
     {
-        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_logouticon.png.flat",
-        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\logouticon.png"
+        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_camera.png.flat",
+        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\camera.png"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\font_relay_fira_sans_extrabold_italic.ttf.flat",
@@ -166,6 +170,10 @@
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\font_relay_fira_sans_regular.ttf.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\font\\relay_fira_sans_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_filmreel.png.flat",
+        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\filmreel.png"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_ic_launcher_background.xml.flat",
@@ -186,6 +194,10 @@
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_questionrandomblack.png.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\questionrandomblack.png"
+    },
+    {
+        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_ticketsonline.png.flat",
+        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\ticketsonline.png"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\font_relay_fira_sans_medium.ttf.flat",
@@ -230,6 +242,10 @@
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_bocadillopreguntanegro.png.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\bocadillopreguntanegro.png"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/drawable_congratsimg.png.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/drawable/congratsimg.png"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_cabecera_box_play.xml.flat",
@@ -310,6 +326,10 @@
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_imagenprueba3.jpg.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\imagenprueba3.jpg"
+    },
+    {
+        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_filmreeldrink.png.flat",
+        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\filmreeldrink.png"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_saveiconsurvival.png.flat",
@@ -396,12 +416,20 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\font\\relay_fira_sans_black_italic.ttf"
     },
     {
+        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_sillon.png.flat",
+        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\sillon.png"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_barra_navegacion_nav.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\barra_navegacion_nav.xml"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_barra_navegacion_vector.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\barra_navegacion_vector.xml"
+    },
+    {
+        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_popcorns.png.flat",
+        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\popcorns.png"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_ranking_position_avatar.jpeg.flat",

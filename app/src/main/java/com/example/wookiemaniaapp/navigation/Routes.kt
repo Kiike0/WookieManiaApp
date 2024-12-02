@@ -11,70 +11,76 @@ sealed class Routes(val route: String) {
     /**
      * Pantalla Inicial de la aplicación.
      */
-    object FirstScreen : Routes("firstScreen")
+    data object FirstScreen : Routes("firstScreen")
 
     /**
      * Pantalla vacía.
      */
-    object EmptyScreen : Routes("emptyScreen")
+    data object EmptyScreen : Routes("emptyScreen")
 
     /**
      * Objeto que representa la pantalla de Inicio de Sesión (Acceso).
      */
-    object Login : Routes("loginScreen")
+    data object Login : Routes("loginScreen")
 
     /**
      * Objeto que representa la pantalla de Registro de usuario.
      */
-    object Register : Routes("registerScreen")
+    data object Register : Routes("registerScreen")
 
 
 
     /**
      * Pantalla Home de juego.
      */
-    object Home : Routes("homeView")
+    data object Home : Routes("homeView")
 
     /**
      * Pantalla de todas las Categorías para elegir.
      */
-    object Categories : Routes("categoriesView")
+    data object Categories : Routes("categoriesView")
+
+    /**
+     * Pantalla del Ranking.
+     */
+    data object Ranking : Routes("rankingView")
+
+
+    /**
+     * Pantalla del Perfil del usuario.
+     */
+    data object Profile : Routes("profileScreen")
+
+
+    //----------------------- Modos de juego --------------------//
+
+    /**
+     * Pantalla de las preguntas del modo normal de juego.
+     */
+
+    data object NormalMode : Routes("normalModeView")
+
+    /**
+     * Pantalla de las preguntas del modo supervivencia de juego.
+     */
+
+    data object SurvivalMode : Routes("survivalModeView")
 
     // Ruta para el modo por categoría con un parámetro dinámico
-    object CategoryMode : Routes("categoryMode/{categorySelected}") {
+    data object CategoryMode : Routes("categoryMode/{categorySelected}") {
         fun createRoute(categorySelected: String): String {
             return "categoryMode/$categorySelected"
         }
     }
 
     /**
-     * Pantalla del Ranking.
-     */
-    object Ranking : Routes("rankingView")
-
-    /**
-    * Pantalla de la Categoría elegida o modo normal de juego.
-    */
-
-    object Category : Routes("categoryView")
-
-
-    /**
-     * Pantalla de las preguntas del modo normal de juego.
+     * Pantalla de las preguntas del modo quiz de juego.
      */
 
-    object NormalMode : Routes("normalModeView")
+    data object QuizMode : Routes("quizModeView")
 
-    /**
-     * Pantalla de las preguntas del modo supervivencia de juego.
-     */
 
-    object SurvivalMode : Routes("survivalModeView")
 
-    /**
-     * Pantalla del Perfil del usuario.
-     */
-    object Profile : Routes("profileScreen")
 
 
     //----------------------- Configuración --------------------//
@@ -82,37 +88,42 @@ sealed class Routes(val route: String) {
     /**
      * Pantalla de la configuracion.
      */
-    object Settings : Routes("settingsScreen")
+    data object Settings : Routes("settingsScreen")
 
     /**
      * Pantalla de la configuracion.
      */
-    object UserEdit : Routes("userEditScreen")
+    data object UserEdit : Routes("userEditScreen")
 
     /**
      * Pantalla de la configuracion del administrador.
      */
-    object AdminSettings : Routes("adminSettingsScreen")
+    data object AdminSettings : Routes("adminSettingsScreen")
 
     /**
      * Pantalla de la configuracion del administrador.
      */
-    object AdminMode : Routes("adminModeScreen")
+    data object AdminMode : Routes("adminModeScreen")
+
+    /**
+     * Pantalla de la creación de quizzes.
+     */
+    data object AddingQuiz : Routes("addingQuizScreen")
 
     /**
      * Pantalla información.
      */
-    object AboutScreen : Routes("aboutScreen")
+    data object AboutScreen : Routes("aboutScreen")
 
     /**
      * Pantalla política y privacidad.
      */
-    object PoliticsScreen : Routes("politicsScreen")
+    data object PoliticsScreen : Routes("politicsScreen")
 
     /**
      * Pantalla estado del servidor.
      */
-    object ServerStateScreen : Routes("serverStateScreen")
+    data object ServerStateScreen : Routes("serverStateScreen")
 
 
     //----------------------- Creación de preguntas --------------------//
@@ -121,19 +132,19 @@ sealed class Routes(val route: String) {
      * Pantalla de la creación de la pregunta.
      */
 
-    object QuestionTitle : Routes("questionTitleView")
+    data object QuestionTitle : Routes("questionTitleView")
 
     /**
      * Pantalla de la creación de la pregunta.
      */
 
-    object CorrectAnswer : Routes("correctAnswerView")
+    data object CorrectAnswer : Routes("correctAnswerView")
 
     /**
      * Pantalla de la creación de la pregunta.
      */
 
-    object IncorrectAnswer : Routes("incorrectAnswerView")
+    data object IncorrectAnswer : Routes("incorrectAnswerView")
 
 
 

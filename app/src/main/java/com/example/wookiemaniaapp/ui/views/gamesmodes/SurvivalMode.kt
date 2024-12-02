@@ -38,14 +38,10 @@ import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.nextnav.NextNav
 import com.example.wookiemaniaapp.question.firaSans
 import com.example.wookiemaniaapp.ui.components.CloseIconComposable
-import com.example.wookiemaniaapp.ui.components.CloseIconComposableSurvival
-import com.example.wookiemaniaapp.ui.components.NextNavSurvival
 import com.example.wookiemaniaapp.ui.components.SaveComposable
-import com.example.wookiemaniaapp.ui.components.SaveComposableSurvival
 import com.example.wookiemaniaapp.ui.components.TituloPreguntaComposableSurvival
 import com.example.wookiemaniaapp.ui.components.VectorHeartComposableSurvival
 import com.example.wookiemaniaapp.ui.components.VectorSaveComposable
-import com.example.wookiemaniaapp.ui.components.VectorSaveComposableSurvival
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.ui.theme.ColorBoxSurvivalQuestion
 import com.example.wookiemaniaapp.ui.theme.ColorButtonSurvival

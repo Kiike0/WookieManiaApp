@@ -84,7 +84,8 @@ fun ProfileScreen(
                 textAlign = TextAlign.Start, // Alinea el texto a la izquierda
                 fontWeight = FontWeight.Bold,
                 fontFamily = firaSans,
-                fontSize = 18.sp
+                fontSize = 18.sp,
+                color = Color.Black
             )
 
             // Spacer que empuja la imagen hacia la derecha
@@ -133,7 +134,8 @@ fun ProfileScreen(
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Bold,
                 fontFamily = firaSans,
-                fontSize = 16.sp
+                fontSize = 16.sp,
+                color = Color.Black
             )
         }
 
@@ -157,7 +159,8 @@ fun ProfileScreen(
             textAlign = TextAlign.Left,
             fontWeight = FontWeight.Bold,
             fontFamily = firaSans,
-            fontSize = 17.sp
+            fontSize = 17.sp,
+            color = Color.Black
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -182,7 +185,8 @@ fun ProfileScreen(
                     modifier = Modifier.padding(start = 20.dp), // Padding a la izquierda
                     textAlign = TextAlign.Left,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 17.sp
+                    fontSize = 17.sp,
+                    color = Color.Black
                 )
 
                 Spacer(modifier = Modifier.width(10.dp)) // Espacio reducido entre el texto y la imagen
@@ -201,7 +205,8 @@ fun ProfileScreen(
                     text = currentUserViewModel.fetchCurrentNickName(),
                     modifier = Modifier.padding(end = 10.dp), // Padding a la derecha
                     fontWeight = FontWeight.Bold,
-                    fontSize = 17.sp
+                    fontSize = 17.sp,
+                    color = Color.Black
                 )
 
                 // Spacer que empuja el tercer texto a la derecha
@@ -213,7 +218,8 @@ fun ProfileScreen(
                     modifier = Modifier.padding(end = 20.dp),
                     textAlign = TextAlign.End,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 17.sp
+                    fontSize = 17.sp,
+                    color = Color.Black
                 )
             }
         }
@@ -233,7 +239,7 @@ fun ProfileScreen(
             NavigationBar(
                 modifier = Modifier,
                 homeButton = {navController.navigate(Routes.Home.route)},
-                profileButton= {},
+                profileButton= {navController.navigate(Routes.Profile.route)},
                 addButton = {navController.navigate(Routes.QuestionTitle.route)}
             )
 

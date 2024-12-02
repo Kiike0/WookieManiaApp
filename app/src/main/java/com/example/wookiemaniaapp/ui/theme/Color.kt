@@ -13,9 +13,11 @@ val Pink40 = Color(0xFF7D5260)
 val ColorApp = Color(0xFFFFD600)
 
 val ColorBoxNormalQuestion = Color(0xFFECFFB8)
-
+val ColorBoxQuizQuestion = Color(0xFFF2D293)
 val ColorButtonSurvival = Color(0xFF292929)
-
 val ColorBoxSurvivalQuestion = Color(0xFFF58F82)
-
 val ColorBoxCategoryQuestion = Color(0xFFC3C3C3)
+
+val BackGroundOutlinedQuestion = Color(0xFF33D6FF)
+val BackGroundAccessBox = Color(0xFF201C1C)
+val BackGroundOutlinedAnswer = Color(0xFFBBF01C)

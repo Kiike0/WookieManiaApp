@@ -21,20 +21,6 @@ import com.google.relay.compose.RelayText
  */
 
 @Composable
-fun CustomizedBasicText(
-    modifier: Modifier = Modifier,
-    contenido: String
-){
-    Text(
-        text = contenido,
-        fontWeight = FontWeight.Bold,
-        fontFamily = firaSans,
-        fontSize = 18.sp,
-        color = Color.Black,
-        modifier = Modifier
-    )
-}
-@Composable
 fun CustomizedCategoryText(
     modifier: Modifier = Modifier,
     contenido: String
@@ -92,3 +78,48 @@ fun CustomizedBiggerTextBold(
         modifier = modifier
     )
 }
+
+@Composable
+fun CustomizedSimpleText(
+    customizedText: String
+) {
+    Text(
+        text = customizedText,
+        fontSize = 14.0.sp,
+        fontFamily = firaSans,
+        color = Color.Black
+    )
+}
+
+@Composable
+fun CustomizedSimpleTextBlack(
+    customizedText: String
+) {
+    Text(
+        text = customizedText,
+        fontSize = 14.0.sp,
+        fontFamily = firaSans,
+        color = Color.Black
+    )
+}
+
+@Composable
+fun CustomizedText(
+    customizedText: String
+) {
+    Text(
+        text = customizedText,
+        style = TextStyle(
+            color = Color(
+                alpha = 255,
+                red = 151,
+                green = 168,
+                blue = 183
+            ),
+            fontSize = 14.0.sp,
+            fontFamily = firaSans
+        )
+    )
+}
+
+
