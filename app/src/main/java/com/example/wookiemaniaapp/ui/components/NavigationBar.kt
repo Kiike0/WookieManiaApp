@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.DpOffset
@@ -32,7 +33,8 @@ fun NavigationBar(
     modifier: Modifier = Modifier,
     homeButton: () -> Unit = {},
     profileButton: () -> Unit = {},
-    addButton: () -> Unit = {}
+    addButton: () -> Unit = {},
+    profileImagePainter: Painter
 ) {
     BotLevel(modifier = modifier) {
         NavComposable(
@@ -65,7 +67,8 @@ fun NavigationBar(
                     x = 122.0.dp,
                     y = (-11.0).dp
                 )
-            )
+            ),
+            profileImagePainter = profileImagePainter
         )
         AddButtonComposable(
             addButton = addButton,
@@ -136,10 +139,11 @@ fun HomeButtonComposable(
 @Composable
 fun ProfileButtonComposable(
     profileButton: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    profileImagePainter: Painter
 ) {
     RelayImage(
-        image = painterResource(R.drawable.barra_navegacion_profile_button),
+        image = profileImagePainter,
         radius = 100.0,
         strokeColor = Color(
             alpha = 255,

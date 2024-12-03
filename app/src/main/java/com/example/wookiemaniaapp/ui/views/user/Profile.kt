@@ -1,5 +1,6 @@
 package com.example.wookiemaniaapp.ui.views.user
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -14,6 +15,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,19 +25,22 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import coil.compose.rememberImagePainter
 import com.example.wookiemaniaapp.R
 import com.example.wookiemaniaapp.categorytypecomp.firaSans
 import com.example.wookiemaniaapp.navigation.Routes
-import com.example.wookiemaniaapp.ui.components.CircularImage
 import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
 import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
@@ -49,7 +55,8 @@ import com.example.wookiemaniaapp.viewmodels.UserViewModel
 fun ProfileScreen(
     navController: NavHostController,
     currentUserViewModel: UserViewModel,
-    rankingViewModel: RankingViewModel
+    rankingViewModel: RankingViewModel,
+    avatarViewModel: AvatarViewModel
 ) {
     // Observa la lista de rankings en lugar de los usuarios
     val allRankingUsers by rankingViewModel.rankingList.observeAsState(emptyList())
@@ -57,22 +64,27 @@ fun ProfileScreen(
     LaunchedEffect(Unit) {
         currentUserViewModel.getCurrentUserData()
         rankingViewModel.fetchRankingData()
+        avatarViewModel.fetchAvatarUrl() // Llama a fetchAvatarUrl para obtener la URL del avatar
     }
+
+    // Observa la URL del avatar
+    val avatarUrl by avatarViewModel.avatarUrl.observeAsState()
 
     // Busca al usuario actual en el ranking
     val userRanking = allRankingUsers.find { it.nickname == currentUserViewModel.fetchCurrentNickName() }
 
     // Si no se encuentra al usuario, coloca un valor por defecto
-    //val userPosition = userRanking?.position?.toString() ?: "1"
     val userPoints = userRanking?.points?.toString() ?: "0"
 
-
     Column(
-        modifier = Modifier.fillMaxSize().background(ColorApp)
+        modifier = Modifier
+            .fillMaxSize()
+            .background(ColorApp)
     ) {
-
         Row(
-            modifier = Modifier.fillMaxWidth().padding(top = 30.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 30.dp),
             verticalAlignment = Alignment.CenterVertically // Alinea el contenido verticalmente al centro
         ) {
             // Texto centrado en la fila
@@ -116,7 +128,19 @@ fun ProfileScreen(
                 .padding(top = 30.dp),
             contentAlignment = Alignment.TopCenter
         ) {
-            CircularImage()
+            // Mostrar el avatar
+            avatarUrl?.let { url ->
+                Image(
+                    painter = rememberImagePainter(url),
+                    contentDescription = "Avatar Image",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .size(100.dp)
+                        .clip(CircleShape)
+                        .border(BorderStroke(2.dp, Color.Black), CircleShape)
+                        .background(Color.Gray)
+                )
+            } ?: Text(text = "No Image")
         }
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -127,7 +151,7 @@ fun ProfileScreen(
         ) {
             // Texto centrado debajo de la imagen
             Text(
-                text = currentUserViewModel.fetchCurrentName() +" "+currentUserViewModel.fetchCurrentSurname(),
+                text = currentUserViewModel.fetchCurrentName() + " " + currentUserViewModel.fetchCurrentSurname(),
                 modifier = Modifier
                     .fillMaxWidth(),
                 textAlign = TextAlign.Center,
@@ -163,6 +187,7 @@ fun ProfileScreen(
         )
 
         Spacer(modifier = Modifier.height(20.dp))
+
         Box(
             modifier = Modifier
                 .width(350.dp)
@@ -204,8 +229,6 @@ fun ProfileScreen(
             }
         }
 
-
-
         // Este Spacer ocupa todo el espacio restante
         Spacer(modifier = Modifier.weight(1f))
 
@@ -218,16 +241,15 @@ fun ProfileScreen(
         ) {
             NavigationBar(
                 modifier = Modifier,
-                homeButton = {navController.navigate(Routes.Home.route)},
-                profileButton= {navController.navigate(Routes.Profile.route)},
-                addButton = {navController.navigate(Routes.QuestionTitle.route)}
+                homeButton = { navController.navigate(Routes.Home.route) },
+                profileButton = { navController.navigate(Routes.Profile.route) },
+                addButton = { navController.navigate(Routes.QuestionTitle.route) },
+                profileImagePainter = rememberImagePainter(avatarUrl)
             )
-
         }
-
     }
-
 }
+
 
 @Composable
 fun PlayerStatusBox(playerStatus: String) {
@@ -235,8 +257,15 @@ fun PlayerStatusBox(playerStatus: String) {
         modifier = Modifier
             .width(220.dp) // Ancho de la Box
             .height(40.dp) // Alto de la Box
-            .border(2.dp, Color.Black, RoundedCornerShape(16.dp)) // Borde negro con esquinas redondeadas
-            .background(Color.Black, RoundedCornerShape(16.dp)) // Fondo negro con esquinas redondeadas
+            .border(
+                2.dp,
+                Color.Black,
+                RoundedCornerShape(16.dp)
+            ) // Borde negro con esquinas redondeadas
+            .background(
+                Color.Black,
+                RoundedCornerShape(16.dp)
+            ) // Fondo negro con esquinas redondeadas
             .padding(8.dp) // Padding interno
     ) {
         Text(

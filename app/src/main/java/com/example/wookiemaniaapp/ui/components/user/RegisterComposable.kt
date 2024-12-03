@@ -20,8 +20,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -38,14 +36,21 @@ import com.example.wookiemaniaapp.viewmodels.UserViewModel
  * This composable was generated from the UI Package 'login_prototipo'.
  * Generated code; do not edit directly
  */
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
+
 @Composable
 fun RegisterComposable(
     newUserVM: UserViewModel,
     navController: NavHostController
 ) {
-    Column (modifier = Modifier.fillMaxWidth(),
+    val context = LocalContext.current
+
+    Column(
+        modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,  // Centra horizontalmente el contenido
-        verticalArrangement = Arrangement.Center){
+        verticalArrangement = Arrangement.Center
+    ) {
         OutlinedTextField1Custom(newUserVM = newUserVM)
         Spacer(modifier = Modifier.height(20.dp))
         OutlinedTextField2Custom(newUserVM = newUserVM)
@@ -58,18 +63,22 @@ fun RegisterComposable(
         Spacer(modifier = Modifier.height(40.dp))
         Row {
             BotonVolverR(
-                backToStartButton = {navController.navigate(Routes.FirstScreen.route)}
+                backToStartButton = { navController.navigate(Routes.FirstScreen.route) }
             )
             Spacer(modifier = Modifier.width(20.dp))
             BotonAccederR(
-                accessButton = {newUserVM.createUser{navController.navigate(Routes.Home.route)}}
+                accessButton = {
+                    if (newUserVM.password.length >= 6) {
+                        newUserVM.createUser { navController.navigate(Routes.Home.route) }
+                    } else {
+                        Toast.makeText(context, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show()
+                    }
+                }
             )
-
         }
-
     }
-
 }
+
 @Composable
 fun BotonAccederR(
     accessButton: () -> Unit

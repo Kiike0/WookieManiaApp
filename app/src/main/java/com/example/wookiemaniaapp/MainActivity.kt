@@ -111,7 +111,8 @@ class MainActivity : ComponentActivity() {
                         composable(Routes.Home.route) {
                             HomeScreen(
                                 navController = navController,
-                                quizVM = quizViewModel
+                                quizVM = quizViewModel,
+                                avatarViewModel = avatarViewModel
                             )
                         }
 
@@ -120,7 +121,8 @@ class MainActivity : ComponentActivity() {
                             ProfileScreen(
                                 navController = navController,
                                 currentUserViewModel = userViewModel,
-                                rankingViewModel = rankingViewModel
+                                rankingViewModel = rankingViewModel,
+                                avatarViewModel = avatarViewModel
                             )
                         }
 
@@ -189,7 +191,8 @@ class MainActivity : ComponentActivity() {
                         // Composable con la ruta a la pantalla de las categorías a elegir
                         composable(Routes.Categories.route) {
                             Categories(
-                                navController = navController
+                                navController = navController,
+                                avatarViewModel = avatarViewModel
                             )
                         }
 
@@ -198,7 +201,8 @@ class MainActivity : ComponentActivity() {
                             RankingScreen(
                                 navController = navController,
                                 userViewModel = userViewModel,
-                                rankingViewModel = rankingViewModel
+                                rankingViewModel = rankingViewModel,
+                                avatarViewModel = avatarViewModel
                             )
                         }
 

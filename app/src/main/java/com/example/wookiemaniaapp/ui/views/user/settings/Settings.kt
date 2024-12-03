@@ -144,7 +144,8 @@ fun ClickableSettings(
                 text = text, // Usa el texto pasado
                 modifier = Modifier.padding(end = 10.dp), // Padding a la derecha
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
+                fontSize = 20.sp,
+                color = Color.Black
             )
         }
     }

@@ -12,6 +12,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.wookiemaniaapp.model.AvatarModel
 import com.example.wookiemaniaapp.model.RankingModel
 import com.example.wookiemaniaapp.model.UserModel
+import com.example.wookiemaniaapp.ui.painters.avatarUrlResources
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -56,7 +57,7 @@ class UserViewModel : ViewModel() {
         private set
 
     // Propiedad que devuelve el id del usuario autenticado actualmente
-    val currentUserId: String?
+    var currentUserId: String? = null
         get() = auth.currentUser?.uid
 
     fun fetchCurrentUserId(): String? { return currentUserId }
@@ -128,6 +129,7 @@ class UserViewModel : ViewModel() {
                     for (document in documents) {
                         //Log.d(TAG, "${document.id} => ${document.data.get("nickname")}")
                         //Log.d(TAG, "${document.data.get("nickname").toString()}")
+                        currentUserId = document.data["userId"].toString()
                         currentName = document.data["name"].toString()
                         currentSurname = document.data["surname"].toString()
                         currentNickname = document.data["nickname"].toString()
@@ -152,6 +154,7 @@ class UserViewModel : ViewModel() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
+                            Log.d("AUTH_SUCCESS", "Usuario creado correctamente")
                             val currentUser = auth.currentUser
                             if (currentUser != null) {
                                 saveUser(name, surname, nickname) // Aquí usas los datos ingresados
@@ -166,22 +169,26 @@ class UserViewModel : ViewModel() {
 
                                 rankingViewModel.addRanking(ranking)  // Llama a la función addRanking del RankingViewModel
 
+                                // Seleccionar una URL de imagen al azar
+                                val randomImageUrl = avatarUrlResources.random()
+
                                 // Crear un modelo de avatar y añadirlo a la colección de avatars
                                 val avatar = AvatarModel(
                                     id = UUID.randomUUID().toString(), // Genera un ID único para el avatar
                                     userId = currentUser.uid,
-                                    imageUrl = "" // Inicialmente vacío
+                                    imageUrl = randomImageUrl // Asigna la URL al azar
                                 )
 
                                 saveAvatarToFirestore(avatar)
 
+                                Log.d("NAVIGATION", "Navegando a la pantalla Home")
                                 onSuccess()
                             } else {
                                 Log.d("ERROR EN FIREBASE", "Usuario creado pero no encontrado")
                                 showAlert = true
                             }
                         } else {
-                            Log.d("ERROR EN FIREBASE", "Error al crear usuario: ${task.exception?.message}")
+                            Log.d("AUTH_ERROR", "Error al crear usuario: ${task.exception?.message}")
                             showAlert = true
                         }
                     }
@@ -200,15 +207,10 @@ class UserViewModel : ViewModel() {
                 Log.d("AVATAR_CREATION_SUCCESS", "Avatar creado correctamente en Firestore")
             }
             .addOnFailureListener { exception ->
-                Log.d("ERROR AL GUARDAR AVATAR", "Error al guardar el avatar en Firestore: $exception")
+                Log.d("ERROR AL GUARDAR AVATAR", "Error al guardar el avatar en Firestore: ${exception.message}")
             }
     }
 
-    /**
-     * Guarda la información del usuario recién registrado en Firestore.
-     *
-     * @param nickName Nombre de usuario a guardar.
-     */
     private fun saveUser(name: String, surname: String, nickName: String) {
         val id = auth.currentUser?.uid
         val email = auth.currentUser?.email
@@ -223,18 +225,18 @@ class UserViewModel : ViewModel() {
                 totalAdded = 0,
                 trophiesNumber = 0
             )
-            // DCS - Añade el usuario a la colección "Users" en la base de datos Firestore
+            // Añade el usuario a la colección "Users" en la base de datos Firestore
             firestore.collection("Users")
                 .add(user)
                 .addOnSuccessListener {
-                    Log.d(
-                        "GUARDAR OK",
-                        "Se guardó el usuario correctamente en Firestore"
-                    )
+                    Log.d("GUARDAR OK", "Se guardó el usuario correctamente en Firestore")
                 }
-                .addOnFailureListener { Log.d("ERROR AL GUARDAR", "ERROR al guardar en Firestore") }
+                .addOnFailureListener { exception ->
+                    Log.d("ERROR AL GUARDAR", "ERROR al guardar en Firestore: ${exception.message}")
+                }
         }
     }
+
 
     /**
      * Cierra la sesión del usuario actual en Firebase Auth.

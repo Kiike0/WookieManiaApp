@@ -13,17 +13,22 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import coil.compose.rememberImagePainter
 import com.example.wookiemaniaapp.cabeceratipo2.CabeceraTipo2
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.components.CategoryTypeComposable
 import com.example.wookiemaniaapp.ui.components.CustomizedCategoryText
 import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
 
 /**
  * Función composable que representa la pantalla Home del juego.
@@ -32,8 +37,16 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun Categories(
-    navController: NavHostController
+    navController: NavHostController,
+    avatarViewModel: AvatarViewModel // Añadimos AvatarViewModel
 ) {
+
+    val avatarUrl by avatarViewModel.avatarUrl.observeAsState() // Observamos avatarUrl
+
+    LaunchedEffect(Unit) {
+        avatarViewModel.fetchAvatarUrl() // Llamamos a fetchAvatarUrl para obtener la URL del avatar
+    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -57,8 +70,6 @@ fun Categories(
             }
             Spacer(modifier = Modifier.height(32.dp))
 
-
-
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
                 modifier = Modifier.fillMaxSize(),
@@ -74,84 +85,84 @@ fun Categories(
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Aventura"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Aventura")) },
                         contenido = "Aventura"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Terror"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Terror")) },
                         contenido = "Terror"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Ciencia Ficción"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Ciencia Ficción")) },
                         contenido = "Ciencia Ficción"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Drama"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Drama")) },
                         contenido = "Drama"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Acción"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Acción")) },
                         contenido = "Acción"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Fantasía"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Fantasía")) },
                         contenido = "Fantasía"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Comedia"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Comedia")) },
                         contenido = "Comedia"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Animación"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Animación")) },
                         contenido = "Animación"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Historia"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Historia")) },
                         contenido = "Historia"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Suspense"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Suspense")) },
                         contenido = "Suspense"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Romance"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Romance")) },
                         contenido = "Romance"
                     )
                 }
                 item {
                     CategoryTypeComposable(
                         modifier = Modifier.size(100.dp, 125.dp),
-                        categoryButton = {navController.navigate(Routes.CategoryMode.createRoute("Western"))},
+                        categoryButton = { navController.navigate(Routes.CategoryMode.createRoute("Western")) },
                         contenido = "Western"
                     )
                 }
@@ -161,34 +172,24 @@ fun Categories(
                 item {
                     Spacer(modifier = Modifier.height(142.dp))
                 }
-
             }
-
-
         }
 
-
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(142.dp)
-                    .background(color = ColorApp)
-                    .align(Alignment.BottomEnd)
-                    .padding(bottom = 10.dp)
-            ) {
-                NavigationBar(
-                    modifier = Modifier,
-                    homeButton = {navController.navigate(Routes.Home.route)},
-                    profileButton= {navController.navigate(Routes.Profile.route)},
-                    addButton = {navController.navigate(Routes.QuestionTitle.route)}
-                )
-
-            }
-
-
-
-
-
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(142.dp)
+                .background(color = ColorApp)
+                .align(Alignment.BottomEnd)
+                .padding(bottom = 10.dp)
+        ) {
+            NavigationBar(
+                modifier = Modifier,
+                homeButton = { navController.navigate(Routes.Home.route) },
+                profileButton = { navController.navigate(Routes.Profile.route) },
+                addButton = { navController.navigate(Routes.QuestionTitle.route) },
+                profileImagePainter = rememberImagePainter(avatarUrl) // Pasar la imagen
+            )
+        }
     }
-
 }

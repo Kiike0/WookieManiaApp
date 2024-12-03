@@ -28,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import coil.compose.rememberImagePainter
 import com.example.wookiemaniaapp.cabeceratipo3.firaSans
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.components.HeadBoard
@@ -35,6 +36,7 @@ import com.example.wookiemaniaapp.ui.components.NavigationBar
 import com.example.wookiemaniaapp.ui.components.QuizCardComposable
 import com.example.wookiemaniaapp.ui.painters.imageQuizResources
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
 import com.example.wookiemaniaapp.viewmodels.QuizViewModel
 
 /**
@@ -46,14 +48,17 @@ import com.example.wookiemaniaapp.viewmodels.QuizViewModel
 @Composable
 fun HomeScreen(
     navController: NavHostController,
-    quizVM: QuizViewModel
+    quizVM: QuizViewModel,
+    avatarViewModel: AvatarViewModel // Añadimos AvatarViewModel
 ) {
 
     val quizIdsList: ArrayList<String> by quizVM.quizIdsList.observeAsState(ArrayList())
     val datos by quizVM.quizData.collectAsState()
+    val avatarUrl by avatarViewModel.avatarUrl.observeAsState() // Observamos avatarUrl
 
     LaunchedEffect(Unit) {
         quizVM.fetchQuiz()
+        avatarViewModel.fetchAvatarUrl() // Llamamos a fetchAvatarUrl para obtener la URL del avatar
     }
 
     val miArrayList = ArrayList<String>()
@@ -90,8 +95,6 @@ fun HomeScreen(
         Spacer(modifier = Modifier.height(40.dp))
 
         val esImpar = datos.size % 2 != 0
-        //val esPar = !esImpar
-
         var tamanyoTotal = datos.size / 2
         val tamanyoImagenResources = imageQuizResources.size / 2
         if (esImpar) tamanyoTotal++
@@ -103,7 +106,7 @@ fun HomeScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp),
             modifier = Modifier.weight(1f).padding(start = 30.dp)
         ) {
-            item{
+            item {
                 // Texto "Quizzes Personalizadas"
                 Text(
                     text = "Quizzes Personalizadas",
@@ -173,8 +176,10 @@ fun HomeScreen(
                 modifier = Modifier.align(Alignment.BottomCenter),
                 homeButton = { navController.navigate(Routes.Home.route) },
                 profileButton = { navController.navigate(Routes.Profile.route) },
-                addButton = { navController.navigate(Routes.QuestionTitle.route) }
+                addButton = { navController.navigate(Routes.QuestionTitle.route) },
+                profileImagePainter = rememberImagePainter(avatarUrl) // Pasar la imagen
             )
         }
     }
 }
+
