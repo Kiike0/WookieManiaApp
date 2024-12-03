@@ -30,7 +30,7 @@ fun FirstScreenView(
             modifier = Modifier,
             loginButton = { navController.navigate(Routes.Login.route) },
             registerButton = { navController.navigate(Routes.Register.route) },
-            invitadoButton = { navController.navigate(Routes.Home.route) }
+            invitadoButton = { }
         )
     }
 }
