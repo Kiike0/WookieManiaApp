@@ -34,7 +34,6 @@ import com.example.wookiemaniaapp.categorytypecomp.firaSans
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.components.CircularImage
 import com.example.wookiemaniaapp.ui.components.NavigationBar
-import com.example.wookiemaniaapp.ui.components.RoundedCornerSquareImage
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
@@ -64,7 +63,7 @@ fun ProfileScreen(
     val userRanking = allRankingUsers.find { it.nickname == currentUserViewModel.fetchCurrentNickName() }
 
     // Si no se encuentra al usuario, coloca un valor por defecto
-    val userPosition = userRanking?.position?.toString() ?: "1"
+    //val userPosition = userRanking?.position?.toString() ?: "1"
     val userPoints = userRanking?.points?.toString() ?: "0"
 
 
@@ -152,7 +151,7 @@ fun ProfileScreen(
         Spacer(modifier = Modifier.height(20.dp))
 
         Text(
-            text = "Posición en el ranking",
+            text = "Puntuación en el ranking",
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 20.dp),
@@ -179,28 +178,9 @@ fun ProfileScreen(
                 verticalAlignment = Alignment.CenterVertically, // Alinea verticalmente al centro
                 horizontalArrangement = Arrangement.Start // Alinea horizontalmente al inicio
             ) {
-                // Primer texto
-                Text(
-                    text = userPosition,
-                    modifier = Modifier.padding(start = 20.dp), // Padding a la izquierda
-                    textAlign = TextAlign.Left,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 17.sp,
-                    color = Color.Black
-                )
+                Spacer(modifier = Modifier.width(30.dp)) // Espacio reducido
 
-                Spacer(modifier = Modifier.width(10.dp)) // Espacio reducido entre el texto y la imagen
-
-                // Imagen
-                RoundedCornerSquareImage(
-                    painter = painterResource(id = R.drawable.avatarprueba),
-                    size = 35,
-                    cornerRadius = 5
-                )
-
-                Spacer(modifier = Modifier.width(10.dp)) // Espacio reducido entre la imagen y el segundo texto
-
-                // Segundo texto
+                // Texto
                 Text(
                     text = currentUserViewModel.fetchCurrentNickName(),
                     modifier = Modifier.padding(end = 10.dp), // Padding a la derecha

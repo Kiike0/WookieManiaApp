@@ -44,7 +44,6 @@ import com.example.wookiemaniaapp.ui.components.TituloPreguntaComposable
 import com.example.wookiemaniaapp.ui.components.VectorSaveComposable
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.ui.theme.ColorBoxCategoryQuestion
-import com.example.wookiemaniaapp.ui.theme.ColorBoxNormalQuestion
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
@@ -186,7 +185,7 @@ fun CategoryMode(
                                     // Deshabilitar los botones después de un retraso de 1 segundo
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         buttonsEnabled = false
-                                    }, 1000)
+                                    }, 500)
 
                                     // Actualizar puntos si la respuesta es correcta
                                     if (isCorrect) {

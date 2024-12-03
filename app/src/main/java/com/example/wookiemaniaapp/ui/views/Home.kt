@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -23,8 +24,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.wookiemaniaapp.cabeceratipo3.firaSans
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.components.HeadBoard
 import com.example.wookiemaniaapp.ui.components.NavigationBar
@@ -83,10 +87,11 @@ fun HomeScreen(
             )
         }
 
-        Spacer(modifier = Modifier.height(35.dp))
+        Spacer(modifier = Modifier.height(40.dp))
 
         val esImpar = datos.size % 2 != 0
         //val esPar = !esImpar
+
         var tamanyoTotal = datos.size / 2
         val tamanyoImagenResources = imageQuizResources.size / 2
         if (esImpar) tamanyoTotal++
@@ -96,41 +101,56 @@ fun HomeScreen(
         LazyColumn(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp),
-            modifier = Modifier.weight(1f)
+            modifier = Modifier.weight(1f).padding(start = 30.dp)
         ) {
+            item{
+                // Texto "Quizzes Personalizadas"
+                Text(
+                    text = "Quizzes Personalizadas",
+                    fontFamily = firaSans,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 17.sp,
+                    color = Color.Black,
+                    modifier = Modifier
+                        .padding(end = 150.dp)
+                )
+            }
             items(tamanyoTotal) { elemento ->
                 Row(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center
+                    horizontalArrangement = Arrangement.Start // Alinear a la izquierda
                 ) {
                     QuizCardComposable(
                         modifier = Modifier
                             .size(155.dp, 200.dp),
                         quizImg = painterResource(imageQuizResources[elementoComprobacion]),
-                        quizTitleText = "${valoresTitulos.getOrNull(elemento)}",
+                        quizTitleText = "${valoresTitulos.getOrNull(elemento * 2)}",
                         onBoxQuiz = {
-                            quizVM.changeQuizId(quizIdsList[elemento])
+                            quizVM.changeQuizId(quizIdsList[elemento * 2])
                             navController.navigate(Routes.QuizMode.route)
                         },
                         onQuizImg = {
-                            quizVM.changeQuizId(quizIdsList[elemento])
+                            quizVM.changeQuizId(quizIdsList[elemento * 2])
                             navController.navigate(Routes.QuizMode.route)
                         }
                     )
-                    Spacer(modifier = Modifier.width(25.dp))
-                    QuizCardComposable(
-                        modifier = Modifier.size(155.dp, 200.dp),
-                        quizImg = painterResource(imageQuizResources[elementoComprobacion + tamanyoImagenResources]),
-                        quizTitleText = "${valoresTitulos.getOrNull(elemento + tamanyoTotal)}",
-                        onBoxQuiz = {
-                            quizVM.changeQuizId(quizIdsList[elemento + tamanyoTotal])
-                            navController.navigate(Routes.QuizMode.route)
-                        },
-                        onQuizImg = {
-                            quizVM.changeQuizId(quizIdsList[elemento + tamanyoTotal])
-                            navController.navigate(Routes.QuizMode.route)
-                        }
-                    )
+
+                    if (elemento * 2 + 1 < datos.size) {
+                        Spacer(modifier = Modifier.width(25.dp))
+                        QuizCardComposable(
+                            modifier = Modifier.size(155.dp, 200.dp),
+                            quizImg = painterResource(imageQuizResources[elementoComprobacion + tamanyoImagenResources]),
+                            quizTitleText = "${valoresTitulos.getOrNull(elemento * 2 + 1)}",
+                            onBoxQuiz = {
+                                quizVM.changeQuizId(quizIdsList[elemento * 2 + 1])
+                                navController.navigate(Routes.QuizMode.route)
+                            },
+                            onQuizImg = {
+                                quizVM.changeQuizId(quizIdsList[elemento * 2 + 1])
+                                navController.navigate(Routes.QuizMode.route)
+                            }
+                        )
+                    }
                 }
 
                 if (elementoComprobacion < tamanyoImagenResources - 1) elementoComprobacion++

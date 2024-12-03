@@ -24,6 +24,7 @@ import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.cabeceratipo3.firaSans
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
  * Función composable que representa la pantalla política y privacidad del juego.
@@ -32,7 +33,8 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun PoliticsScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    userViewModel: UserViewModel
 ) {
     Box(
         modifier = Modifier
@@ -57,7 +59,13 @@ fun PoliticsScreen(
                 CabeceraTipo3(
                     modifier = Modifier,
                     screenText = "Política y privacidad",
-                    backButton = { navController.navigate(Routes.Settings.route) }
+                    backButton = {
+                        if (userViewModel.currentUserEmail == "adminprueba@gmail.com") {
+                            navController.navigate(Routes.AdminSettings.route)
+                        } else {
+                            navController.navigate(Routes.Settings.route)
+                        }
+                    }
                 )
             }
 

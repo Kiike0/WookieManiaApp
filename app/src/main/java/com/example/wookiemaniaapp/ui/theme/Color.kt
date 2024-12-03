@@ -15,8 +15,10 @@ val ColorApp = Color(0xFFFFD600)
 val ColorBoxNormalQuestion = Color(0xFFECFFB8)
 val ColorBoxQuizQuestion = Color(0xFFF2D293)
 val ColorButtonSurvival = Color(0xFF292929)
-val ColorBoxSurvivalQuestion = Color(0xFFF58F82)
+val ColorBoxSurvivalQuestion = Color(0xFF8D8C8C)
 val ColorBoxCategoryQuestion = Color(0xFFC3C3C3)
+
+val ColorBoxQuiz = Color(0xFF2C2C2C)
 
 val BackGroundOutlinedQuestion = Color(0xFF33D6FF)
 val BackGroundAccessBox = Color(0xFF201C1C)

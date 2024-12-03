@@ -179,7 +179,7 @@ fun Categories(
                 NavigationBar(
                     modifier = Modifier,
                     homeButton = {navController.navigate(Routes.Home.route)},
-                    profileButton= {},
+                    profileButton= {navController.navigate(Routes.Profile.route)},
                     addButton = {navController.navigate(Routes.QuestionTitle.route)}
                 )
 

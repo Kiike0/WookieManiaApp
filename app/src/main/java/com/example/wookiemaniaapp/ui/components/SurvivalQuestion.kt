@@ -17,11 +17,8 @@ import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import com.example.wookiemaniaapp.R
 import com.example.wookiemaniaapp.question.firaSans
-import com.google.relay.compose.RelayContainer
-import com.google.relay.compose.RelayContainerScope
 import com.google.relay.compose.RelayText
 import com.google.relay.compose.RelayVector
-import com.google.relay.compose.tappable
 
 @Composable
 fun TituloPreguntaComposableSurvival(
@@ -51,43 +48,10 @@ fun TituloPreguntaComposableSurvival(
     }
 
 }
-
-@Composable
-fun CloseIconComposableSurvival(
-    onCloseIcon: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    RelayVector(
-        vector = painterResource(R.drawable.closeiconsurvival),
-        modifier = modifier.tappable(onTap = onCloseIcon)
-    )
-}
-
-@Composable
-fun VectorSaveComposableSurvival(modifier: Modifier = Modifier) {
-    RelayVector(
-        vector = painterResource(R.drawable.saveiconsurvival),
-        modifier = modifier
-    )
-}
-
 @Composable
 fun VectorHeartComposableSurvival(modifier: Modifier = Modifier) {
     RelayVector(
         vector = painterResource(R.drawable.heartsurvival),
-        modifier = modifier
-    )
-}
-
-@Composable
-fun SaveComposableSurvival(
-    saveIcon: () -> Unit,
-    modifier: Modifier = Modifier,
-    content: @Composable RelayContainerScope.() -> Unit
-) {
-    RelayContainer(
-        isStructured = false,
-        content = content,
         modifier = modifier
     )
 }

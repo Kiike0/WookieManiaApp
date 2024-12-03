@@ -167,19 +167,22 @@ class MainActivity : ComponentActivity() {
 
                         composable(Routes.AboutScreen.route) {
                             AboutScreen(
-                                navController = navController
+                                navController = navController,
+                                userViewModel = userViewModel
                             )
                         }
 
                         composable(Routes.PoliticsScreen.route) {
                             PoliticsScreen(
-                                navController = navController
+                                navController = navController,
+                                userViewModel = userViewModel
                             )
                         }
 
                         composable(Routes.ServerStateScreen.route) {
                             ServerStateScreen(
-                                navController = navController
+                                navController = navController,
+                                userViewModel = userViewModel
                             )
                         }
 

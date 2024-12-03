@@ -205,7 +205,7 @@ fun SurvivalMode(
                                     // Deshabilitar los botones después de un retraso de 1 segundo
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         buttonsEnabled = false
-                                    }, 1000)
+                                    }, 500)
 
                                     // Actualizar puntos si la respuesta es correcta
                                     if (isCorrect) {

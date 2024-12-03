@@ -3,6 +3,7 @@ package com.example.wookiemaniaapp.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,6 +27,7 @@ import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import com.example.wookiemaniaapp.R
 import com.example.wookiemaniaapp.categorytypecomp.firaSans
+import com.example.wookiemaniaapp.ui.theme.ColorBoxQuiz
 import com.google.relay.compose.EmptyPainter
 import com.google.relay.compose.RelayContainer
 import com.google.relay.compose.RelayContainerScope
@@ -106,9 +108,14 @@ fun QuizImgQuizCard(
             .tappable(onTap = onQuizImg)
             .requiredWidth(166.0.dp)
             .requiredHeight(126.0.dp)
-            .clip(RoundedCornerShape(20.dp, 20.dp, 0.dp, 0.dp))
-            .background(Color.White)
-    ){
+            .clip(RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 0.dp, bottomEnd = 0.dp))
+            .background(ColorBoxQuiz)
+            .border(
+                width = 3.dp,
+                color = Color.White,
+                shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp, bottomStart = 0.dp, bottomEnd = 0.dp)
+            )
+    ) {
         Image(
             painter = quizImg,
             contentDescription = "Quiz card image",
@@ -116,6 +123,7 @@ fun QuizImgQuizCard(
             modifier = Modifier.fillMaxSize()
         )
     }
+
 
 }
 

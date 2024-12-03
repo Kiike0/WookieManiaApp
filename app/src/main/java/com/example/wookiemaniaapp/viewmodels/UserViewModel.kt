@@ -294,4 +294,46 @@ class UserViewModel : ViewModel() {
     fun changeSurname(surname: String) {
         this.surname = surname
     }
+
+    /**
+     * Actualiza la información del usuario en Firestore.
+     *
+     * @param user UserModel con la información actualizada del usuario.
+     * @param onSuccess Acción a ejecutar si la actualización es exitosa.
+     */
+    fun updateUser(name: String, surname: String, onSuccess: () -> Unit) {
+        val userId = auth.currentUser?.uid ?: return
+
+        firestore.collection("Users")
+            .whereEqualTo("userId", userId)
+            .get()
+            .addOnSuccessListener { documents ->
+                if (!documents.isEmpty) { // Usar isEmpty en lugar de isNotEmpty
+                    val document = documents.first()
+                    firestore.collection("Users")
+                        .document(document.id)
+                        .update(
+                            "name", name,
+                            "surname", surname
+                        )
+                        .addOnSuccessListener {
+                            Log.d("UpdateUser", "Usuario actualizado correctamente.")
+                            onSuccess()
+                        }
+                        .addOnFailureListener { exception ->
+                            Log.e("UpdateUserError", "Error al actualizar el usuario: $exception")
+                        }
+                } else {
+                    Log.e("UpdateUserError", "No se encontró el documento del usuario.")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.e("UpdateUserError", "Error al obtener el usuario: $exception")
+            }
+    }
+
+
+
 }
+
+

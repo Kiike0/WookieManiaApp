@@ -183,6 +183,7 @@ int drawable login_prototipo_boton_box_acc 0x7f04004f
 int drawable login_prototipo_box_atras 0x7f040050
 int drawable login_prototipo_text_field1 0x7f040051
 int drawable login_prototipo_text_field2 0x7f040052
+int drawable logo 0x7f040095
 int drawable logoapp 0x7f040053
 int drawable logouticon 0x7f040054
 int drawable nameapp 0x7f040055
@@ -382,6 +383,7 @@ int layout notification_template_icon_group 0x7f080008
 int layout notification_template_part_chronometer 0x7f080009
 int layout notification_template_part_time 0x7f08000a
 int mipmap ic_launcher 0x7f090000
+int mipmap ic_launcher_foreground 0x7f090002
 int mipmap ic_launcher_round 0x7f090001
 int raw firebase_common_keep 0x7f0a0000
 int string android_credentials_TYPE_PASSWORD_CREDENTIAL 0x7f0b0000

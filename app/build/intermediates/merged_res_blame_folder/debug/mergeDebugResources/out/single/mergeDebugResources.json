@@ -28,6 +28,10 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\registro_prototipo_rect_username.xml"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_agregar_nav_vector_add.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\agregar_nav_vector_add.xml"
     },
@@ -42,6 +46,10 @@
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -104,6 +112,10 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\politicsicon.png"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_registro_prototipo_rectangle_name.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\registro_prototipo_rectangle_name.xml"
     },
@@ -140,12 +152,20 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-70:/drawable_logo.png.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/drawable/logo.png"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_question_answer_d.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\question_answer_d.xml"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_cabecera_vector_notif.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\cabecera_vector_notif.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_next_nav_vector_next5.xml.flat",
@@ -168,12 +188,20 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\font\\relay_fira_sans_extrabold_italic.ttf"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\font_relay_fira_sans_regular.ttf.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\font\\relay_fira_sans_regular.ttf"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_filmreel.png.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\filmreel.png"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_ic_launcher_background.xml.flat",
@@ -244,8 +272,8 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\bocadillopreguntanegro.png"
     },
     {
-        "merged": "com.example.wookiemaniaapp-debug-70:/drawable_congratsimg.png.flat",
-        "source": "com.example.wookiemaniaapp-main-72:/drawable/congratsimg.png"
+        "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_congratsimg.png.flat",
+        "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\congratsimg.png"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_cabecera_box_play.xml.flat",
@@ -262,6 +290,10 @@
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-xhdpi/ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_registro_prototipo_rectangle_cont.xml.flat",
@@ -286,6 +318,10 @@
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-hdpi/ic_launcher_foreground.webp"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\xml_backup_rules.xml.flat",
@@ -344,6 +380,10 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\font\\relay_fira_sans_black.ttf"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_login_prototipo_text_field1.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\login_prototipo_text_field1.xml"
     },
@@ -372,6 +412,10 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\cabecera_caja_category.xml"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_pregunta_titulo_box_pregunta.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\pregunta_titulo_box_pregunta.xml"
     },
@@ -386,6 +430,10 @@
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_login_prototipo_text_field2.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\login_prototipo_text_field2.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-hdpi/ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\font_relay_fira_sans_italic.ttf.flat",
@@ -460,8 +508,16 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\font\\relay_fira_sans_medium_italic.ttf"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_avatarprueba.jpg.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\drawable\\avatarprueba.jpg"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-mdpi/ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable_heartsurvival.png.flat",
@@ -488,8 +544,16 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\pregunta_titulo_box_categoria.xml"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-main-72:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_next_nav_nav_next_box.xml.flat",
@@ -508,8 +572,16 @@
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\cabecera_vector_categ.xml"
     },
     {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_next_nav_vector_next3.xml.flat",
         "source": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-relay-66:\\drawable-nodpi\\next_nav_vector_next3.xml"
+    },
+    {
+        "merged": "com.example.wookiemaniaapp-debug-70:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.wookiemaniaapp-main-72:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\enriv\\.gradle\\daemon\\8.6\\com.example.wookiemaniaapp-debug-70:\\drawable-nodpi_login_prototipo_box_atras.xml.flat",

@@ -77,14 +77,6 @@ fun SettingsScreen(
         Spacer(modifier = Modifier.height(35.dp))
 
         ClickableSettings(
-            iconResId = R.drawable.addicon,
-            text = "Añadir amigo",
-            onClick = {}
-        )
-
-        Spacer(modifier = Modifier.height(35.dp))
-
-        ClickableSettings(
             iconResId = R.drawable.infoicon,
             text = "Información",
             onClick = {navController.navigate(Routes.AboutScreen.route)}

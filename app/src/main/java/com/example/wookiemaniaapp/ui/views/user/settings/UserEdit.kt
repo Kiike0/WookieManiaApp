@@ -41,6 +41,7 @@ import androidx.navigation.NavHostController
 import coil.compose.rememberImagePainter
 import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.cabeceratipo3.firaSans
+import com.example.wookiemaniaapp.model.UserModel
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
@@ -103,7 +104,13 @@ fun UserEditScreen(
                 CabeceraTipo3(
                     modifier = Modifier,
                     screenText = "Edición de usuario",
-                    backButton = { navController.navigate(Routes.Settings.route) }
+                    backButton = {
+                        if (userViewModel.currentUserEmail == "adminprueba@gmail.com") {
+                            navController.navigate(Routes.AdminSettings.route)
+                        } else {
+                            navController.navigate(Routes.Settings.route)
+                        }
+                    }
                 )
             }
 
@@ -143,28 +150,6 @@ fun UserEditScreen(
             Spacer(modifier = Modifier.height(25.dp))
 
             // Campos de texto para editar información del usuario
-            OutlinedTextField(
-                value = userViewModel.nickname,
-                onValueChange = { userViewModel.changeNickName(it) },
-                modifier = Modifier
-                    .width(350.dp)
-                    .height(70.dp)
-                    .background(Color.White, shape = MaterialTheme.shapes.medium)
-                    .border(
-                        BorderStroke(5.dp, Color.Black),
-                        shape = MaterialTheme.shapes.medium
-                    ),
-                placeholder = { Text("Nuevo nombre de usuario") },
-                label = { Text("Nombre de usuario") },
-                maxLines = 1,
-                colors = TextFieldDefaults.outlinedTextFieldColors(
-                    unfocusedBorderColor = Color.Transparent,
-                    focusedBorderColor = Color.Transparent
-                )
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
             OutlinedTextField(
                 value = userViewModel.name,
                 onValueChange = { userViewModel.changeName(it) },
@@ -211,11 +196,20 @@ fun UserEditScreen(
 
             // Botón para guardar cambios
             Button(
-                onClick = { /* Implementar lógica para guardar cambios */ },
+                onClick = {
+                    // Implementar lógica para guardar cambios
+                    userViewModel.updateUser(
+                        name = userViewModel.name,
+                        surname = userViewModel.surname
+                    ) {
+                        Toast.makeText(context, "Usuario actualizado exitosamente", Toast.LENGTH_SHORT).show()
+                        navController.navigate(Routes.Profile.route)
+                    }
+                },
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
                 modifier = Modifier
-                    .fillMaxWidth()
                     .height(50.dp)
+                    .width(100.dp)
             ) {
                 Text(
                     text = "Guardar",
@@ -227,4 +221,8 @@ fun UserEditScreen(
         }
     }
 }
+
+
+
+
 

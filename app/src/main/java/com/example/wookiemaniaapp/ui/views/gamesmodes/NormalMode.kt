@@ -39,7 +39,6 @@ import com.example.wookiemaniaapp.nextnav.NextNav
 import com.example.wookiemaniaapp.question.firaSans
 import com.example.wookiemaniaapp.ui.components.CloseIconComposable
 import com.example.wookiemaniaapp.ui.components.SaveComposable
-import com.example.wookiemaniaapp.ui.components.TextCategoryComposable
 import com.example.wookiemaniaapp.ui.components.TituloPreguntaComposable
 import com.example.wookiemaniaapp.ui.components.VectorSaveComposable
 import com.example.wookiemaniaapp.ui.theme.ColorApp
@@ -164,7 +163,7 @@ fun NormalMode(
                                     // Deshabilitar los botones después de un retraso de 1 segundo
                                     Handler(Looper.getMainLooper()).postDelayed({
                                         buttonsEnabled = false
-                                    }, 1000)
+                                    }, 500)
 
                                     // Actualizar puntos si la respuesta es correcta
                                     if (isCorrect) {

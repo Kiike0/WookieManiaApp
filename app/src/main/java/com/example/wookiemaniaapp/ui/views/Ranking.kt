@@ -16,15 +16,13 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.wookiemaniaapp.R
 import com.example.wookiemaniaapp.navigation.Routes
-import com.example.wookiemaniaapp.rankingposition.RankingPosition
 import com.example.wookiemaniaapp.ui.components.CustomizedTypeText
 import com.example.wookiemaniaapp.ui.components.HeadBoard2
 import com.example.wookiemaniaapp.ui.components.NavigationBar
+import com.example.wookiemaniaapp.ui.components.RankingPoints
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
@@ -54,7 +52,7 @@ fun RankingScreen(
     val userRanking = allRankingUsers.find { it.nickname == userViewModel.fetchCurrentNickName() }
 
     // Si no se encuentra al usuario, coloca un valor por defecto
-    val userPosition = userRanking?.position?.toString() ?: "1"
+    //val userPosition = userRanking?.position?.toString() ?: "1"
     val userPoints = userRanking?.points?.toString() ?: "0"
 
 
@@ -89,14 +87,12 @@ fun RankingScreen(
             var contador = 0
             LazyColumn {
                 item {
-                    CustomizedTypeText(contenido = "Tu posición en el ranking")
+                    CustomizedTypeText(contenido = "Tu puntuación en el ranking")
                     Spacer(modifier = Modifier.height(15.dp))
-                    RankingPosition(
+                    RankingPoints(
                         modifier = Modifier,
                         username = "@${userViewModel.fetchCurrentNickName()}",
-                        avatar = painterResource(R.drawable.ranking_position_avatar),
                         points = userPoints,
-                        position = userPosition,
                         boxToProfileButton = {}
                     )
                     Spacer(modifier = Modifier.height(7.dp))
@@ -107,12 +103,10 @@ fun RankingScreen(
                 }
                 items(tamanyoTotal) {
                     val user = allRankingUsers[contador++]
-                    RankingPosition(
+                    RankingPoints(
                         modifier = Modifier,
                         username = "@${user.nickname}",
-                        avatar = painterResource(R.drawable.ranking_position_avatar),
                         points = user.points.toString(),
-                        position = user.position.toString(),
                         boxToProfileButton = {}
                     )
                     Spacer(modifier = Modifier.height(15.dp))

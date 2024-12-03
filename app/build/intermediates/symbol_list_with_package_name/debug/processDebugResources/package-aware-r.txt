@@ -184,6 +184,7 @@ drawable login_prototipo_boton_box_acc
 drawable login_prototipo_box_atras
 drawable login_prototipo_text_field1
 drawable login_prototipo_text_field2
+drawable logo
 drawable logoapp
 drawable logouticon
 drawable nameapp
@@ -383,6 +384,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 raw firebase_common_keep
 string android_credentials_TYPE_PASSWORD_CREDENTIAL

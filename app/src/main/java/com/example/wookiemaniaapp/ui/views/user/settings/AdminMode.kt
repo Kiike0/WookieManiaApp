@@ -97,7 +97,6 @@ fun AdminView(
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(end = 50.dp)
                     ) {
                         Text(
                             text = question.tittle,
@@ -125,11 +124,14 @@ fun AdminView(
                             modifier = Modifier.padding(bottom = 8.dp)
                         )
 
-                        Spacer(modifier = Modifier.height(16.dp))
+                        Spacer(modifier = Modifier.weight(1f))
 
                         Row(
                             horizontalArrangement = Arrangement.spacedBy(8.dp),
-                            modifier = Modifier.fillMaxWidth()
+                            verticalAlignment = Alignment.Bottom,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 16.dp)
                         ) {
                             // Botón "Añadir"
                             Button(
@@ -143,7 +145,8 @@ fun AdminView(
                                         currentQuestionIndex++
                                     }
                                 },
-                                colors = ButtonDefaults.buttonColors(Color.Gray)
+                                colors = ButtonDefaults.buttonColors(Color.Black),
+                                modifier = Modifier.weight(1f)
                             ) {
                                 Text(text = "Añadir", color = Color.White)
                             }
@@ -155,7 +158,8 @@ fun AdminView(
                                         currentQuestionIndex++
                                     }
                                 },
-                                colors = ButtonDefaults.buttonColors(Color.Black)
+                                colors = ButtonDefaults.buttonColors(Color.Black),
+                                modifier = Modifier.weight(1f)
                             ) {
                                 Text(text = "Borrar", color = Color.White)
                             }
@@ -201,3 +205,4 @@ fun AdminView(
         }
     }
 }
+

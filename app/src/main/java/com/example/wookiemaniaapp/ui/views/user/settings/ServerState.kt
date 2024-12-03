@@ -26,6 +26,7 @@ import com.example.wookiemaniaapp.R
 import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
  * Función composable que representa la pantalla del estado del servidor del juego.
@@ -34,7 +35,8 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun ServerStateScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    userViewModel: UserViewModel
 ) {
     Box(
         modifier = Modifier
@@ -59,7 +61,13 @@ fun ServerStateScreen(
                 CabeceraTipo3(
                     modifier = Modifier,
                     screenText = "Estado del servidor",
-                    backButton = { navController.navigate(Routes.Settings.route) }
+                    backButton = {
+                        if (userViewModel.currentUserEmail == "adminprueba@gmail.com") {
+                            navController.navigate(Routes.AdminSettings.route)
+                        } else {
+                            navController.navigate(Routes.Settings.route)
+                        }
+                    }
                 )
             }
 

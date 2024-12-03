@@ -31,6 +31,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -176,7 +177,7 @@ fun QuizMode(
                                             // Deshabilitar los botones después de un retraso de 1 segundo
                                             Handler(Looper.getMainLooper()).postDelayed({
                                                 buttonsEnabled = false
-                                            }, 1000)
+                                            }, 500)
 
                                             // Actualizar puntos si la respuesta es correcta
                                             if (isCorrect) {
@@ -190,7 +191,7 @@ fun QuizMode(
                                                 currentQuestionIndex++
                                                 buttonColors = listOf(Color.White, Color.White, Color.White, Color.White)
                                                 buttonsEnabled = true
-                                            }, 1000)
+                                            }, 500)
                                         }
                                     },
                                     enabled = buttonsEnabled,
@@ -254,8 +255,9 @@ fun CongratulationsDialog(correctCount: Int, onContinueButton: () -> Unit) {
         Box(
             modifier = Modifier
                 .size(300.dp, 200.dp) // Tamaño del cuadro de diálogo
+                .clip(RoundedCornerShape(16.dp)) // Redondear las esquinas
                 .background(Color.White, shape = RoundedCornerShape(16.dp))
-                .border(BorderStroke(2.dp, Color.Black)),
+                .border(BorderStroke(2.dp, Color.Black), shape = RoundedCornerShape(16.dp)),
             contentAlignment = Alignment.Center
         ) {
             Column(
@@ -290,6 +292,7 @@ fun CongratulationsDialog(correctCount: Int, onContinueButton: () -> Unit) {
                 }
             }
         }
+
     }
 }
 

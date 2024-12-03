@@ -27,6 +27,7 @@ import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.categorytypecomp.firaSans
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.ColorApp
+import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
  * Función composable que representa la pantalla Información de la app.
@@ -35,7 +36,8 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
  */
 @Composable
 fun AboutScreen(
-    navController: NavHostController
+    navController: NavHostController,
+    userViewModel: UserViewModel
 ) {
     Box(
         modifier = Modifier
@@ -60,7 +62,13 @@ fun AboutScreen(
                 CabeceraTipo3(
                     modifier = Modifier,
                     screenText = "Información",
-                    backButton = {navController.navigate(Routes.Settings.route)}
+                    backButton = {
+                        if (userViewModel.currentUserEmail == "adminprueba@gmail.com") {
+                            navController.navigate(Routes.AdminSettings.route)
+                        } else {
+                            navController.navigate(Routes.Settings.route)
+                        }
+                    }
                 )
             }
             Spacer(modifier = Modifier.height(140.dp))

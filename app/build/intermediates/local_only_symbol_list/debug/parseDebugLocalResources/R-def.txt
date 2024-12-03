@@ -59,6 +59,7 @@ drawable login_prototipo_boton_box_acc
 drawable login_prototipo_box_atras
 drawable login_prototipo_text_field1
 drawable login_prototipo_text_field2
+drawable logo
 drawable logoapp
 drawable logouticon
 drawable nameapp
@@ -127,6 +128,7 @@ font relay_fira_sans_thin_italic
 font relay_rubik_mono_one_regular
 font relay_rubik_wet_paint_regular
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string app_name
 string gcm_defaultSenderId
