@@ -37,6 +37,7 @@ import com.example.wookiemaniaapp.ui.views.user.settings.AboutScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.AddQuizView
 import com.example.wookiemaniaapp.ui.views.user.settings.AdminSettingsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.AdminView
+import com.example.wookiemaniaapp.ui.views.user.settings.AvatarSelectionScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.PoliticsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.ServerStateScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.SettingsScreen
@@ -139,6 +140,14 @@ class MainActivity : ComponentActivity() {
                             UserEditScreen(
                                 navController = navController,
                                 userViewModel = userViewModel,
+                                avatarViewModel = avatarViewModel
+                            )
+                        }
+
+                        // Ruta desde la pantalla de perfil
+                        composable(Routes.AvatarSelection.route) {
+                            AvatarSelectionScreen(
+                                navController = navController,
                                 avatarViewModel = avatarViewModel
                             )
                         }
@@ -260,8 +269,7 @@ class MainActivity : ComponentActivity() {
                             QuizMode(
                                 navController = navController,
                                 quizVM = quizViewModel,
-                                currentUserViewModel = userViewModel,
-                                rankingViewModel = rankingViewModel
+                                currentUserViewModel = userViewModel
 
                             )
                         }

@@ -149,7 +149,8 @@ class QuestionViewModel : ViewModel() {
                         idQuiz = it.id
                     }
                 }
-                _allQuestions.value = ArrayList(questionsList)
+                //Baraja las preguntas para que no se muestren siempre en el mismo orden
+                _allQuestions.value = ArrayList(questionsList).apply { shuffle() }
             }
             .addOnFailureListener { exception ->
                 Log.e("QuestionViewModel", "Error al recuperar preguntas: $exception")

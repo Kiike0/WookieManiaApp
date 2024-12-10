@@ -40,6 +40,9 @@ import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
  *
  * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
  */
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
+
 @Composable
 fun AdminView(
     navController: NavHostController,
@@ -55,6 +58,8 @@ fun AdminView(
 
     var currentQuestionIndex by rememberSaveable { mutableIntStateOf(0) }
     val isEndOfQuestions = currentQuestionIndex >= invalidQuestions.size
+
+    val context = LocalContext.current
 
     Box(
         modifier = Modifier
@@ -143,6 +148,7 @@ fun AdminView(
                                     ) {
                                         // Avanza a la siguiente pregunta después de actualizar
                                         currentQuestionIndex++
+                                        Toast.makeText(context, "Pregunta añadida correctamente", Toast.LENGTH_SHORT).show()
                                     }
                                 },
                                 colors = ButtonDefaults.buttonColors(Color.Black),
@@ -156,6 +162,7 @@ fun AdminView(
                                 onClick = {
                                     questionViewModel.deleteQuestion(question.idQuiz) {
                                         currentQuestionIndex++
+                                        Toast.makeText(context, "Pregunta borrada correctamente", Toast.LENGTH_SHORT).show()
                                     }
                                 },
                                 colors = ButtonDefaults.buttonColors(Color.Black),
@@ -205,4 +212,5 @@ fun AdminView(
         }
     }
 }
+
 

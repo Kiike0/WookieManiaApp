@@ -5,6 +5,8 @@ import android.os.Looper
 import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -48,6 +50,7 @@ import com.example.wookiemaniaapp.ui.theme.ColorButtonSurvival
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
+import androidx.compose.ui.draw.clip
 
 @Composable
 fun SurvivalMode(
@@ -70,10 +73,10 @@ fun SurvivalMode(
     var buttonColors by rememberSaveable {
         mutableStateOf(
             listOf(
-                Color.White,
-                Color.White,
-                Color.White,
-                Color.White
+                ColorButtonSurvival,
+                ColorButtonSurvival,
+                ColorButtonSurvival,
+                ColorButtonSurvival
             )
         )
     }
@@ -85,6 +88,9 @@ fun SurvivalMode(
 
     // Estado de los corazones
     var lives by rememberSaveable { mutableIntStateOf(3) }
+
+    // Estado para mostrar el diálogo de "Game Over"
+    var showGameOverDialog by rememberSaveable { mutableStateOf(false) }
 
     // Cargar las preguntas una sola vez al principio
     LaunchedEffect(Unit) {
@@ -115,8 +121,6 @@ fun SurvivalMode(
             ColorButtonSurvival
         )
         buttonsEnabled = true
-        nextButtonEnabled =
-            lives > 0 // Habilitar el botón de siguiente pregunta solo si quedan vidas
     }
 
     if (isLoading) {
@@ -135,157 +139,217 @@ fun SurvivalMode(
             )
         }
     } else if (currentQuestion != null) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(ColorApp)
-        ) {
-            Box(
+        if (showGameOverDialog) {
+            GameOverDialog(
+                onBackButton = {
+                    navController.navigate(Routes.Home.route)
+                }
+            )
+        } else {
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(728.dp)
-                    .background(ColorBoxSurvivalQuestion),
-                contentAlignment = Alignment.TopStart
+                    .fillMaxSize()
+                    .background(ColorApp)
             ) {
-                Column(modifier = Modifier.fillMaxWidth()) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 37.dp)
-                            .size(30.dp) // Ajusta solo la altura de la Row si es necesario
-                    ) {
-                        Spacer(modifier = Modifier.width(30.dp))
-                        CloseIconComposable(
-                            onCloseIcon = { navController.navigate(Routes.Home.route) },
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(728.dp)
+                        .background(ColorBoxSurvivalQuestion),
+                    contentAlignment = Alignment.TopStart
+                ) {
+                    Column(modifier = Modifier.fillMaxWidth()) {
+                        Row(
                             modifier = Modifier
-                                .padding(top = 7.dp)
-                                .size(30.dp)
+                                .fillMaxWidth()
+                                .padding(top = 37.dp)
+                                .size(30.dp) // Ajusta solo la altura de la Row si es necesario
+                        ) {
+                            Spacer(modifier = Modifier.width(30.dp))
+                            CloseIconComposable(
+                                onCloseIcon = { navController.navigate(Routes.Home.route) },
+                                modifier = Modifier
+                                    .padding(top = 7.dp)
+                                    .size(30.dp)
+                            )
+                            Spacer(modifier = Modifier.width(210.dp))
+                            if (lives >= 3) {
+                                VectorHeartComposableSurvival(
+                                    modifier = Modifier
+                                        .width(30.dp)
+                                        .padding(end = 10.dp)
+                                )
+                            }
+                            if (lives >= 2) {
+                                VectorHeartComposableSurvival(
+                                    modifier = Modifier
+                                        .width(30.dp)
+                                        .padding(end = 10.dp)
+                                )
+                            }
+                            if (lives >= 1) {
+                                VectorHeartComposableSurvival(
+                                    modifier = Modifier
+                                        .width(30.dp)
+                                        .padding(end = 20.dp)
+                                )
+                            }
+                        }
+
+                        TituloPreguntaComposableSurvival(
+                            questionTitle = currentQuestion.tittle,
+                            modifier = Modifier.padding(start = 40.dp, top = 20.dp)
                         )
-                        Spacer(modifier = Modifier.width(210.dp))
-                        if (lives >= 3) {
-                            VectorHeartComposableSurvival(
-                                modifier = Modifier
-                                    .width(30.dp)
-                                    .padding(end = 10.dp)
-                            )
-                        }
-                        if (lives >= 2) {
-                            VectorHeartComposableSurvival(
-                                modifier = Modifier
-                                    .width(30.dp)
-                                    .padding(end = 10.dp)
-                            )
-                        }
-                        if (lives >= 1) {
-                            VectorHeartComposableSurvival(
-                                modifier = Modifier
-                                    .width(30.dp)
-                                    .padding(end = 20.dp)
-                            )
-                        }
-                    }
 
+                        // Botones de respuestas
+                        for (i in shuffledAnswers.indices) {
+                            Button(
+                                onClick = {
+                                    if (buttonsEnabled) {
+                                        selectedAnswer = shuffledAnswers[i]
+                                        isCorrect = shuffledAnswers[i] == currentQuestion.correctAnswer
+                                        buttonColors = buttonColors.toMutableList().apply {
+                                            this[i] = if (isCorrect) Color.Green else Color.Red
+                                        }
 
-                    TituloPreguntaComposableSurvival(
-                        questionTitle = currentQuestion.tittle,
-                        modifier = Modifier.padding(start = 40.dp, top = 20.dp)
-                    )
+                                        // Deshabilitar los botones después de un retraso de 1 segundo
+                                        Handler(Looper.getMainLooper()).postDelayed({
+                                            buttonsEnabled = false
+                                        }, 500)
 
-                    // Botones de respuestas
-                    for (i in shuffledAnswers.indices) {
-                        Button(
-                            onClick = {
-                                if (buttonsEnabled) {
-                                    selectedAnswer = shuffledAnswers[i]
-                                    isCorrect = shuffledAnswers[i] == currentQuestion.correctAnswer
-                                    buttonColors = buttonColors.toMutableList().apply {
-                                        this[i] = if (isCorrect) Color.Green else Color.Red
-                                    }
-
-                                    // Deshabilitar los botones después de un retraso de 1 segundo
-                                    Handler(Looper.getMainLooper()).postDelayed({
-                                        buttonsEnabled = false
-                                    }, 500)
-
-                                    // Actualizar puntos si la respuesta es correcta
-                                    if (isCorrect) {
-                                        val nickname = currentUserViewModel.fetchCurrentNickName()
-                                        Log.d(
-                                            "SurvivalMode",
-                                            "Nickname del usuario actual: $nickname"
-                                        )
-                                        rankingViewModel.updateRankingPoints(nickname)
-                                        Log.d("SurvivalMode", "Puntos actualizados para $nickname")
-                                    } else {
-                                        // Reducir una vida si la respuesta es incorrecta
-                                        lives -= 1
-                                        if (lives <= 0) {
-                                            nextButtonEnabled =
-                                                false // Deshabilitar el botón de siguiente pregunta si no quedan vidas
+                                        // Actualizar puntos si la respuesta es correcta
+                                        if (isCorrect) {
+                                            val nickname = currentUserViewModel.fetchCurrentNickName()
+                                            Log.d("SurvivalMode", "Nickname del usuario actual: $nickname")
+                                            rankingViewModel.updateRankingPoints(nickname)
+                                            Log.d("SurvivalMode", "Puntos actualizados para $nickname")
+                                        } else {
+                                            // Reducir una vida si la respuesta es incorrecta
+                                            lives -= 1
+                                            if (lives <= 0) {
+                                                showGameOverDialog = true
+                                            }
+                                            nextButtonEnabled = true // Solo deshabilitar el botón de siguiente pregunta si se pierden todas las vidas
                                         }
                                     }
-                                }
-                            },
-                            enabled = buttonsEnabled,
-                            colors = ButtonDefaults.buttonColors(containerColor = buttonColors[i]),
-                            border = BorderStroke(3.dp, Color.Black),
-                            shape = RoundedCornerShape(10.dp),
-                            modifier = Modifier
-                                .padding(12.dp)
-                                .fillMaxWidth()
-                                .height(50.dp)
-                        ) {
-                            Text(
-                                text = "${'A' + i}. ${shuffledAnswers[i]}",
-                                color = Color.White,
-                                fontSize = 18.0.sp,
-                                fontFamily = firaSans,
-                                fontWeight = FontWeight.Bold
-                            )
+                                },
+                                enabled = buttonsEnabled,
+                                colors = ButtonDefaults.buttonColors(containerColor = buttonColors[i]),
+                                border = BorderStroke(3.dp, Color.Black),
+                                shape = RoundedCornerShape(10.dp),
+                                modifier = Modifier
+                                    .padding(12.dp)
+                                    .fillMaxWidth()
+                                    .height(50.dp)
+                            ) {
+                                Text(
+                                    text = "${'A' + i}. ${shuffledAnswers[i]}",
+                                    color = Color.White,
+                                    fontSize = 18.0.sp,
+                                    fontFamily = firaSans,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
                         }
-                    }
 
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 30.dp)
-                    ) {
-                        Spacer(modifier = Modifier.weight(1f))
-                        SaveComposable(
-                            saveIcon = {},
-                            modifier = Modifier.padding(end = 20.dp)
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(top = 30.dp)
                         ) {
-                            VectorSaveComposable(modifier = Modifier)
+                            Spacer(modifier = Modifier.weight(1f))
+                            SaveComposable(
+                                saveIcon = {},
+                                modifier = Modifier.padding(end = 20.dp)
+                            ) {
+                                VectorSaveComposable(modifier = Modifier)
+                            }
                         }
                     }
                 }
-            }
 
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(142.dp)
-                    .background(color = Color.Transparent)
-                    .padding(bottom = 10.dp)
-            ) {
-                NextNav(
-                    modifier = Modifier.fillMaxWidth(),
-                    nextButton = {
-                        if (nextButtonEnabled) {
-                            if (currentQuestionIndex < allQuestions.size - 1) {
-                                currentQuestionIndex++
-                            } else {
-                                currentQuestionIndex = 0
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(142.dp)
+                        .background(color = Color.Transparent)
+                        .padding(bottom = 10.dp)
+                ) {
+                    NextNav(
+                        modifier = Modifier.fillMaxWidth(),
+                        nextButton = {
+                            if (nextButtonEnabled) {
+                                if (currentQuestionIndex < allQuestions.size - 1) {
+                                    currentQuestionIndex++
+                                } else {
+                                    currentQuestionIndex = 0
+                                }
+                                shuffledAnswers =
+                                    emptyList()  // Restablecer las respuestas barajadas para la siguiente pregunta
+                                buttonsEnabled = true // Habilitar los botones de nuevo
                             }
-                            shuffledAnswers =
-                                emptyList()  // Restablecer las respuestas barajadas para la siguiente pregunta
                         }
-                    }
-                )
+                    )
+
+                }
             }
         }
     }
 }
+
+
+@Composable
+fun GameOverDialog(onBackButton: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(ColorApp), // Fondo principal colorApp
+        contentAlignment = Alignment.Center
+    ) {
+        Box(
+            modifier = Modifier
+                .size(300.dp, 200.dp) // Tamaño del cuadro de diálogo
+                .clip(RoundedCornerShape(16.dp)) // Redondear las esquinas
+                .background(Color.White, shape = RoundedCornerShape(16.dp))
+                .border(BorderStroke(2.dp, Color.Black), shape = RoundedCornerShape(16.dp)),
+            contentAlignment = Alignment.Center
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(
+                    text = "Game Over\nHas perdido todas tus vidas ¡Inténtalo de nuevo!",
+                    color = Color.Black,
+                    fontSize = 18.sp,
+                    fontFamily = com.example.wookiemaniaapp.cabeceratipo3.firaSans,
+                    fontWeight = FontWeight.Bold
+                )
+                Spacer(modifier = Modifier.height(20.dp))
+                Button(
+                    onClick = onBackButton,
+                    shape = RoundedCornerShape(50),
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .fillMaxWidth()
+                        .size(40.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Black)
+                ) {
+                    Text(
+                        text = "Volver",
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontFamily = com.example.wookiemaniaapp.cabeceratipo3.firaSans,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+        }
+    }
+}
+
+
 
 
 

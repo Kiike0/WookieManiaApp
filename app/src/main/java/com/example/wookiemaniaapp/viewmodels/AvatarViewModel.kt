@@ -1,19 +1,17 @@
 package com.example.wookiemaniaapp.viewmodels
 
-import android.net.Uri
+
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.wookiemaniaapp.model.AvatarModel
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.auth.FirebaseAuth
 
 class AvatarViewModel : ViewModel() {
-    private val storageRef = FirebaseStorage.getInstance().reference
     private val firestore = FirebaseFirestore.getInstance()
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance() // Asegúrate de inicializar FirebaseAuth
+    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     private val _avatarUrl = MutableLiveData<String>()
     val avatarUrl: LiveData<String> get() = _avatarUrl
@@ -35,40 +33,35 @@ class AvatarViewModel : ViewModel() {
             }
     }
 
-    fun uploadImageToStorage(
-        uri: Uri,
-        userId: String,
-        onSuccess: (String) -> Unit,
-        onFailure: (Exception) -> Unit
-    ) {
-        val imageRef = storageRef.child("avatars/${userId}.jpg")
-        val uploadTask = imageRef.putFile(uri)
-
-        uploadTask.addOnSuccessListener {
-            imageRef.downloadUrl.addOnSuccessListener { uri ->
-                val imageUrl = uri.toString()
-                val avatar = AvatarModel(id = userId, userId = userId, imageUrl = imageUrl)
-                saveAvatarToFirestore(avatar, onSuccess, onFailure)
+    fun updateAvatarUrl(newAvatarUrl: String, onComplete: () -> Unit) {
+        val userId = auth.currentUser?.uid ?: return // Obtiene el ID del usuario actual o retornar si es nulo
+        firestore.collection("Avatars")
+            .whereEqualTo("userId", userId) // Busca el documento de avatar correspondiente al ID del usuario
+            .get()
+            .addOnSuccessListener { documents ->
+                if (documents.isEmpty) {
+                    Log.w("AvatarViewModel", "No avatar document found for user: $userId")
+                } else {
+                    // Si se encuentra el documento, actualiza el campo "imageUrl"
+                    for (document in documents) {
+                        val avatarDocRef = firestore.collection("Avatars").document(document.id)
+                        avatarDocRef.update("imageUrl", newAvatarUrl)
+                            .addOnSuccessListener {
+                                _avatarUrl.value = newAvatarUrl // Actualiza el LiveData con la nueva URL del avatar
+                                onComplete() // Llama a la función de completado
+                            }
+                            .addOnFailureListener { e ->
+                                Log.w("AvatarViewModel", "Error updating avatar document", e)
+                            }
+                    }
+                }
             }
-        }.addOnFailureListener {
-            onFailure(it)
-        }
-    }
-
-    private fun saveAvatarToFirestore(
-        avatar: AvatarModel,
-        onSuccess: (String) -> Unit,
-        onFailure: (Exception) -> Unit
-    ) {
-        val docRef = firestore.collection("Avatars").document(avatar.id)
-        docRef.set(avatar)
-            .addOnSuccessListener {
-                onSuccess(avatar.imageUrl)
-            }
-            .addOnFailureListener {
-                onFailure(it)
+            .addOnFailureListener { e ->
+                Log.w("AvatarViewModel", "Error retrieving avatar document", e)
             }
     }
+
+
 }
 
 

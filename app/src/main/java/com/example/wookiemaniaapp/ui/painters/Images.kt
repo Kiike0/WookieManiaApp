@@ -32,6 +32,7 @@ val avatarUrl6 = "https://img.freepik.com/psd-gratis/render-3d-personaje-avatar_
 val avatarUrl7 = "https://img.freepik.com/psd-gratis/render-3d-personaje-avatar_23-2150611762.jpg?t=st=1733240354~exp=1733243954~hmac=19c8cac6a8cd9e76897cbe7eff078460bd98c558b2890b624be5dbf2f8844b47&w=826"
 val avatarUrl8 = "https://img.freepik.com/psd-gratis/render-3d-personaje-avatar_23-2150611719.jpg?t=st=1733240357~exp=1733243957~hmac=c0510953404be49c2acb963655d8369164449bec086ec82c1508c22801182d1c&w=826"
 val avatarUrl9 = "https://img.freepik.com/psd-gratis/render-3d-personaje-avatar_23-2150611728.jpg?t=st=1733240359~exp=1733243959~hmac=782150af6d0181bbd9784aaa82cb219064a56e268c2f4c92ad7c3ec10946d0ef&w=826"
+val avatarUrl10 = "https://img.freepik.com/psd-gratis/render-3d-personaje-avatar_23-2150611737.jpg?t=st=1733856200~exp=1733859800~hmac=79668924def75ede68a6778df69ef5c6c51c5a2dd2d44e12c673660dd9c102fc&w=826"
 
 val avatarUrlResources = listOf(
     avatarUrl1,
@@ -42,5 +43,6 @@ val avatarUrlResources = listOf(
     avatarUrl6,
     avatarUrl7,
     avatarUrl8,
-    avatarUrl9
+    avatarUrl9,
+    avatarUrl10
 )

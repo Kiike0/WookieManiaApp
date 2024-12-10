@@ -46,7 +46,6 @@ import com.example.wookiemaniaapp.ui.components.TituloPreguntaComposable
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.ui.theme.ColorBoxQuizQuestion
 import com.example.wookiemaniaapp.viewmodels.QuizViewModel
-import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
@@ -61,8 +60,7 @@ import com.example.wookiemaniaapp.viewmodels.UserViewModel
 fun QuizMode(
     navController: NavHostController,
     quizVM: QuizViewModel,
-    currentUserViewModel: UserViewModel,
-    rankingViewModel: RankingViewModel
+    currentUserViewModel: UserViewModel
 ) {
     val quizId: String by quizVM.quizId.observeAsState(initial = "")
 
@@ -182,8 +180,6 @@ fun QuizMode(
                                             // Actualizar puntos si la respuesta es correcta
                                             if (isCorrect) {
                                                 correctCount++
-                                                val nickname = currentUserViewModel.fetchCurrentNickName()
-                                                rankingViewModel.updateRankingPoints(nickname)
                                             }
 
                                             // Avanzar a la siguiente pregunta después de un retraso
@@ -296,25 +292,4 @@ fun CongratulationsDialog(correctCount: Int, onContinueButton: () -> Unit) {
     }
 }
 
-
-
-
-
-/*
-
-Intento para actualizar la nota al salir con el boton salir
-
-// Para acceder a la id de la quiz
-val idQuizActual = quiz.idQuiz
-
-// Para acceder al total de completados de la quiz
-var totalCompletedActual = quiz.totalCompleted
-
-totalCompletedActual++
-
-quizVM.updateQuizCompleted(idQuizActual, totalCompletedActual){
-    navController.navigate(Routes.HomeScreen.route)
-}
-
- */
 

@@ -125,6 +125,11 @@ sealed class Routes(val route: String) {
      */
     data object ServerStateScreen : Routes("serverStateScreen")
 
+    /**
+     * Pantalla de la configuracion del avatar.
+     */
+    data object AvatarSelection : Routes("avatarSelection")
+
 
     //----------------------- Creación de preguntas --------------------//
 

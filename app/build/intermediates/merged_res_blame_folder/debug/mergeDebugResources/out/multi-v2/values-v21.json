@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.wookiemaniaapp-mergeDebugResources-68:/values-v21/values-v21.xml",
+            "outputFile": "com.example.wookiemaniaapp-mergeDebugResources-75:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\cdf7c29e0b0c3cf9eba6f42cf23977bb\\transformed\\core-1.13.1\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\206a40adaae0157dd5d0ac1924cca087\\transformed\\core-1.13.1\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\67f2404dd84e5d609c5ee34f55c6993c\\transformed\\credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\0c598e05908f05836c36c16086118523\\transformed\\credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

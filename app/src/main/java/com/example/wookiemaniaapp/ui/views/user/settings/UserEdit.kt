@@ -1,13 +1,10 @@
 package com.example.wookiemaniaapp.ui.views.user.settings
 
-import android.net.Uri
+
 import android.widget.Toast
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -28,8 +25,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -41,7 +38,6 @@ import androidx.navigation.NavHostController
 import coil.compose.rememberImagePainter
 import com.example.wookiemaniaapp.cabeceratipo3.CabeceraTipo3
 import com.example.wookiemaniaapp.cabeceratipo3.firaSans
-import com.example.wookiemaniaapp.model.UserModel
 import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
@@ -55,31 +51,17 @@ fun UserEditScreen(
     avatarViewModel: AvatarViewModel
 ) {
     val context = LocalContext.current
-    val imageUri = remember { mutableStateOf<Uri?>(null) }
-    val userImage = remember { mutableStateOf<String?>(null) }
 
+    // Obtener datos del usuario al cargar la pantalla
     LaunchedEffect(Unit) {
         userViewModel.getCurrentUserData()
+        avatarViewModel.fetchAvatarUrl()
     }
 
-    val userId = userViewModel.userId
+    //val userId = userViewModel.userId
 
-    // Launcher para seleccionar imagen de la galería
-    val galleryLauncher = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
-        uri?.let {
-            avatarViewModel.uploadImageToStorage(
-                it,
-                userId,
-                onSuccess = { imageUrl ->
-                    userImage.value = imageUrl
-                    Toast.makeText(context, "Imagen subida exitosamente", Toast.LENGTH_SHORT).show()
-                },
-                onFailure = { exception ->
-                    Toast.makeText(context, "Error al subir imagen: ${exception.message}", Toast.LENGTH_SHORT).show()
-                }
-            )
-        }
-    }
+    // Observa la URL del avatar
+    val avatarUrl by avatarViewModel.avatarUrl.observeAsState()
 
     Box(
         modifier = Modifier
@@ -124,7 +106,7 @@ fun UserEditScreen(
                     .background(Color.Gray),
                 contentAlignment = Alignment.Center
             ) {
-                userImage.value?.let {
+                avatarUrl?.let {
                     Image(
                         painter = rememberImagePainter(it),
                         contentDescription = "User Avatar",
@@ -137,8 +119,9 @@ fun UserEditScreen(
 
             // Botón para seleccionar imagen
             Button(
-                onClick = { galleryLauncher.launch("image/*") },
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Black)) {
+                onClick = { navController.navigate(Routes.AvatarSelection.route) },
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Black)
+            ) {
                 Text(
                     text = "Seleccionar imagen",
                     color = Color.White,
@@ -221,7 +204,6 @@ fun UserEditScreen(
         }
     }
 }
-
 
 
 

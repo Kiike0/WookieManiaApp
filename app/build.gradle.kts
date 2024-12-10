@@ -97,6 +97,10 @@ dependencies {
     implementation("androidx.compose.runtime:runtime-livedata:1.6.7")
     //noinspection UseTomlInstead
     implementation("androidx.wear.compose:compose-material:1.3.1")
+    implementation(libs.androidx.glance)
+
+    // Otras dependencias
+    implementation ("androidx.compose.material:material-icons-extended:1.5.1")
 
 
     testImplementation(libs.junit)
