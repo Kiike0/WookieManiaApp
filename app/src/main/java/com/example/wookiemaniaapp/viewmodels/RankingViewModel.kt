@@ -23,7 +23,7 @@ class RankingViewModel : ViewModel() {
 
     // Método para agregar un nuevo ranking
     fun addRanking(ranking: RankingModel) {
-        // Crear un nuevo documento en Firestore con los datos del ranking
+        // Crea un nuevo documento en Firestore con los datos del ranking
         val rankingData = hashMapOf(
             "idRanking" to ranking.idRanking,
             "position" to ranking.position,
@@ -31,15 +31,15 @@ class RankingViewModel : ViewModel() {
             "points" to ranking.points
         )
 
-        // Agregar el nuevo ranking en la colección "Ranking" en Firestore
-        firestore.collection("Ranking")  // Aquí es "Ranking" en lugar de "Rankings"
+        // Agrega el nuevo ranking en la colección "Ranking" en Firestore
+        firestore.collection("Ranking")
             .add(rankingData)
             .addOnSuccessListener {
                 // Si se agrega correctamente, actualizar la lista de rankings en vivo
                 updateRankingList()
             }
             .addOnFailureListener { e ->
-                // Manejar cualquier error
+                // Maneja cualquier error
                 println("Error al agregar el ranking: $e")
             }
     }
@@ -58,7 +58,7 @@ class RankingViewModel : ViewModel() {
                 _rankingList.value = rankings
             }
             .addOnFailureListener { e ->
-                // Manejar cualquier error
+                // Maneja cualquier error
                 println("Error al obtener los rankings: $e")
             }
     }

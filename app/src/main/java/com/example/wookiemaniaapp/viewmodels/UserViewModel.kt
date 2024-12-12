@@ -159,7 +159,7 @@ class UserViewModel : ViewModel() {
                             if (currentUser != null) {
                                 saveUser(name, surname, nickname) // Aquí usas los datos ingresados
 
-                                // Crear un modelo de ranking y añadirlo a la colección de ranking
+                                // Crea un modelo de ranking y añadirlo a la colección de ranking
                                 val ranking = RankingModel(
                                     idRanking = currentUser.uid,  // Usa el UID del usuario como el ID de ranking
                                     position = 0,                 // Puedes inicializar la posición según la lógica del ranking
@@ -169,10 +169,10 @@ class UserViewModel : ViewModel() {
 
                                 rankingViewModel.addRanking(ranking)  // Llama a la función addRanking del RankingViewModel
 
-                                // Seleccionar una URL de imagen al azar
+                                // Selecciona una URL de imagen al azar
                                 val randomImageUrl = avatarUrlResources.random()
 
-                                // Crear un modelo de avatar y añadirlo a la colección de avatars
+                                // Crea un modelo de avatar y añadirlo a la colección de avatars
                                 val avatar = AvatarModel(
                                     id = UUID.randomUUID().toString(), // Genera un ID único para el avatar
                                     userId = currentUser.uid,

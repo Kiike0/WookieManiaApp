@@ -23,7 +23,7 @@ class AvatarViewModel : ViewModel() {
     val avatarUrl: LiveData<String> get() = _avatarUrl
 
     fun fetchAvatarUrl() {
-        val userId = auth.currentUser?.uid ?: return // Obtener el ID del usuario actual
+        val userId = auth.currentUser?.uid ?: return // Obtiene el ID del usuario actual
 
         firestore.collection("Avatars")
             .whereEqualTo("userId", userId)

@@ -110,7 +110,7 @@ class QuestionViewModel : ViewModel() {
      */
     fun fetchAllQuestionsFalse() {
         firestore.collection("Questions")
-            .whereEqualTo("valid", false)  // Cambiar "isValid" por "valid" aquí
+            .whereEqualTo("valid", false)
             .get()
             .addOnSuccessListener { snapshot ->
                 if (snapshot.isEmpty) {
@@ -138,7 +138,7 @@ class QuestionViewModel : ViewModel() {
      */
     fun fetchAllQuestionsValid() {
         firestore.collection("Questions")
-            .whereEqualTo("valid", true)  // Filtrar las preguntas donde valid es true
+            .whereEqualTo("valid", true)  // Filtra las preguntas donde valid es true
             .get()
             .addOnSuccessListener { snapshot ->
                 if (snapshot.isEmpty) {
