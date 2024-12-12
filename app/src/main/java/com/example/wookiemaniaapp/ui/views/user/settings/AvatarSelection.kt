@@ -36,6 +36,11 @@ import com.example.wookiemaniaapp.ui.painters.avatarUrlResources
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
 
+/**
+ * Función composable que representa la pantalla de la selección de avatares.
+ *
+ * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
+ */
 @Composable
 fun AvatarSelectionScreen(
     navController: NavHostController,   // Controlador de navegación para navegar entre pantallas

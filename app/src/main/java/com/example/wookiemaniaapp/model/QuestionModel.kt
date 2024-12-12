@@ -2,6 +2,10 @@ package com.example.wookiemaniaapp.model
 
 import com.google.firebase.firestore.PropertyName
 
+/**
+ * Define el modelo de datos para las preguntas.
+ * Se utiliza para gestionar las preguntas de las quiz en la base de datos.
+ */
 data class QuestionModel(
     var idQuiz: String = "",
     val category: String,

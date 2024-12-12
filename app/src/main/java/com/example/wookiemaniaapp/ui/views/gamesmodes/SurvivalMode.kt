@@ -52,6 +52,11 @@ import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 import androidx.compose.ui.draw.clip
 
+/**
+ * Función composable que representa la pantalla del modo supervivencia.
+ *
+ * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
+ */
 @Composable
 fun SurvivalMode(
     navController: NavHostController,

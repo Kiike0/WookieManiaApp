@@ -31,7 +31,7 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
 
 /**
- * Función composable que representa la pantalla Home del juego.
+ * Función composable que representa la pantalla 'Categorías' del juego.
  *
  * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
  */

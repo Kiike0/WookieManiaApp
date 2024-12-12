@@ -1,6 +1,5 @@
 package com.example.wookiemaniaapp.ui.views.user.settings
 
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -34,29 +33,30 @@ import com.example.wookiemaniaapp.navigation.Routes
 import com.example.wookiemaniaapp.nextnav.NextNav
 import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
-import android.widget.Toast
-import androidx.compose.ui.platform.LocalContext
 
 /**
- * Función composable que representa la pantalla configuración de preguntas del administrador del juego.
+ * Función composable que representa la pantalla de edición de preguntas que ya se muestran en el juego.
  *
  * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
  */
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
+
 @Composable
-fun AdminView(
+fun EditQuestions(
     navController: NavHostController,
     questionViewModel: QuestionViewModel
 ) {
     // Observa solo `allQuestions` que será filtrado a `invalidQuestions`
     val allQuestions by questionViewModel.allQuestions.observeAsState(emptyList())
-    val invalidQuestions = allQuestions.filter { !it.isValid }
+    val validQuestions = allQuestions.filter { it.isValid }
 
     LaunchedEffect(Unit) {
-        questionViewModel.fetchAllQuestionsFalse()
+        questionViewModel.fetchAllQuestionsValid()
     }
 
     var currentQuestionIndex by rememberSaveable { mutableIntStateOf(0) }
-    val isEndOfQuestions = currentQuestionIndex >= invalidQuestions.size
+    val isEndOfQuestions = currentQuestionIndex >= validQuestions.size
 
     val context = LocalContext.current
 
@@ -86,8 +86,8 @@ fun AdminView(
                 )
             }
 
-            if (invalidQuestions.isNotEmpty() && !isEndOfQuestions) {
-                val question = invalidQuestions[currentQuestionIndex]
+            if (validQuestions.isNotEmpty() && !isEndOfQuestions) {
+                val question = validQuestions[currentQuestionIndex]
 
                 Spacer(modifier = Modifier.height(200.dp))
 
@@ -140,20 +140,20 @@ fun AdminView(
                             // Botón "Añadir"
                             Button(
                                 onClick = {
-                                    val updatedQuestion = question.copy(isValid = true)
+                                    val updatedQuestion = question.copy(isValid = false)
                                     questionViewModel.updateQuestion(
                                         question.idQuiz,
                                         updatedQuestion
                                     ) {
                                         // Avanza a la siguiente pregunta después de actualizar
                                         currentQuestionIndex++
-                                        Toast.makeText(context, "Pregunta añadida correctamente", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(context, "Pregunta quitada correctamente", Toast.LENGTH_SHORT).show()
                                     }
                                 },
                                 colors = ButtonDefaults.buttonColors(Color.Black),
                                 modifier = Modifier.weight(1f)
                             ) {
-                                Text(text = "Añadir", color = Color.White)
+                                Text(text = "Quitar", color = Color.White)
                             }
 
                             // Botón "Borrar"
@@ -211,5 +211,3 @@ fun AdminView(
         }
     }
 }
-
-

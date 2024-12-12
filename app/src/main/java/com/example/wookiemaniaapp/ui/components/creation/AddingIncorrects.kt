@@ -19,6 +19,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 
+/**
+ * Esta es la función que representa la agregación de la respuesta incorrecta
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun IncorrectsFields(

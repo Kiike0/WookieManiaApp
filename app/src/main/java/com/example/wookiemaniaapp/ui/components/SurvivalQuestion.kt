@@ -20,6 +20,10 @@ import com.example.wookiemaniaapp.question.firaSans
 import com.google.relay.compose.RelayText
 import com.google.relay.compose.RelayVector
 
+/**
+ * Esta composable muestra el bocadillo de la pregunta y los corazones de vida del usuario.
+ * Se usa para el modo supervivencia
+ */
 @Composable
 fun TituloPreguntaComposableSurvival(
     questionTitle: String,

@@ -8,7 +8,7 @@ import com.example.wookiemaniaapp.model.QuestionModel
  *
  */
 sealed class QuestionState {
-    object Loading : QuestionState()
+    data object Loading : QuestionState()
     data class Success(val quiz: QuestionModel) : QuestionState()
     data class Error(val message: String) : QuestionState()
 }

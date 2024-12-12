@@ -7,7 +7,6 @@ package com.example.wookiemaniaapp.navigation
  */
 sealed class Routes(val route: String) {
 
-
     /**
      * Pantalla Inicial de la aplicación.
      */
@@ -91,7 +90,7 @@ sealed class Routes(val route: String) {
     data object Settings : Routes("settingsScreen")
 
     /**
-     * Pantalla de la configuracion.
+     * Pantalla de la configuracion del usuario.
      */
     data object UserEdit : Routes("userEditScreen")
 
@@ -129,6 +128,11 @@ sealed class Routes(val route: String) {
      * Pantalla de la configuracion del avatar.
      */
     data object AvatarSelection : Routes("avatarSelection")
+
+    /**
+     * Pantalla de la edicion de preguntas ya mostradas.
+     */
+    data object EditQuestions : Routes("editQuestions")
 
 
     //----------------------- Creación de preguntas --------------------//

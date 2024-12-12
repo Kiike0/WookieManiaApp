@@ -38,6 +38,7 @@ import com.example.wookiemaniaapp.ui.views.user.settings.AddQuizView
 import com.example.wookiemaniaapp.ui.views.user.settings.AdminSettingsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.AdminView
 import com.example.wookiemaniaapp.ui.views.user.settings.AvatarSelectionScreen
+import com.example.wookiemaniaapp.ui.views.user.settings.EditQuestions
 import com.example.wookiemaniaapp.ui.views.user.settings.PoliticsScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.ServerStateScreen
 import com.example.wookiemaniaapp.ui.views.user.settings.SettingsScreen
@@ -171,6 +172,14 @@ class MainActivity : ComponentActivity() {
                         // Ruta desde la pantalla de perfil
                         composable(Routes.AdminMode.route) {
                             AdminView(
+                                navController = navController,
+                                questionViewModel = questionViewModel
+                            )
+                        }
+
+                        // Ruta desde la pantalla de perfil
+                        composable(Routes.EditQuestions.route) {
+                            EditQuestions(
                                 navController = navController,
                                 questionViewModel = questionViewModel
                             )

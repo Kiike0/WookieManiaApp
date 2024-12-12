@@ -43,6 +43,11 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.AvatarViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
+/**
+ * Función composable que representa la pantalla de edición del usuario.
+ *
+ * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserEditScreen(

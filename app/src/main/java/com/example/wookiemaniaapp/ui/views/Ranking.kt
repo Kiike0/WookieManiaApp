@@ -30,7 +30,7 @@ import com.example.wookiemaniaapp.viewmodels.RankingViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
- * Función composable que representa la pantalla Home del juego.
+ * Función composable que representa la pantalla Ranking del juego.
  *
  * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
  */

@@ -49,12 +49,12 @@ import com.example.wookiemaniaapp.viewmodels.QuizViewModel
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
- * Función composable que representa la pantalla de las preguntas.
+ * Función composable que representa la pantalla del modo quiz personalizadas.
  *
  *
  * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
- *
  * @param quizVM El ViewModel responsable de gestionar la lógica de la colección de quizzes.
+ * @param currentUserViewModel El ViewModel responsable de gestionar la lógica del usuario.
  */
 @Composable
 fun QuizMode(

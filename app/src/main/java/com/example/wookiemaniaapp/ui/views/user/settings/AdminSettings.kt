@@ -57,7 +57,7 @@ fun AdminSettingsScreen(
             }
         }
 
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         // Aquí se aseguran de que cada ClickableSettings esté centrado
         ClickableSettings(
@@ -66,16 +66,25 @@ fun AdminSettingsScreen(
             onClick = {navController.navigate(Routes.AdminMode.route)}
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(30.dp))
 
         // Aquí se aseguran de que cada ClickableSettings esté centrado
         ClickableSettings(
             iconResId = R.drawable.adminquestionslogo,
-            text = "Añadir preguntas",
+            text = "Editar preguntas",
+            onClick = {navController.navigate(Routes.EditQuestions.route)}
+        )
+
+        Spacer(modifier = Modifier.height(18.dp))
+
+        // Aquí se aseguran de que cada ClickableSettings esté centrado
+        ClickableSettings(
+            iconResId = R.drawable.adminquestionslogo,
+            text = "Añadir quiz",
             onClick = {navController.navigate(Routes.AddingQuiz.route)}
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(18.dp))
 
         // Aquí se aseguran de que cada ClickableSettings esté centrado
         ClickableSettings(
@@ -84,7 +93,7 @@ fun AdminSettingsScreen(
             onClick = {navController.navigate(Routes.UserEdit.route)}
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(18.dp))
 
         ClickableSettings(
             iconResId = R.drawable.infoicon,
@@ -92,7 +101,7 @@ fun AdminSettingsScreen(
             onClick = {navController.navigate(Routes.AboutScreen.route)}
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(18.dp))
 
         ClickableSettings(
             iconResId = R.drawable.serverstateicon,
@@ -100,7 +109,7 @@ fun AdminSettingsScreen(
             onClick = {navController.navigate(Routes.ServerStateScreen.route)}
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(18.dp))
 
         ClickableSettings(
             iconResId = R.drawable.politicsicon,
@@ -108,7 +117,7 @@ fun AdminSettingsScreen(
             onClick = {navController.navigate(Routes.PoliticsScreen.route)}
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(18.dp))
 
         ClickableSettings(
             iconResId = R.drawable.logouticon,

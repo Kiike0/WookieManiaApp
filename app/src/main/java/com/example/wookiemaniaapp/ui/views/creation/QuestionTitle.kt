@@ -22,9 +22,10 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
 
 /**
- * Función composable que representa la pantalla Home del juego.
+ * Función composable que representa la pantalla de la creacion de la respuesta para el título de las preguntas.
  *
  * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
+ * @param newQuestionVM El controlador de view model para gestionar las preguntas.
  */
 @Composable
 fun QuestionTitle(

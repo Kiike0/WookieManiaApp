@@ -8,6 +8,11 @@ import com.example.wookiemaniaapp.model.RankingModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
+/**
+ * ViewModel responsable de gestionar la lógica de la puntuación de los rankings.
+ * Proporciona funciones para el ranking utilizando Firebase Auth.
+ *
+ */
 class RankingViewModel : ViewModel() {
 
     // LiveData que contiene la lista de Rankings

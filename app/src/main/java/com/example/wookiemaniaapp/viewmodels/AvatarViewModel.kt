@@ -9,6 +9,12 @@ import com.example.wookiemaniaapp.model.AvatarModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.auth.FirebaseAuth
 
+/**
+ * ViewModel responsable de gestionar la lógica de autenticación de los avatares.
+ * Proporciona funciones para el cambio de avatar utilizando Firebase Auth.
+ *
+ * @property auth Instancia de FirebaseAuth utilizada para las operaciones de autenticación.
+ */
 class AvatarViewModel : ViewModel() {
     private val firestore = FirebaseFirestore.getInstance()
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()

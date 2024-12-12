@@ -12,8 +12,9 @@ import com.example.wookiemaniaapp.ui.theme.ColorApp
 import com.example.wookiemaniaapp.viewmodels.UserViewModel
 
 /**
- * Función composable que representa la pantalla Home del juego.
+ * Función composable que representa la pantalla de Registro del juego.
  *
+ * @param newUserVM El ViewModel responsable de gestionar la lógica del usuario.
  * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
  */
 @Composable

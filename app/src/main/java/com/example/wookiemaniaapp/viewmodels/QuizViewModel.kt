@@ -19,9 +19,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 /**
- * ViewModel responsable de gestionar la lógica y el estado de las notas de los usuarios.
- * Proporciona funciones para agregar, recuperar, actualizar y eliminar notas utilizando Firebase Firestore.
- * Mantiene el estado de la lista de notas y la nota actualmente seleccionada o editada.
+ * ViewModel responsable de gestionar la lógica y el estado de las quiz creadas.
+ * Proporciona funciones para agregar quiz utilizando Firebase Firestore.
  *
  * @property auth Instancia de FirebaseAuth utilizada para obtener el usuario actual.
  * @property firestore Instancia de FirebaseFirestore utilizada para operaciones en la base de datos.

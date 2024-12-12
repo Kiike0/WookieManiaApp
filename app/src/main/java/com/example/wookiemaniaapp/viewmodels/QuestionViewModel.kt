@@ -15,6 +15,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel responsable de gestionar la lógica de autenticación de las preguntas.
+ * Proporciona funciones para la creación de preguntas utilizando Firebase Auth.
+ *
+ */
 class QuestionViewModel : ViewModel() {
     private val firestore = Firebase.firestore
 

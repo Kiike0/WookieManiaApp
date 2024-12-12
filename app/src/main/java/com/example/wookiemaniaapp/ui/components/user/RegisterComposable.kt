@@ -39,6 +39,12 @@ import com.example.wookiemaniaapp.viewmodels.UserViewModel
 import android.widget.Toast
 import androidx.compose.ui.platform.LocalContext
 
+/**
+ * Esta es la función que representa el registro del usuario
+ *
+ * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
+ * @param newUserVM El ViewModel responsable de gestionar la lógica del usuario.
+ */
 @Composable
 fun RegisterComposable(
     newUserVM: UserViewModel,

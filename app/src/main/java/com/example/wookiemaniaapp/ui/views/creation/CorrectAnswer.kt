@@ -25,6 +25,7 @@ import com.example.wookiemaniaapp.viewmodels.QuestionViewModel
  * Función composable que representa la pantalla de la creacion de la respuesta para las quiz.
  *
  * @param navController El controlador de navegación utilizado para navegar en las diferentes pantallas.
+ * @param newQuestionVM El controlador de view model para gestionar las preguntas.
  */
 @Composable
 fun CorrectAnswer(
