@@ -4,7 +4,7 @@
             "outputFile": "com.example.wookiemaniaapp.test.app-mergeDebugAndroidTestResources-32:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\2007e841c67cc722a1b342e3c8726a17\\transformed\\ui-release\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\355e1d5f0c90ad8ac8d71002709abaef\\transformed\\ui-release\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\cdf7c29e0b0c3cf9eba6f42cf23977bb\\transformed\\core-1.13.1\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\enriv\\.gradle\\caches\\transforms-4\\206a40adaae0157dd5d0ac1924cca087\\transformed\\core-1.13.1\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
