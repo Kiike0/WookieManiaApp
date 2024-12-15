@@ -14,6 +14,8 @@
    * **Usuario**: Un objeto que representa la información del usuario, como el nombre de usuario, el correo electrónico, etc.
    * **Quiz**: Contiene información sobre un quiz específico, como el título, las preguntas y las respuestas.
    * **Pregunta**: Representa una pregunta individual en un quiz, con sus opciones de respuesta y la respuesta correcta.
+   * Ranking: Representa las puntuaciones de los usuarios que han respondido pregunta y han utilizado la aplicación.
+   * Avatars: Representa una colección de datos de los avatares de cada usuario.
 4. **Firebase**: Este proyecto hace uso de Firebase para la autenticación de usuarios, almacenamiento de datos y posiblemente otras funcionalidades. Algunos de los componentes de Firebase que podrían utilizarse incluyen:
    * **Firebase Authentication**: Para gestionar la autenticación de usuarios.
    * **Cloud Firestore o Firebase Realtime Database**: Para almacenar y recuperar datos, como información de usuario, quizzes y preguntas.

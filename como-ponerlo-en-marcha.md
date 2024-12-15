@@ -15,3 +15,9 @@ description: Despliegue de la aplicación
 3. **Compilar y ejecutar**: Una vez que hayas configurado todo correctamente, puedes compilar y ejecutar el proyecto en Android Studio. Asegúrate de tener un dispositivo Android conectado o un emulador configurado para probar la aplicación.
 4. **Loguearse o registrarse:** Una vez que ya esté corriendo la aplicación deberá loguearse si tiene una cuenta ya creada o registrarse en el caso contrario. Una vez se loguea, el login se queda guardado en la aplicación para no tener que repetir ese paso de nuevo.
 5. **Disfruta de la aplicación:** Ya solo queda empezar a hacer quiz y disfrutar de lo que la aplicación te ofrece. Crea o haz las quiz que quieras, cuando quieras.
+
+
+
+Para ponerlo en marcha desde el móvil:
+
+1. Descargar el archivo apk que está alojado en la carpeta build -> outputs -> apks e iniciar la instalación desde tu móvil android.
